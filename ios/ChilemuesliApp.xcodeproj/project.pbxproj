@@ -194,7 +194,6 @@
 				A7D9580A70BAD08A6DF8074B /* Pods-ChilemuesliAppTests.debug.xcconfig */,
 				2B77E7DCA1856E3C32165C32 /* Pods-ChilemuesliAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -308,6 +307,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -630,6 +630,7 @@
 				DEAD_CODE_STRIPPING = NO;
 				INFOPLIST_FILE = ChilemuesliApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 0.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -649,6 +650,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = ChilemuesliApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 0.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
