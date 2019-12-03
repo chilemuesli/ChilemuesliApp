@@ -1,7 +1,9 @@
-package com.chilemuesliapp;
+package ch.mabaka.chilemuesli;
 
 import android.app.Application;
 import android.content.Context;
+
+import ch.mabaka.chilemuesli.BuildConfig;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;

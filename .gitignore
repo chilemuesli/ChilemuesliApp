@@ -3,3 +3,5 @@
 build/
 *.code-workspace
 node_modules/
+main.jsbundle
+android/local.properties
