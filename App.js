@@ -13,10 +13,19 @@ import {createBottomTabNavigator} from 'react-navigation-tabs';
 import {createStackNavigator} from 'react-navigation-stack';
 import WelcomeScreen from './Screens/WelcomeScreen';
 
-const WelcomeNavigator = createStackNavigator(
+Ionicons.loadFont();
+
+const WelcomeNavigator = createStackNavigator({
+  Home: {
+    screen: WelcomeScreen,
+    routeName: 'Home',
+  },
+});
+
+const TabNavigator = createBottomTabNavigator(
   {
     Home: {
-      screen: WelcomeScreen,
+      screen: WelcomeNavigator,
     },
   },
   {
@@ -26,14 +35,15 @@ const WelcomeNavigator = createStackNavigator(
         let IconComponent = Ionicons;
         let iconName;
         if (routeName === 'Home') {
-          iconName = `ios-information-circle${focused ? '' : '-outline'}`;
+          iconName = 'ios-home';
+          //iconName = `ios-home${focused ? '' : '-outline'}`;
           // Sometimes we want to add badges to some icons.
           // You can check the implementation below.
           // IconComponent = HomeIconWithBadge;
         } else if (routeName === 'Settings') {
           iconName = 'ios-options';
         } else {
-          iconName = 'ios-frowno'
+          iconName = 'ios-frowno';
         }
 
         // You can return any component that you like here!
@@ -46,10 +56,6 @@ const WelcomeNavigator = createStackNavigator(
     },
   },
 );
-
-const TabNavigator = createBottomTabNavigator({
-  Home: WelcomeNavigator,
-});
 
 /*export default TabNavigator(
   {
