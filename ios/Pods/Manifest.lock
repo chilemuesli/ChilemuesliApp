@@ -221,6 +221,10 @@ PODS:
     - React-cxxreact (= 0.61.4)
     - React-jsi (= 0.61.4)
     - ReactCommon/jscallinvoker (= 0.61.4)
+  - ReactNativeBeaconsManager (1.1.0):
+    - React
+  - RNBluetoothStateManager (1.1.0):
+    - React
   - RNGestureHandler (1.5.1):
     - React
   - RNReanimated (1.4.0):
@@ -261,6 +265,8 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - ReactCommon/jscallinvoker (from `../node_modules/react-native/ReactCommon`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - ReactNativeBeaconsManager (from `../node_modules/react-native-beacons-manager`)
+  - RNBluetoothStateManager (from `../node_modules/react-native-bluetooth-state-manager`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
@@ -324,6 +330,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/Libraries/Vibration"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  ReactNativeBeaconsManager:
+    :path: "../node_modules/react-native-beacons-manager"
+  RNBluetoothStateManager:
+    :path: "../node_modules/react-native-bluetooth-state-manager"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
   RNReanimated:
@@ -363,12 +373,14 @@ SPEC CHECKSUMS:
   React-RCTText: 21934e0a51d522abcd0a275407e80af45d6fd9ec
   React-RCTVibration: 0f76400ee3cec6edb9c125da49fed279340d145a
   ReactCommon: a6a294e7028ed67b926d29551aa9394fd989c24c
+  ReactNativeBeaconsManager: dd0b01841445881989af5be9ab83153d1cdaa6b7
+  RNBluetoothStateManager: f38ca64bd09d3028b596cb080b89a388207b62a0
   RNGestureHandler: 7add966bb5d90ee8cf38d4341f87814474357972
   RNReanimated: b2ab0b693dddd2339bd2f300e770f6302d2e960c
   RNScreens: 3a9ec369c7608d36f037bd14340a95a005f3f9d5
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   Yoga: ba3d99dbee6c15ea6bbe3783d1f0cb1ffb79af0f
 
-PODFILE CHECKSUM: c6477ce4839a665b8b980b66ac6c274ec37562a9
+PODFILE CHECKSUM: 38e54a69620d9f0d1cccb6137dc7d6dda431a08d
 
 COCOAPODS: 1.8.4

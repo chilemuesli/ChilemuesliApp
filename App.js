@@ -12,6 +12,7 @@ import {createAppContainer} from 'react-navigation';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import {createStackNavigator} from 'react-navigation-stack';
 import WelcomeScreen from './Screens/WelcomeScreen';
+import BeaconsDemoScreen from './Screens/BeaconsDemoScreen';
 
 Ionicons.loadFont();
 
@@ -22,10 +23,20 @@ const WelcomeNavigator = createStackNavigator({
   },
 });
 
+const AboutNavigator = createStackNavigator({
+  Home: {
+    screen: BeaconsDemoScreen,
+    routeName: 'Home',
+  },
+});
+
 const TabNavigator = createBottomTabNavigator(
   {
     Home: {
       screen: WelcomeNavigator,
+    },
+    About: {
+      screen: AboutNavigator,
     },
   },
   {
@@ -40,6 +51,8 @@ const TabNavigator = createBottomTabNavigator(
           // Sometimes we want to add badges to some icons.
           // You can check the implementation below.
           // IconComponent = HomeIconWithBadge;
+        } else if (routeName === 'About') {
+          iconName = 'ios-question';
         } else if (routeName === 'Settings') {
           iconName = 'ios-options';
         } else {

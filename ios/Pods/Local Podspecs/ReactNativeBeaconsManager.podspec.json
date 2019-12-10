@@ -1,0 +1,27 @@
+{
+  "name": "ReactNativeBeaconsManager",
+  "version": "1.1.0",
+  "summary": "React-Native library for detecting beacons (iOS and Android)",
+  "homepage": "https://github.com/MacKentoch/react-native-beacons-manager#readme",
+  "license": {
+    "type": "MIT"
+  },
+  "authors": {
+    "": ""
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "path": "."
+  },
+  "source_files": [
+    "ios",
+    "ios/**/*.{h,m}"
+  ],
+  "dependencies": {
+    "React": [
+
+    ]
+  }
+}
