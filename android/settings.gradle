@@ -1,3 +1,5 @@
 rootProject.name = 'ChilemuesliApp'
 apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
 include ':app'
+include ':react-native-bluetooth-state-manager'
+project(':react-native-bluetooth-state-manager').projectDir = new File(rootProject.projectDir,   '../node_modules/react-native-bluetooth-state-manager/android')

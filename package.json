@@ -8,13 +8,15 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "build:ios": "react-native bundle --entry-file='index.js' --bundle-output='./ios/main.jsbundle' --dev=false --platform='ios'"
+    "build:ios": "react-native bundle --entry-file='index.js' --bundle-output='./ios/main.jsbundle' --dev=false --platform='ios'",
+    "postinstall" : "npx jetify"
   },
   "dependencies": {
     "deprecated-react-native-listview": "^0.0.6",
+    "jetifier": "^1.6.5",
     "react": "16.9.0",
-    "react-native": "0.61.4",
-    "react-native-beacons-manager": "https://github.com/MacKentoch/react-native-beacons-manager.git#53c1bda",
+    "react-native": "0.61.5",
+    "react-native-beacons-manager": "https://github.com/chilemuesli/react-native-beacons-manager.git#85b410d",
     "react-native-bluetooth-state-manager": "^1.1.0",
     "react-native-config": "^0.12.0",
     "react-native-gesture-handler": "^1.5.1",

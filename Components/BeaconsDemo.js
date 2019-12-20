@@ -3,6 +3,7 @@ import {StyleSheet, View, Text} from 'react-native';
 import ListView from 'deprecated-react-native-listview';
 import Beacons from 'react-native-beacons-manager';
 import BluetoothState from 'react-native-bluetooth-state-manager';
+import {Platform} from 'react-native';
 
 /**
  * uuid of YOUR BEACON (change to yours)
@@ -41,30 +42,37 @@ export default class BeaconsDemo extends Component {
     bluetoothState: '',
   };
 
-  componentWillMount() {
+  constructor(props) {
+    super(props);
     const {identifier, uuid} = this.state;
     const {otherIdentifier, otherUUID} = this.state;
 
-    Beacons.requestAlwaysAuthorization();
+    if (Platform.OS === 'ios') {
+      Beacons.requestAlwaysAuthorization();
+    } else if (Platform === 'android'){
+      Beacons.detectIBeacons();
+    }
 
     const region = {identifier, uuid};
     const anotherRegion = {identifier: otherIdentifier, uuid: otherUUID};
 
     // Range for beacons inside the region
-    Beacons.startRangingBeaconsInRegion(region) // or like  < v1.0.7: .startRangingBeaconsInRegion(identifier, uuid)
+    Beacons.startRangingBeaconsInRegion(region)
       .then(() => console.log('Beacons ranging started succesfully'))
       .catch(error =>
         console.log(`Beacons ranging not started, error: ${error}`),
       );
     // Range for beacons inside the other region
-    Beacons.startRangingBeaconsInRegion(anotherRegion) // or like  < v1.0.7: .startRangingBeaconsInRegion(identifier, uuid)
+    Beacons.startRangingBeaconsInRegion(anotherRegion)
       .then(() => console.log('Beacons ranging started succesfully'))
       .catch(error =>
         console.log(`Beacons ranging not started, error: ${error}`),
       );
 
     // update location to ba able to monitor:
-    Beacons.startUpdatingLocation();
+    if (Platform.OS === 'ios') {
+      Beacons.startUpdatingLocation();
+    }
   }
 
   componentDidMount() {

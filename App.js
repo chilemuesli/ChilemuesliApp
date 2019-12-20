@@ -52,7 +52,7 @@ const TabNavigator = createBottomTabNavigator(
           // You can check the implementation below.
           // IconComponent = HomeIconWithBadge;
         } else if (routeName === 'About') {
-          iconName = 'ios-question';
+          iconName = 'ios-information-circle-outline';
         } else if (routeName === 'Settings') {
           iconName = 'ios-options';
         } else {
