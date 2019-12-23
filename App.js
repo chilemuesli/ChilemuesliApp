@@ -16,24 +16,28 @@ import BeaconsDemoScreen from './Screens/BeaconsDemoScreen';
 
 Ionicons.loadFont();
 
-const WelcomeNavigator = createStackNavigator({
+const MainNavigator = createStackNavigator({
   Home: {
     screen: WelcomeScreen,
     routeName: 'Home',
   },
+  Test: {
+    screen: BeaconsDemoScreen,
+    routeName: 'Test',
+  },
 });
 
 const AboutNavigator = createStackNavigator({
-  Home: {
+  Test: {
     screen: BeaconsDemoScreen,
-    routeName: 'Home',
+    routeName: 'Test',
   },
 });
 
 const TabNavigator = createBottomTabNavigator(
   {
     Home: {
-      screen: WelcomeNavigator,
+      screen: MainNavigator,
     },
     About: {
       screen: AboutNavigator,
@@ -69,56 +73,9 @@ const TabNavigator = createBottomTabNavigator(
     },
   },
 );
+const AppContainer = createAppContainer(MainNavigator);
 
-/*export default TabNavigator(
-  {
-    Willkommen: {
-      screen: WelcomeStack,
-      navigationOptions: {tabBarLabel: 'Willkommen'},
-    },
-  },
-  {
-    navigationOptions: ({navigation}) => ({
-      tabBarIcon: ({focused, tintColor}) => {
-        const {routeName} = navigation.state;
-        let iconName;
-        var styles = StyleSheet.create({
-          PNGImageStyle: {
-            width: 25,
-            height: 25,
-          },
-        });
-        if (routeName === 'Willkommen') {
-          iconName = `ios-home${focused ? '' : '-outline'}`;
-        } else if (routeName === 'Kontakt') {
-          iconName = `ios-contact${focused ? '' : '-outline'}`;
-        } else if (routeName === 'Agenda') {
-          iconName = `ios-calendar${focused ? '' : '-outline'}`;
-        } else if (routeName === 'InfoBox') {
-          iconName = `ios-bonfire${focused ? '' : '-outline'}`;
-        } else if (routeName === 'Datenschutz') {
-          iconName = `ios-information-circle${focused ? '' : '-outline'}`;
-        }
-        // You can return any component that you like here! We usually use an
-        // icon component from react-native-vector-icons
-        return <Ionicons name={iconName} size={25} color={tintColor} />;
-      },
-    }),
-    tabBarOptions: {
-      activeTintColor: 'navy',
-      inactiveTintColor: 'gray',
-    },
-    tabBarComponent: TabBarBottom,
-    tabBarPosition: 'bottom',
-    animationEnabled: false,
-    swipeEnabled: false,
-  },
-
-);*/
-
-const AppContainer = createAppContainer(TabNavigator);
-
-export default class App extends React.Component {
+export default class App extends React.Component{
   render() {
     return <AppContainer />;
   }
