@@ -28,39 +28,37 @@ export default class WelcomeScreen extends React.Component {
   render() {
     return (
       <ScrollView style={styles.view}>
-        <View style={styles.container}>
-          <View style={styles.button_view}>
-            <Button
-              onPress={() => {
-                this.openSearchMiceListView();
-              }}
-              title="Müsli suchen"
-            />
-            <Button
-              onPress={() => {
-                this.openTravellingInstructionsView();
-              }}
-              title="Anreise"
-            />
-            <Button
-              onPress={() => {
-                this.openContactView();
-              }}
-              title="Kontakt"
-            />
-            <Button
-              onPress={() => {
-                this.openPrivacyPolicyView();
-              }}
-              title="Datenschutzerklärung"
-            />
-            <Button
-              onPress={() => {
-                this.openDebugView();
-              }}
-              title="Debug"
-            />
-          </View>
+        <View style={styles.button_view}>
+          <Button
+            onPress={() => {
+              this.openSearchMiceListView();
+            }}
+            title="Müsli suchen"
+          />
+          <Button
+            onPress={() => {
+              this.openTravellingInstructionsView();
+            }}
+            title="Anreise"
+          />
+          <Button
+            onPress={() => {
+              this.openContactView();
+            }}
+            title="Kontakt"
+          />
+          <Button
+            onPress={() => {
+              this.openPrivacyPolicyView();
+            }}
+            title="Datenschutzerklärung"
+          />
+          <Button
+            onPress={() => {
+              this.openDebugView();
+            }}
+            title="Debug"
+          />
         </View>
       </ScrollView>
     );
@@ -68,21 +66,13 @@ export default class WelcomeScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  view: {},
-  container: {
-    margin: 10,
-  },
-  icon: {
-    width: 60,
-    height: 60,
-  },
-  button_view: {
-    marginTop: 10,
-    width: '100%',
+  view: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  button_pos: {
-    marginTop: 30,
+  button_view: {
+    //marginTop: 10,
+    width: '100%',
   },
 });
