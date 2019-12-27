@@ -6,6 +6,7 @@ import Config from 'react-native-config';
 export default class WelcomeScreen extends React.Component {
   openSearchMiceListView() {
     console.log('openSearchMiceListView clicked');
+    this.props.navigation.navigate('StoryList', {});
   }
 
   openTravellingInstructionsView() {
@@ -72,7 +73,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   button_view: {
-    //marginTop: 10,
     width: '100%',
   },
 });

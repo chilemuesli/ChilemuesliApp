@@ -11,6 +11,7 @@ import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import WelcomeScreen from './Screens/WelcomeScreen';
 import BeaconsDemoScreen from './Screens/BeaconsDemoScreen';
+import StoryListScreen from  './Screens/StoryListScreen';
 import {ThemeProvider} from 'react-native-elements';
 import {COLOR_PRIMARY, BORDER_RADIUS} from './Styles/Common';
 
@@ -38,6 +39,10 @@ const MainNavigator = createStackNavigator({
   Home: {
     screen: WelcomeScreen,
     routeName: 'Home',
+  },
+  StoryList: {
+    screen: StoryListScreen,
+    routeName: 'StoryList',
   },
   Test: {
     screen: BeaconsDemoScreen,
