@@ -28,51 +28,62 @@ export default class WelcomeScreen extends React.Component {
 
   render() {
     return (
-      <ScrollView style={styles.view}>
-        <View style={styles.button_view}>
-          <Button
-            onPress={() => {
-              this.openSearchMiceListView();
-            }}
-            title="Müsli suchen"
-          />
-          <Button
-            onPress={() => {
-              this.openTravellingInstructionsView();
-            }}
-            title="Anreise"
-          />
-          <Button
-            onPress={() => {
-              this.openContactView();
-            }}
-            title="Kontakt"
-          />
-          <Button
-            onPress={() => {
-              this.openPrivacyPolicyView();
-            }}
-            title="Datenschutzerklärung"
-          />
-          <Button
-            onPress={() => {
-              this.openDebugView();
-            }}
-            title="Debug"
-          />
-        </View>
-      </ScrollView>
+      <View style={styles.mainView}>
+        <ScrollView contentContainerStyle={styles.scrollViewContentContainerStyle}>
+          <View style={styles.button_view}>
+            <Button
+              onPress={() => {
+                this.openSearchMiceListView();
+              }}
+              style={styles.firstButton}
+              title="Müsli suchen"
+            />
+            <Button
+              onPress={() => {
+                this.openTravellingInstructionsView();
+              }}
+              title="Anreise"
+            />
+            <Button
+              onPress={() => {
+                this.openContactView();
+              }}
+              title="Kontakt"
+            />
+            <Button
+              onPress={() => {
+                this.openPrivacyPolicyView();
+              }}
+              title="Datenschutzerklärung"
+            />
+            <Button
+              onPress={() => {
+                this.openDebugView();
+              }}
+              title="Debug"
+            />
+          </View>
+        </ScrollView>
+      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  view: {
+  mainView: {
     flex: 1,
+  },
+  scrollViewContentContainerStyle: {
+    flexGrow: 1,
     justifyContent: 'center',
-    alignItems: 'center',
   },
   button_view: {
+    flexGrow: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
     width: '100%',
+  },
+  firstButton: {
+    marginTop: 0,
   },
 });
