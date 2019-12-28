@@ -5,11 +5,10 @@ export default class ReadStoriesService {
     this.rnfs = require('react-native-fs');
   }
   getBaseDirectory() {
-    console.log(Platform.OS);
     if (Platform.OS === 'ios') {
-      return this.rnfs.MainBundlePath;
+      return this.rnfs.MainBundlePath + '/StoryData';
     } else if (Platform === 'android') {
-      return this.rnfs.DocumentDirectoryPath;
+      return this.rnfs.DocumentDirectoryPath + '/StoryData';
     }
   }
 

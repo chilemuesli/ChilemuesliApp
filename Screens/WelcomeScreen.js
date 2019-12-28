@@ -29,7 +29,8 @@ export default class WelcomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.mainView}>
-        <ScrollView contentContainerStyle={styles.scrollViewContentContainerStyle}>
+        <ScrollView
+          contentContainerStyle={styles.scrollViewContentContainerStyle}>
           <View style={styles.button_view}>
             <Button
               onPress={() => {

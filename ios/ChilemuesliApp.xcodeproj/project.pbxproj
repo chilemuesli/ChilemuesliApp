@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* ChilemuesliAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ChilemuesliAppTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -17,6 +18,7 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* ChilemuesliAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ChilemuesliAppTests.m */; };
 		38572EFCA2A3905062768AF4 /* libPods-ChilemuesliApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F81470DD17C95A1CD751FA5 /* libPods-ChilemuesliApp.a */; };
+		620DB37D23B7F93700C31508 /* StoryData in Resources */ = {isa = PBXBuildFile; fileRef = 620DB37C23B7F93700C31508 /* StoryData */; };
 		62EB9845238F1CB10069CC42 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 008F07F21AC5B25A0029DE68 /* main.jsbundle */; };
 		62EB9846238F1D0F0069CC42 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 008F07F21AC5B25A0029DE68 /* main.jsbundle */; };
 		62EB9867238F22F70069CC42 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62EB9857238F22F60069CC42 /* Entypo.ttf */; };
@@ -76,6 +78,7 @@
 		36AA8F28B098666499E337FF /* Pods-ChilemuesliApp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChilemuesliApp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-ChilemuesliApp-tvOSTests/Pods-ChilemuesliApp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		5C388FAEFE481F894B729DD4 /* Pods-ChilemuesliApp-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChilemuesliApp-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-ChilemuesliApp-tvOS/Pods-ChilemuesliApp-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		60890BA5BC429843DBCBCF2D /* Pods-ChilemuesliApp-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChilemuesliApp-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-ChilemuesliApp-tvOSTests/Pods-ChilemuesliApp-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		620DB37C23B7F93700C31508 /* StoryData */ = {isa = PBXFileReference; lastKnownFileType = folder; name = StoryData; path = ../StoryData; sourceTree = "<group>"; };
 		62EB9857238F22F60069CC42 /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		62EB9858238F22F60069CC42 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		62EB9859238F22F60069CC42 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
@@ -187,7 +190,6 @@
 			isa = PBXGroup;
 			children = (
 				D9E8EB47ADAC4D84AFD9F3C8 /* libRNiBeacon.a */,
-				5EAC30B0450A4CE3BA5092CB /* libRNBluetoothState.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -225,6 +227,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				620DB37C23B7F93700C31508 /* StoryData */,
 				62EB9877238F23100069CC42 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* ChilemuesliApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -386,8 +389,6 @@
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* ChilemuesliApp */,
@@ -397,9 +398,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		00E356EC1AD99517003FC87E /* Resources */ = {
@@ -413,6 +411,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				620DB37D23B7F93700C31508 /* StoryData in Resources */,
 				62EB9845238F1CB10069CC42 /* main.jsbundle in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
@@ -737,9 +736,7 @@
 				INFOPLIST_FILE = ChilemuesliAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -764,9 +761,7 @@
 				INFOPLIST_FILE = ChilemuesliAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -848,9 +843,7 @@
 				);
 				INFOPLIST_FILE = "ChilemuesliApp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -884,9 +877,7 @@
 				);
 				INFOPLIST_FILE = "ChilemuesliApp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -918,9 +909,7 @@
 				);
 				INFOPLIST_FILE = "ChilemuesliApp-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -953,9 +942,7 @@
 				);
 				INFOPLIST_FILE = "ChilemuesliApp-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
