@@ -7,8 +7,8 @@ export default class ReadStoriesService {
   getBaseDirectory() {
     if (Platform.OS === 'ios') {
       return this.rnfs.MainBundlePath + '/StoryData';
-    } else if (Platform === 'android') {
-      return this.rnfs.DocumentDirectoryPath + '/StoryData';
+    } else if (Platform.OS === 'android') {
+      return this.rnfs.DocumentDirectoryPath + '/raw';
     }
   }
 
