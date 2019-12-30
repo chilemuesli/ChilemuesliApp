@@ -3,8 +3,6 @@ package ch.mabaka.chilemuesli;
 import android.app.Application;
 import android.content.Context;
 
-import ch.mabaka.chilemuesli.BuildConfig;
-
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
@@ -14,9 +12,13 @@ import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
-import de.patwoz.rn.bluetoothstatemanager.RNBluetoothStateManagerPackage;
-
 public class MainApplication extends Application implements ReactApplication {
+
+    private static Context CONTEXT;
+
+    public static Context getContext() {
+        return CONTEXT;
+    }
 
     private final ReactNativeHost mReactNativeHost =
             new ReactNativeHost(this) {
@@ -48,6 +50,7 @@ public class MainApplication extends Application implements ReactApplication {
         super.onCreate();
         SoLoader.init(this, /* native exopackage */ false);
         initializeFlipper(this); // Remove this line if you don't want Flipper enabled
+        Setup.copyFolder("raw");
     }
 
     /**
@@ -56,6 +59,7 @@ public class MainApplication extends Application implements ReactApplication {
      * @param context
      */
     private static void initializeFlipper(Context context) {
+        MainApplication.CONTEXT = context;
         if (BuildConfig.DEBUG) {
             try {
         /*
