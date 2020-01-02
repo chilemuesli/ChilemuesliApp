@@ -37,7 +37,7 @@ public class Setup {
             } catch (IOException e) {
                 Log.e("ERROR", "Failed to get asset file list.", e);
             }
-            String targetFolder = MainApplication.getContext().getDataDir() +"/"+ name + "/";
+            String targetFolder = MainApplication.getContext().getDataDir() +"/files/"+ name + "/";
             Log.i("INFO", "Try to create target folder: " + targetFolder);
             boolean success = true;
             // First: checking if there is already a target folder

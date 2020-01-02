@@ -14,11 +14,18 @@ export default class ReadStoriesService {
 
   readStories() {
     console.log(this.getBaseDirectory());
-    this.rnfs.readDir(this.getBaseDirectory()).then(result => {
-      console.log('GOT RESULT', result);
-
-      // stat the first file
-      return Promise.all([this.rnfs.stat(result[0].path), result[0].path]);
+    return new Promise((resolve, reject) => {
+      this.rnfs
+        .readFile(this.getBaseDirectory() + '/Stories.json')
+        .then(result => {
+          console.log('File loaded, try to parse it.');
+          resolve(JSON.parse(result));
+        })
+        .catch(err => {
+          console.log('ERROR!');
+          console.log(err.message, err.code);
+          reject(err);
+        });
     });
   }
 }

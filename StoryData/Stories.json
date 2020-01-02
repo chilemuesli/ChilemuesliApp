@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "title": "Kollektenmaus",
+        "imageFiles": {},
+        "audioFile": "",
+        "description": "Die Kollektenmaus ist zuständig für..."
+    },
+    {
+        "id": 2,
+        "title": "Pfarrmaus",
+        "imageFiles": {},
+        "audioFile": "",
+        "description": "Die Pfarrmaus ist zuständig für..."
+    }
+]
