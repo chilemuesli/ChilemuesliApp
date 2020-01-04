@@ -4,13 +4,15 @@
         "title": "Kollektenmaus",
         "imageFiles": {},
         "audioFile": "",
-        "description": "Die Kollektenmaus ist zuständig für..."
+        "description": "Die Kollektenmaus ist zuständig für...",
+        "iBeaconName": "kollektenmaus"
     },
     {
         "id": 2,
         "title": "Pfarrmaus",
         "imageFiles": {},
         "audioFile": "",
-        "description": "Die Pfarrmaus ist zuständig für..."
+        "description": "Die Pfarrmaus ist zuständig für...",
+        "iBeaconName": "pfarrmaus"
     }
 ]

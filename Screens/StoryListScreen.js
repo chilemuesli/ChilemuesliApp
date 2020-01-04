@@ -33,16 +33,21 @@ export default class StoryListScreen extends React.Component {
     console.log(this.state.stories);
   };
 
+  onStorySelected(story) {
+    console.log('Story selected: ' + story.id);
+    this.props.navigation.navigate('Story', {selectedStory: story});
+  }
+
   render() {
     return (
       <ScrollView style={styles.view}>
         <View>
-          {this.state.stories.map((l, i) => (
+          {this.state.stories.map((story, i) => (
             <ListItem
-              key={l.id}
+              key={i}
               //leftAvatar={{source: {uri: l.avatar_url}}}
-              title={l.title}
-              //subtitle={l.subtitle}
+              title={story.title}
+              onPress={() => this.onStorySelected(story)}
               bottomDivider
             />
           ))}
