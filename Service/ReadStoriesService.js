@@ -6,20 +6,30 @@ export default class ReadStoriesService {
   }
   getBaseDirectory() {
     if (Platform.OS === 'ios') {
-      return this.rnfs.MainBundlePath + '/StoryData';
+      return this.rnfs.MainBundlePath + '/StoryData/';
     } else if (Platform.OS === 'android') {
-      return this.rnfs.DocumentDirectoryPath + '/raw';
+      return this.rnfs.DocumentDirectoryPath + '/raw/';
     }
   }
 
   readStories() {
-    console.log(this.getBaseDirectory());
+    let baseDirectory = this.getBaseDirectory();
+    console.log(baseDirectory);
     return new Promise((resolve, reject) => {
       this.rnfs
-        .readFile(this.getBaseDirectory() + '/Stories.json')
+        .readFile(baseDirectory + 'Stories.json')
         .then(result => {
           console.log('File loaded, try to parse it.');
-          resolve(JSON.parse(result));
+          result = JSON.parse(result);
+          result.forEach(story => {
+            if (story.audioFile !== undefined && story.audioFile !== '') {
+              story.audioFile = baseDirectory + story.audioFile;
+            }
+            story.imageFiles.forEach((part, index, imageFiles) => {
+              imageFiles[index] = baseDirectory + imageFiles[index];
+            });
+          });
+          resolve(result);
         })
         .catch(err => {
           console.log('ERROR!');
