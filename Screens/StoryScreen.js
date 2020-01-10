@@ -45,7 +45,8 @@ export default class StoryScreen extends React.Component {
           onError={this.videoError} // Callback when video cannot be load
           //poster={story.imageFiles[0]}
           ignoreSilentSwitch="ignore"
-          posterResizeMode="cover"
+          posterResizeMode={'center'}
+          audioOnly={true}
           controls={true}
           paused={true}
           muted={false}
@@ -63,16 +64,15 @@ export default class StoryScreen extends React.Component {
     );
   }
 }
+const ASPECT_RATIO = 16 / 9;
 const styles = StyleSheet.create({
   view: {
     flex: 1,
   },
   video: {
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0,
-    height: 200,
-    width: 300,
+    width: '100%',
+    height: 'auto',
+    minWidth: '100%',
+    aspectRatio: ASPECT_RATIO,
   },
 });

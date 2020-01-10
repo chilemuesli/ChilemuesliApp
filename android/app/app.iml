@@ -130,25 +130,5 @@
     <orderEntry type="module" module-name="node_modules-react-native-reanimated-android-react-native-reanimated" />
     <orderEntry type="module" module-name="node_modules-react-native-screens-android-react-native-screens" />
     <orderEntry type="module" module-name="node_modules-react-native-vector-icons-android-react-native-vector-icons" />
-    <orderEntry type="module" module-name="node_modules-react-native-bluetooth-state-manager-android-react-native-bluetooth-state-manager" />
-    <orderEntry type="module" module-name="node_modules-react-native-beacons-manager-android-react-native-beacons-manager" />
-    <orderEntry type="module" module-name="node_modules-react-native-webview-android-react-native-webview" />
-    <orderEntry type="module" module-name="android-react-native-fs" />
-    <orderEntry type="module" module-name="react-native-video" />
-    <orderEntry type="module" module-name="node_modules-react-native-config-android-react-native-config" />
-    <orderEntry type="module" module-name="node_modules-react-native-gesture-handler-android-react-native-gesture-handler" />
-    <orderEntry type="module" module-name="node_modules-react-native-reanimated-android-react-native-reanimated" />
-    <orderEntry type="module" module-name="node_modules-react-native-screens-android-react-native-screens" />
-    <orderEntry type="module" module-name="node_modules-react-native-vector-icons-android-react-native-vector-icons" />
-    <orderEntry type="module" module-name="node_modules-react-native-bluetooth-state-manager-android-react-native-bluetooth-state-manager" />
-    <orderEntry type="module" module-name="node_modules-react-native-beacons-manager-android-react-native-beacons-manager" />
-    <orderEntry type="module" module-name="node_modules-react-native-webview-android-react-native-webview" />
-    <orderEntry type="module" module-name="android-react-native-fs" />
-    <orderEntry type="module" module-name="react-native-video" />
-    <orderEntry type="module" module-name="node_modules-react-native-config-android-react-native-config" />
-    <orderEntry type="module" module-name="node_modules-react-native-gesture-handler-android-react-native-gesture-handler" />
-    <orderEntry type="module" module-name="node_modules-react-native-reanimated-android-react-native-reanimated" />
-    <orderEntry type="module" module-name="node_modules-react-native-screens-android-react-native-screens" />
-    <orderEntry type="module" module-name="node_modules-react-native-vector-icons-android-react-native-vector-icons" />
   </component>
 </module>
