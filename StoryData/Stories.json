@@ -11,7 +11,7 @@
         "id": 2,
         "title": "Pfarrmaus",
         "imageFiles": ["Pfarrmaus.jpg"],
-        "audioFile": "Testmaus.m4a",
+        "audioFile": "Testmaus.mp3",
         "description": "Die Pfarrmaus ist zuständig für...",
         "iBeaconName": "pfarrmaus"
     }

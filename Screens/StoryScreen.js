@@ -43,7 +43,8 @@ export default class StoryScreen extends React.Component {
           }} // Store reference
           onBuffer={this.onBuffer} // Callback when remote video is buffering
           onError={this.videoError} // Callback when video cannot be load
-          poster={story.imageFiles[0]}
+          //poster={story.imageFiles[0]}
+          ignoreSilentSwitch="ignore"
           posterResizeMode="cover"
           controls={true}
           paused={true}
@@ -67,7 +68,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   video: {
-    position: 'absolute',
     top: 0,
     left: 0,
     bottom: 0,
