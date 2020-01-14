@@ -3,24 +3,53 @@ import {ScrollView, View, StyleSheet} from 'react-native';
 import {Text} from 'react-native-elements';
 import ReadStoriesService from '../Service/ReadStoriesService';
 import Video from 'react-native-video';
+import AsyncStorage from '@react-native-community/async-storage';
 
 export default class StoryScreen extends React.Component {
   state = {
     readStoryService: new ReadStoriesService(),
     story: null,
     audioLoadingFailed: false,
+    found: false,
   };
 
   constructor(props) {
     super(props);
-    //console.log(props);
     if (
       this.props.navigation.state.params &&
       this.props.navigation.state.params.selectedStory
     ) {
       this.state.story = this.props.navigation.state.params.selectedStory;
     }
+    this.isAlreadyFound();
   }
+
+  isAlreadyFound = async () => {
+    try {
+      const value = await AsyncStorage.getItem(
+        this.state.story.iBeaconName + '.found',
+      );
+      if (value !== null && value === 'true') {
+        this.setState({found: true});
+      } else {
+        console.log(this.state.story.iBeaconName + ' was not found before.');
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  setIsAlreadyFound = async () => {
+    try {
+      await AsyncStorage.setItem(
+        this.state.story.iBeaconName + '.found',
+        'true',
+      );
+    } catch (e) {
+      console.log(e);
+    }
+    console.log('Value saved.');
+  };
 
   onBuffer() {
     console.log('Audio is buffering....');
@@ -32,7 +61,7 @@ export default class StoryScreen extends React.Component {
 
   render() {
     const story = this.state.story;
-    let video = <Text>{'Audio file: ' + story.audioFile}</Text>;
+    let video = null;
 
     if (story.audioFile !== undefined && story.audioFile !== '') {
       video = (

@@ -230,6 +230,8 @@ PODS:
     - React
   - RNBluetoothStateManager (1.1.0):
     - React
+  - RNCAsyncStorage (1.7.1):
+    - React
   - RNFS (2.16.2):
     - React
   - RNGestureHandler (1.5.1):
@@ -275,6 +277,7 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - ReactNativeBeaconsManager (from `../node_modules/react-native-beacons-manager`)
   - RNBluetoothStateManager (from `../node_modules/react-native-bluetooth-state-manager`)
+  - "RNCAsyncStorage (from `../node_modules/@react-native-community/async-storage`)"
   - RNFS (from `../node_modules/react-native-fs`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
@@ -345,6 +348,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-beacons-manager"
   RNBluetoothStateManager:
     :path: "../node_modules/react-native-bluetooth-state-manager"
+  RNCAsyncStorage:
+    :path: "../node_modules/@react-native-community/async-storage"
   RNFS:
     :path: "../node_modules/react-native-fs"
   RNGestureHandler:
@@ -389,6 +394,7 @@ SPEC CHECKSUMS:
   ReactCommon: 198c7c8d3591f975e5431bec1b0b3b581aa1c5dd
   ReactNativeBeaconsManager: dd0b01841445881989af5be9ab83153d1cdaa6b7
   RNBluetoothStateManager: f38ca64bd09d3028b596cb080b89a388207b62a0
+  RNCAsyncStorage: 44395cb9c7c1523104c2b499eb426ef7aff82bca
   RNFS: 0d4191b1052bef9ce70deff00a5b4169c62bbd9b
   RNGestureHandler: 7add966bb5d90ee8cf38d4341f87814474357972
   RNReanimated: b2ab0b693dddd2339bd2f300e770f6302d2e960c

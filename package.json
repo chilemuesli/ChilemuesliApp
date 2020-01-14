@@ -12,6 +12,7 @@
     "postinstall": "npx jetify"
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.7.1",
     "deprecated-react-native-listview": "^0.0.6",
     "jetifier": "^1.6.5",
     "react": "16.9.0",
