@@ -4,10 +4,12 @@ import {Text} from 'react-native-elements';
 import ReadStoriesService from '../Service/ReadStoriesService';
 import Video from 'react-native-video';
 import AsyncStorage from '@react-native-community/async-storage';
+import BeaconRangingService from '../Service/BeaconRangingService';
 
 export default class StoryScreen extends React.Component {
   state = {
     readStoryService: new ReadStoriesService(),
+    beaconRangingService: new BeaconRangingService(),
     story: null,
     audioLoadingFailed: false,
     found: false,
@@ -22,6 +24,22 @@ export default class StoryScreen extends React.Component {
       this.state.story = this.props.navigation.state.params.selectedStory;
     }
     this.isAlreadyFound();
+  }
+
+  componentDidMount() {
+    this.state.beaconRangingService.startRanging(
+      beaconsMap => {
+        console.log('BeaconsMap: ' + beaconsMap);
+      },
+      bluetoothState => {
+        console.log('BluetoothState: ' + bluetoothState);
+      },
+      this.state.story.iBeaconName,
+    );
+  }
+
+  componentWillUnmount() {
+    this.state.beaconRangingService.stopRanging();
   }
 
   isAlreadyFound = async () => {
