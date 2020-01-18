@@ -28,13 +28,14 @@ export default class StoryScreen extends React.Component {
 
   componentDidMount() {
     this.state.beaconRangingService.startRanging(
-      beaconsMap => {
-        console.log('BeaconsMap: ' + beaconsMap);
+      beacon => {
+        console.log('Beacon: ' + beacon);
       },
       bluetoothState => {
         console.log('BluetoothState: ' + bluetoothState);
       },
-      this.state.story.iBeaconName,
+      this.state.story.major,
+      this.state.story.minor,
     );
   }
 
@@ -44,9 +45,7 @@ export default class StoryScreen extends React.Component {
 
   isAlreadyFound = async () => {
     try {
-      const value = await AsyncStorage.getItem(
-        this.state.story.iBeaconName + '.found',
-      );
+      const value = await AsyncStorage.getItem(this.state.story.id + '.found');
       if (value !== null && value === 'true') {
         this.setState({found: true});
       } else {
@@ -59,10 +58,7 @@ export default class StoryScreen extends React.Component {
 
   setIsAlreadyFound = async () => {
     try {
-      await AsyncStorage.setItem(
-        this.state.story.iBeaconName + '.found',
-        'true',
-      );
+      await AsyncStorage.setItem(this.state.story.id + '.found', 'true');
     } catch (e) {
       console.log(e);
     }
