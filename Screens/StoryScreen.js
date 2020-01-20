@@ -1,5 +1,5 @@
 import React from 'react';
-import {ScrollView, View, StyleSheet} from 'react-native';
+import {ScrollView, View, StyleSheet, Alert} from 'react-native';
 import {Text} from 'react-native-elements';
 import ReadStoriesService from '../Service/ReadStoriesService';
 import Video from 'react-native-video';
@@ -13,6 +13,7 @@ export default class StoryScreen extends React.Component {
     story: null,
     audioLoadingFailed: false,
     found: false,
+    distanceToBeaconInMeter: 'unbekannt',
   };
 
   constructor(props) {
@@ -27,9 +28,24 @@ export default class StoryScreen extends React.Component {
   }
 
   componentDidMount() {
+    // empty hook
+  }
+
+  startRangingForBeacon() {
     this.state.beaconRangingService.startRanging(
       beacon => {
-        console.log('Beacon: ' + beacon);
+        console.log('Beacon: ' + JSON.stringify(beacon));
+        if (isNaN(beacon.distance)) {
+          this.setState({distanceToBeaconInMeter: 'unbekannt'});
+        } else {
+          this.setState({distanceToBeaconInMeter: beacon.distance});
+          if (beacon.distance >= 0 && beacon.distance < 0.5) {
+            // Found it!
+            this.state.beaconRangingService.stopRanging();
+            this.showFoundAlert();
+            this.setIsAlreadyFound();
+          }
+        }
       },
       bluetoothState => {
         console.log('BluetoothState: ' + bluetoothState);
@@ -40,7 +56,18 @@ export default class StoryScreen extends React.Component {
   }
 
   componentWillUnmount() {
-    this.state.beaconRangingService.stopRanging();
+    if (!this.state.found) {
+      this.state.beaconRangingService.stopRanging();
+    }
+  }
+
+  showFoundAlert() {
+    Alert.alert(
+      'Gefunden!',
+      'Juhu, du hast die ' + this.state.story.title + ' gefunden!',
+      [{text: 'OK', onPress: () => console.log('OK Pressed')}],
+      {cancelable: false},
+    );
   }
 
   isAlreadyFound = async () => {
@@ -49,6 +76,7 @@ export default class StoryScreen extends React.Component {
       if (value !== null && value === 'true') {
         this.setState({found: true});
       } else {
+        this.startRangingForBeacon();
         console.log(this.state.story.iBeaconName + ' was not found before.');
       }
     } catch (e) {
@@ -58,6 +86,7 @@ export default class StoryScreen extends React.Component {
 
   setIsAlreadyFound = async () => {
     try {
+      this.setState({found: true});
       await AsyncStorage.setItem(this.state.story.id + '.found', 'true');
     } catch (e) {
       console.log(e);
@@ -75,10 +104,24 @@ export default class StoryScreen extends React.Component {
 
   render() {
     const story = this.state.story;
-    let video = null;
+    let content = null;
 
-    if (story.audioFile !== undefined && story.audioFile !== '') {
-      video = (
+    if (!this.state.found) {
+      content = (
+        <View>
+          <Text>
+            {'Distanz zur Maus: ' +
+              Math.round(this.state.distanceToBeaconInMeter * 10) / 10 +
+              'm'}
+          </Text>
+        </View>
+      );
+    } else if (
+      this.state.found &&
+      story.audioFile !== undefined &&
+      story.audioFile !== ''
+    ) {
+      content = (
         <Video
           source={{uri: story.audioFile}} // Can be a URL or a local file.
           ref={ref => {
@@ -101,7 +144,7 @@ export default class StoryScreen extends React.Component {
       <ScrollView style={styles.view}>
         <View>
           <Text h1>{story.title}</Text>
-          {video}
+          {content}
         </View>
       </ScrollView>
     );
