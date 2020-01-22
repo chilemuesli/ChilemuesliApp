@@ -1,4 +1,5 @@
 import React from 'react';
+import {Platform} from 'react-native';
 import {ScrollView, View, StyleSheet, Alert} from 'react-native';
 import {Text} from 'react-native-elements';
 import ReadStoriesService from '../Service/ReadStoriesService';
@@ -28,7 +29,11 @@ export default class StoryScreen extends React.Component {
   }
 
   componentDidMount() {
-    // empty hook
+    if (Platform.OS === 'ios') {
+      console.log('Running on iOS');
+    } else if (Platform === 'android') {
+      console.log('Running on Android');
+    }
   }
 
   startRangingForBeacon() {

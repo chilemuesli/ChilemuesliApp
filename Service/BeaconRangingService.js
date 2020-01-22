@@ -24,9 +24,11 @@ export default class BeaconRangingService {
 
   constructor() {
     if (Platform.OS === 'ios') {
+      console.log('Running on iOS');
       Beacons.requestAlwaysAuthorization();
     } else if (Platform === 'android') {
-      Beacons.detectIBeacons();
+      console.log('Running on Android');
+      console.log('Android permissions are handled in native app code.');
     }
     this.rangedBeaconsUUIDMap.set(UUID_1, []);
     this.rangedBeaconsUUIDMap.set(UUID_2, []);
@@ -61,7 +63,7 @@ export default class BeaconRangingService {
     this.beaconsDidRangeEvent = Beacons.BeaconsEventEmitter.addListener(
       'beaconsDidRange',
       data => {
-        //console.log('beaconsDidRange data: ', data);
+        console.log('beaconsDidRange data: ', data);
         const {beacons} = data;
         this.rangedBeaconsUUIDMap = this.convertRangingArrayToMap(beacons);
         let beaconToBeFound = this.findFirstBeaconWithIdentifierToFind(UUID_1);
@@ -104,7 +106,7 @@ export default class BeaconRangingService {
   }
 
   convertRangingArrayToMap(rangedBeacon) {
-    //console.log('this.rangedBeaconsUUIDMap: ' + this.rangedBeaconsUUIDMap);
+    console.log('this.rangedBeaconsUUIDMap: ' + this.rangedBeaconsUUIDMap);
     rangedBeacon.forEach(beacon => {
       if (beacon.uuid.length > 0) {
         const uuid = beacon.uuid.toUpperCase();

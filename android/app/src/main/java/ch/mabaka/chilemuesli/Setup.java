@@ -43,12 +43,28 @@ public class Setup {
             // First: checking if there is already a target folder
             File folder = new File(targetFolder);
             if (!folder.exists()) {
-                success = folder.mkdir();
+                Log.i("INFO", "Target folder does not exist => create it!");
+                for (int i = 0; i < 10; i ++){
+                    success = folder.mkdir();
+                    Log.i("INFO", "Target folder creation succeded: " + success);
+                    if (success){
+                        break;
+                    } else {
+                        try{
+                            Thread.sleep(200);
+                        } catch (InterruptedException e) {
+                            // ignore
+                        }
+                    }
+                }
             } else {
+                Log.i("INFO", "Target folder already exists => remove it first!");
                 success = deleteDirectory(folder);
+                Log.i("INFO", "Target folder delete succeded: " + success);
                 if (success) {
                     success = folder.mkdir();
                 }
+                Log.i("INFO", "Target folder creation succeded: " + success);
             }
             Log.i("INFO", "Target folder creation succeded: " + success);
             // Analyzing all file on assets subfolder

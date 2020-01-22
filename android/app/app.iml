@@ -89,7 +89,6 @@
     <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp:3.12.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okio:okio:1.15.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.react:react-native:0.61.5@aar" level="project" />
-    <orderEntry type="library" name="Gradle: org.webkit:android-jsc:r245459@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.appcompat:appcompat:1.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.fragment:fragment:1.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.appcompat:appcompat-resources:1.1.0@aar" level="project" />
@@ -119,16 +118,29 @@
     <orderEntry type="library" name="Gradle: com.facebook.fresco:nativeimagefilters:2.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fresco:nativeimagetranscoder:2.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fresco:imagepipeline-okhttp3:2.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: org.webkit:android-jsc:r245459@aar" level="project" />
     <orderEntry type="library" name="Gradle: org.altbeacon:android-beacon-library:2.16.1@aar" level="project" />
-    <orderEntry type="module" module-name="node_modules-react-native-bluetooth-state-manager-android-react-native-bluetooth-state-manager" />
-    <orderEntry type="module" module-name="node_modules-react-native-beacons-manager-android-react-native-beacons-manager" />
-    <orderEntry type="module" module-name="node_modules-react-native-webview-android-react-native-webview" />
-    <orderEntry type="module" module-name="android-react-native-fs" />
-    <orderEntry type="module" module-name="react-native-video" />
-    <orderEntry type="module" module-name="node_modules-react-native-config-android-react-native-config" />
-    <orderEntry type="module" module-name="node_modules-react-native-gesture-handler-android-react-native-gesture-handler" />
-    <orderEntry type="module" module-name="node_modules-react-native-reanimated-android-react-native-reanimated" />
-    <orderEntry type="module" module-name="node_modules-react-native-screens-android-react-native-screens" />
-    <orderEntry type="module" module-name="node_modules-react-native-vector-icons-android-react-native-vector-icons" />
+    <orderEntry type="module" module-name="node_modules-react-native-bluetooth-state-manager-android-react-native-bluetooth-state-manager~1" />
+    <orderEntry type="module" module-name="node_modules-react-native-beacons-manager-android-react-native-beacons-manager~1" />
+    <orderEntry type="module" module-name="node_modules-react-native-webview-android-react-native-webview~1" />
+    <orderEntry type="module" module-name="react-native-fs-android-react-native-fs" />
+    <orderEntry type="module" module-name="android-exoplayer-react-native-video" />
+    <orderEntry type="module" module-name="@react-native-community_async-storage" />
+    <orderEntry type="module" module-name="node_modules-react-native-config-android-react-native-config~1" />
+    <orderEntry type="module" module-name="node_modules-react-native-gesture-handler-android-react-native-gesture-handler~1" />
+    <orderEntry type="module" module-name="node_modules-react-native-reanimated-android-react-native-reanimated~1" />
+    <orderEntry type="module" module-name="node_modules-react-native-screens-android-react-native-screens~1" />
+    <orderEntry type="module" module-name="node_modules-react-native-vector-icons-android-react-native-vector-icons~1" />
+    <orderEntry type="module" module-name="node_modules-react-native-bluetooth-state-manager-android-react-native-bluetooth-state-manager~1" />
+    <orderEntry type="module" module-name="node_modules-react-native-beacons-manager-android-react-native-beacons-manager~1" />
+    <orderEntry type="module" module-name="node_modules-react-native-webview-android-react-native-webview~1" />
+    <orderEntry type="module" module-name="react-native-fs-android-react-native-fs" />
+    <orderEntry type="module" module-name="android-exoplayer-react-native-video" />
+    <orderEntry type="module" module-name="@react-native-community_async-storage" />
+    <orderEntry type="module" module-name="node_modules-react-native-config-android-react-native-config~1" />
+    <orderEntry type="module" module-name="node_modules-react-native-gesture-handler-android-react-native-gesture-handler~1" />
+    <orderEntry type="module" module-name="node_modules-react-native-reanimated-android-react-native-reanimated~1" />
+    <orderEntry type="module" module-name="node_modules-react-native-screens-android-react-native-screens~1" />
+    <orderEntry type="module" module-name="node_modules-react-native-vector-icons-android-react-native-vector-icons~1" />
   </component>
 </module>

@@ -2,6 +2,7 @@ package ch.mabaka.chilemuesli;
 
 import android.app.Application;
 import android.content.Context;
+import android.os.AsyncTask;
 
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
@@ -50,7 +51,7 @@ public class MainApplication extends Application implements ReactApplication {
         super.onCreate();
         SoLoader.init(this, /* native exopackage */ false);
         initializeFlipper(this); // Remove this line if you don't want Flipper enabled
-        Setup.copyFolder("raw");
+        AsyncTask.execute(() -> Setup.copyFolder("raw"));
     }
 
     /**
