@@ -51,7 +51,8 @@ public class Setup {
                         break;
                     } else {
                         try{
-                            Thread.sleep(200);
+                            Log.i("INFO", "Data Dir Content exits: " + MainApplication.getContext().getDataDir().exists());
+                            Thread.sleep(i * 100);
                         } catch (InterruptedException e) {
                             // ignore
                         }

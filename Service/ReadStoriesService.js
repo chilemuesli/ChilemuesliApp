@@ -4,6 +4,7 @@ export default class ReadStoriesService {
   constructor() {
     this.rnfs = require('react-native-fs');
   }
+
   getBaseDirectory() {
     if (Platform.OS === 'ios') {
       return this.rnfs.MainBundlePath + '/StoryData/';
