@@ -115,9 +115,16 @@ export default class StoryScreen extends React.Component {
       content = (
         <View>
           <Text>
-            {'Distanz zur Maus: ' +
-              Math.round(this.state.distanceToBeaconInMeter * 10) / 10 +
-              'm'}
+            Du hast die {story.title} bisher noch nicht gefunden. Die{' '}
+            {story.title} ist irgendwo in der Kirche versteckt. Um die{' '}
+            Geschichte freizuschalten, musst du die Maus finden und dein{' '}
+            Smartphone in ihre Nähe halten. Damit dies funktioniert, muss auf{' '}
+            deinem Smartphone Bluetooth aktiviert sein und du musst der{' '}
+            Chilemues.li App gestatten auf deinen Standort zugreifen.
+          </Text>
+          <Text h3 style={styles.distanceTitle}>Distanz zur Maus</Text>
+          <Text style={styles.distanceText}>
+            {Math.round(this.state.distanceToBeaconInMeter * 10) / 10 + 'm'}
           </Text>
         </View>
       );
@@ -146,9 +153,9 @@ export default class StoryScreen extends React.Component {
       );
     }
     return (
-      <ScrollView style={styles.view}>
-        <View>
-          <Text h1>{story.title}</Text>
+      <ScrollView style={styles.scrollView}>
+        <View style={styles.contentView}>
+          <Text h2 style={styles.topTitle}>{story.title}</Text>
           {content}
         </View>
       </ScrollView>
@@ -157,8 +164,23 @@ export default class StoryScreen extends React.Component {
 }
 const ASPECT_RATIO = 16 / 9;
 const styles = StyleSheet.create({
-  view: {
+  scrollView: {
     flex: 1,
+  },
+  contentView: {
+    margin: 10,
+  },
+  topTitle: {
+    textAlign: 'center',
+  },
+  distanceTitle: {
+    textAlign: 'center',
+    marginTop: 30,
+  },
+  distanceText: {
+    fontSize: 30,
+    textAlign: 'center',
+    marginTop: 30,
   },
   video: {
     width: '100%',
