@@ -45,13 +45,16 @@ public class Setup {
             if (!folder.exists()) {
                 Log.i("INFO", "Target folder does not exist => create it!");
                 for (int i = 0; i < 10; i ++){
-                    success = folder.mkdir();
+                    success = folder.mkdirs();
                     Log.i("INFO", "Target folder creation succeded: " + success);
+                    Log.i("INFO", "Data Dir exits: " + MainApplication.getContext().getDataDir().exists());
+                    for (String file : MainApplication.getContext().getDataDir().list()){
+                        Log.i("INFO", file);
+                    }
                     if (success){
                         break;
                     } else {
                         try{
-                            Log.i("INFO", "Data Dir Content exits: " + MainApplication.getContext().getDataDir().exists());
                             Thread.sleep(i * 100);
                         } catch (InterruptedException e) {
                             // ignore
