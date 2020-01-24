@@ -120,7 +120,7 @@ export default class StoryScreen extends React.Component {
             Geschichte freizuschalten, musst du die Maus finden und dein{' '}
             Smartphone in ihre Nähe halten. Damit dies funktioniert, muss auf{' '}
             deinem Smartphone Bluetooth aktiviert sein und du musst der{' '}
-            Chilemues.li App gestatten auf deinen Standort zugreifen.
+            Chilemues.li App gestatten auf deinen Standort zuzugreifen.
           </Text>
           <Text h3 style={styles.distanceTitle}>Distanz zur Maus</Text>
           <Text style={styles.distanceText}>

@@ -44,23 +44,7 @@ public class Setup {
             File folder = new File(targetFolder);
             if (!folder.exists()) {
                 Log.i("INFO", "Target folder does not exist => create it!");
-                for (int i = 0; i < 10; i ++){
-                    success = folder.mkdirs();
-                    Log.i("INFO", "Target folder creation succeded: " + success);
-                    Log.i("INFO", "Data Dir exits: " + MainApplication.getContext().getDataDir().exists());
-                    for (String file : MainApplication.getContext().getDataDir().list()){
-                        Log.i("INFO", file);
-                    }
-                    if (success){
-                        break;
-                    } else {
-                        try{
-                            Thread.sleep(i * 100);
-                        } catch (InterruptedException e) {
-                            // ignore
-                        }
-                    }
-                }
+                success = folder.mkdirs();
             } else {
                 Log.i("INFO", "Target folder already exists => remove it first!");
                 success = deleteDirectory(folder);
