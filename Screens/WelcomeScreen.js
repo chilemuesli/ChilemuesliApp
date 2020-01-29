@@ -19,6 +19,11 @@ export default class WelcomeScreen extends React.Component {
 
   openPrivacyPolicyView() {
     console.log('openPrivacyPolicyView clicked');
+    console.log('Try to open WebViewer');
+    this.props.navigation.navigate('WebViewer', {
+      URL:
+        'https://www.chilemues.li/mobile-pages/datenschutzerklaerung-mobile/',
+    });
   }
 
   openDebugView() {
