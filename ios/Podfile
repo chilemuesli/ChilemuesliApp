@@ -37,6 +37,8 @@ target 'ChilemuesliApp' do
   pod 'RNFS', :path => '../node_modules/react-native-fs'
   pod 'react-native-video', :path => '../node_modules/react-native-video/react-native-video.podspec'
   
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'ChilemuesliAppTests' do
     inherit! :search_paths
     # Pods for testing

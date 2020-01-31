@@ -1,7 +1,6 @@
 import React from 'react';
 import {ScrollView, View, Image, StyleSheet} from 'react-native';
 import {Button} from 'react-native-elements';
-import Config from 'react-native-config';
 
 export default class WelcomeScreen extends React.Component {
   openSearchMiceListView() {
@@ -11,6 +10,7 @@ export default class WelcomeScreen extends React.Component {
 
   openTravellingInstructionsView() {
     console.log('openTravellingInstructionsView clicked');
+    this.props.navigation.navigate('TravelInstructions', {});
   }
 
   openContactView() {

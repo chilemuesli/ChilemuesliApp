@@ -14,6 +14,7 @@ import BeaconsDemoScreen from './Screens/BeaconsDemoScreen';
 import StoryListScreen from './Screens/StoryListScreen';
 import StoryScreen from './Screens/StoryScreen';
 import WebScreen from './Screens/WebScreen';
+import TravelInstructionsScreen from './Screens/TravelInstructionsScreen';
 import {ThemeProvider} from 'react-native-elements';
 import {COLOR_PRIMARY, BORDER_RADIUS} from './Styles/Common';
 
@@ -53,6 +54,10 @@ const MainNavigator = createStackNavigator({
   WebViewer: {
     screen: WebScreen,
     routeName: 'WebViewer',
+  },
+  TravelInstructions: {
+    screen: TravelInstructionsScreen,
+    routeName: 'TravelInstructions',
   },
   Test: {
     screen: BeaconsDemoScreen,
