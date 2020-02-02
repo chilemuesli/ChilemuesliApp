@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import WelcomeScreen from './Screens/WelcomeScreen';
@@ -18,7 +18,7 @@ import TravelInstructionsScreen from './Screens/TravelInstructionsScreen';
 import {ThemeProvider} from 'react-native-elements';
 import {COLOR_PRIMARY, BORDER_RADIUS} from './Styles/Common';
 
-Ionicons.loadFont();
+Icon.loadFont();
 
 const theme = {
   Button: {
