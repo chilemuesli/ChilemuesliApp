@@ -1,5 +1,5 @@
 import React from 'react';
-import {ScrollView, View, Image, StyleSheet} from 'react-native';
+import {ScrollView, View, StyleSheet} from 'react-native';
 import {Button} from 'react-native-elements';
 
 export default class WelcomeScreen extends React.Component {
