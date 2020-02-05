@@ -15,6 +15,7 @@ export default class WelcomeScreen extends React.Component {
 
   openContactView() {
     console.log('openContactView clicked');
+    this.props.navigation.navigate('Contact', {});
   }
 
   openPrivacyPolicyView() {
