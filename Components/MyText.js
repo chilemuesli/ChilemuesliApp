@@ -8,7 +8,9 @@ export default class MyText extends React.Component {
 
   render() {
     return (
-      <Text style={[styles.defaultStyle, this.props.style]}>
+      <Text
+        style={[styles.defaultStyle, this.props.style]}
+        onPress={this.props.onPress}>
         {this.props.children}
       </Text>
     );

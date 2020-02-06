@@ -70,5 +70,16 @@
 		<string>Roboto-Thin.ttf</string>
 		<string>Roboto-ThinItalic.ttf</string>
 	</array>
+  <key>LSApplicationQueriesSchemes</key>
+  <array>
+      <string>message</string>
+      <string>readdle-spark</string>
+      <string>airmail</string>
+      <string>ms-outlook</string>
+      <string>googlegmail</string>
+      <string>inbox-gmail</string>
+      <string>ymail</string>
+      <string>superhuman</string>
+  </array>
 </dict>
 </plist>
