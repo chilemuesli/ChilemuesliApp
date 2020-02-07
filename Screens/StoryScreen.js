@@ -1,7 +1,8 @@
 import React from 'react';
 import {Platform} from 'react-native';
 import {ScrollView, View, StyleSheet, Alert} from 'react-native';
-import {Text} from 'react-native-elements';
+import MyText from '../Components/MyText';
+import MyTitle from '../Components/MyTitle';
 import ReadStoriesService from '../Service/ReadStoriesService';
 import Video from 'react-native-video';
 import AsyncStorage from '@react-native-community/async-storage';
@@ -114,18 +115,18 @@ export default class StoryScreen extends React.Component {
     if (!this.state.found) {
       content = (
         <View>
-          <Text>
+          <MyText>
             Du hast die {story.title} bisher noch nicht gefunden. Die{' '}
             {story.title} ist irgendwo in der Kirche versteckt. Um die{' '}
             Geschichte freizuschalten, musst du die Maus finden und dein{' '}
             Smartphone in ihre Nähe halten. Damit dies funktioniert, muss auf{' '}
             deinem Smartphone Bluetooth aktiviert sein und du musst der{' '}
             Chilemues.li App gestatten auf deinen Standort zuzugreifen.
-          </Text>
-          <Text h3 style={styles.distanceTitle}>Distanz zur Maus</Text>
-          <Text style={styles.distanceText}>
+          </MyText>
+          <MyTitle style={styles.distanceTitle}>Distanz zur Maus</MyTitle>
+          <MyText style={styles.distanceText}>
             {Math.round(this.state.distanceToBeaconInMeter * 10) / 10 + 'm'}
-          </Text>
+          </MyText>
         </View>
       );
     } else if (
@@ -155,7 +156,7 @@ export default class StoryScreen extends React.Component {
     return (
       <ScrollView style={styles.scrollView}>
         <View style={styles.contentView}>
-          <Text h2 style={styles.topTitle}>{story.title}</Text>
+          <MyTitle style={styles.topTitle}>{story.title}</MyTitle>
           {content}
         </View>
       </ScrollView>

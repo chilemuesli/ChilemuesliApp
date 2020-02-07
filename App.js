@@ -28,13 +28,16 @@ const theme = {
       backgroundColor: COLOR_PRIMARY,
       width: 200,
       height: 40,
-      marginTop: 30,
+      marginTop: 15,
+      marginBottom: 15,
       borderColor: 'transparent',
       borderWidth: 0,
       borderRadius: BORDER_RADIUS,
     },
     titleStyle: {
       color: 'white',
+      fontSize: 18,
+      fontFamily: 'Roboto-Light',
     },
   },
 };

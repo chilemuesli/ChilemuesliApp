@@ -1,16 +1,18 @@
 import React from 'react';
 import {ScrollView, View, StyleSheet} from 'react-native';
-import {Text} from 'react-native-elements';
+import MyText from '../Components/MyText';
+import MyTitle from '../Components/MyTitle';
 import createOpenLink from 'react-native-open-maps';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Button} from 'react-native-elements';
 import {COLOR_PRIMARY} from '../Styles/Common';
 
+const ICON_SIZE = 40;
 const churchAddress = {
   latitude: 47.301343,
   longitude: 8.8472558,
   query: 'Reformierte Kirchgemeinde Hinwil',
-  end: 'Reformierte Kirchgemeinde Hinwil'
+  end: 'Reformierte Kirchgemeinde Hinwil',
 };
 export default class TravelInstructionsScreen extends React.Component {
   constructor(props) {
@@ -21,40 +23,39 @@ export default class TravelInstructionsScreen extends React.Component {
     return (
       <ScrollView style={styles.scrollView}>
         <View style={styles.contentView}>
-          <Text h2 style={styles.topTitle}>
-            Anreise
-          </Text>
+          <MyTitle style={styles.topTitle}>Anreise</MyTitle>
           <View style={styles.iconView}>
-            <Icon name="train" size={50} color={COLOR_PRIMARY} />
+            <Icon name="train" size={ICON_SIZE} color={COLOR_PRIMARY} />
           </View>
-          <Text>Mit der S14 bis zum Bahnhof Hinwil.</Text>
+          <MyText>Mit der S14 bis zum Bahnhof Hinwil.</MyText>
           <View style={styles.iconView}>
-            <Icon name="bus" size={50} color={COLOR_PRIMARY} />
+            <Icon name="bus" size={ICON_SIZE} color={COLOR_PRIMARY} />
           </View>
-          <Text>
+          <MyText>
+            Mit den Bussen der Linien 870 oder 875 bis Hinwil, Gstalden.
+          </MyText>
+          <MyText>
             {
-              'Mit den Bussen der Linien 870 oder 875 bis zur Haltestelle Hinwil, Gstalden.'
+              'Von hier sind es noch drei Minuten Fussmarsch zur Reformierten Kirche.'
             }
-          </Text>
-          <Text>
-            {
-              'Von hier sind es noch drei Minuten zu Fuss bis zur Reformierten Kirche Hinwil.'
-            }
-          </Text>
+          </MyText>
           <View style={styles.iconView}>
-            <Icon name="car" size={50} color={COLOR_PRIMARY} />
+            <Icon name="car" size={ICON_SIZE} color={COLOR_PRIMARY} />
           </View>
-          <Text>
+          <MyText>
             {
-              'Mit dem Auto kann direkt bis zur Kirche gefahren werden.\n\nAdresse:\nReformierte Kirchgemeinde Hinwil\nFelsenhofstrasse 9\n8340 Hinwil'
+              'Reformierte Kirchgemeinde Hinwil\nFelsenhofstrasse 9\n8340 Hinwil'
             }
-          </Text>
+          </MyText>
           <View style={styles.buttonView}>
             <Button
               onPress={() => createOpenLink(churchAddress)}
               title="Auf der Karte zeigen"
             />
           </View>
+          <MyText>
+            Mit dem Auto kann direkt bis zur Kirche gefahren werden.
+          </MyText>
         </View>
       </ScrollView>
     );
@@ -68,8 +69,8 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   iconView: {
-    marginTop: 20,
-    marginBottom: 20,
+    marginTop: 15,
+    marginBottom: 15,
     flexGrow: 1,
     justifyContent: 'center',
     alignItems: 'center',
@@ -82,6 +83,6 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   topTitle: {
-    textAlign: 'center',
+    //textAlign: 'center',
   },
 });
