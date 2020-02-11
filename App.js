@@ -6,7 +6,8 @@
  */
 
 import React from 'react';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import WelcomeScreen from './Screens/WelcomeScreen';
@@ -19,7 +20,8 @@ import TravelInstructionsScreen from './Screens/TravelInstructionsScreen';
 import {ThemeProvider} from 'react-native-elements';
 import {COLOR_PRIMARY, BORDER_RADIUS} from './Styles/Common';
 
-Icon.loadFont();
+FontAwesome.loadFont();
+MaterialIcons.loadFont();
 
 const theme = {
   Button: {

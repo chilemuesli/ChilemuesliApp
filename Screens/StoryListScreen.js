@@ -2,6 +2,7 @@ import React from 'react';
 import {ScrollView, View, StyleSheet} from 'react-native';
 import {ListItem} from 'react-native-elements';
 import ReadStoriesService from '../Service/ReadStoriesService';
+import {COLOR_PRIMARY} from '../Styles/Common';
 
 export default class StoryListScreen extends React.Component {
   state = {
@@ -45,10 +46,11 @@ export default class StoryListScreen extends React.Component {
           {this.state.stories.map((story, i) => (
             <ListItem
               key={i}
-              //leftAvatar={{source: {uri: l.avatar_url}}}
+              leftAvatar={{source: {uri: story.avatar}}}
               title={story.title}
               onPress={() => this.onStorySelected(story)}
-              bottomDivider
+              rightIcon={{name: 'chevron-right', color: COLOR_PRIMARY}}
+              bottomDivider={true}
             />
           ))}
         </View>

@@ -2,6 +2,7 @@
     {
         "id": 1,
         "title": "Pfarrmaus",
+        "avatar": "PfarrmausAvatar.jpg",
         "imageFiles": ["Pfarrmaus.jpg"],
         "audioFile": "Testmaus.mp4",
         "description": "Die Pfarrmaus ist zuständig für...",
@@ -11,6 +12,7 @@
     {
         "id": 2,
         "title": "Kollektenmaus",
+        "avatar": "KollektenmausAvatar.jpg",
         "imageFiles": [],
         "audioFile": "",
         "description": "Die Kollektenmaus ist zuständig für...",

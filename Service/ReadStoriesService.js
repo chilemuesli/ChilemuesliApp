@@ -26,6 +26,9 @@ export default class ReadStoriesService {
             if (story.audioFile !== undefined && story.audioFile !== '') {
               story.audioFile = baseDirectory + story.audioFile;
             }
+            if (story.avatar !== undefined && story.avatar !== '') {
+              story.avatar = baseDirectory + story.avatar;
+            }
             story.imageFiles.forEach((part, index, imageFiles) => {
               imageFiles[index] = baseDirectory + imageFiles[index];
             });
