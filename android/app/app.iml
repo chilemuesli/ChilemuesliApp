@@ -156,5 +156,29 @@
     <orderEntry type="module" module-name="react-native-gesture-handler" />
     <orderEntry type="module" module-name="react-native-reanimated" />
     <orderEntry type="module" module-name="react-native-screens" />
+    <orderEntry type="module" module-name="react-native-bluetooth-state-manager" />
+    <orderEntry type="module" module-name="react-native-beacons-manager" />
+    <orderEntry type="module" module-name="react-native-webview" />
+    <orderEntry type="module" module-name="react-native-vector-icons" />
+    <orderEntry type="module" module-name="node_modules-react-native-fs-android-react-native-fs~2" />
+    <orderEntry type="module" module-name="node_modules-react-native-video-android-exoplayer-react-native-video" />
+    <orderEntry type="module" module-name="@react-native-community-async-storage-android-@react-native-community_async-storage" />
+    <orderEntry type="module" module-name="react-native-config" />
+    <orderEntry type="module" module-name="react-native-email-link" />
+    <orderEntry type="module" module-name="react-native-gesture-handler" />
+    <orderEntry type="module" module-name="react-native-reanimated" />
+    <orderEntry type="module" module-name="react-native-screens" />
+    <orderEntry type="module" module-name="react-native-vector-icons" />
+    <orderEntry type="module" module-name="react-native-bluetooth-state-manager" />
+    <orderEntry type="module" module-name="react-native-beacons-manager" />
+    <orderEntry type="module" module-name="react-native-webview" />
+    <orderEntry type="module" module-name="node_modules-react-native-fs-android-react-native-fs~2" />
+    <orderEntry type="module" module-name="node_modules-react-native-video-android-exoplayer-react-native-video" />
+    <orderEntry type="module" module-name="@react-native-community-async-storage-android-@react-native-community_async-storage" />
+    <orderEntry type="module" module-name="react-native-config" />
+    <orderEntry type="module" module-name="react-native-email-link" />
+    <orderEntry type="module" module-name="react-native-gesture-handler" />
+    <orderEntry type="module" module-name="react-native-reanimated" />
+    <orderEntry type="module" module-name="react-native-screens" />
   </component>
 </module>

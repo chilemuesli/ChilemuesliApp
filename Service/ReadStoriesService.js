@@ -27,8 +27,9 @@ export default class ReadStoriesService {
               story.audioFile = baseDirectory + story.audioFile;
             }
             if (story.avatar !== undefined && story.avatar !== '') {
-              story.avatar = baseDirectory + story.avatar;
+              story.avatar = 'file://' + baseDirectory + story.avatar;
             }
+            console.log('story.avatar=' + story.avatar);
             story.imageFiles.forEach((part, index, imageFiles) => {
               imageFiles[index] = baseDirectory + imageFiles[index];
             });
