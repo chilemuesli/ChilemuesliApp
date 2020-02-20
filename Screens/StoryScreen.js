@@ -20,11 +20,10 @@ export default class StoryScreen extends React.Component {
 
   constructor(props) {
     super(props);
-    if (
-      this.props.navigation.state.params &&
-      this.props.navigation.state.params.selectedStory
-    ) {
-      this.state.story = this.props.navigation.state.params.selectedStory;
+    if (this.props.navigation.state.params) {
+      if (this.props.navigation.state.params.selectedStory) {
+        this.state.story = this.props.navigation.state.params.selectedStory;
+      }
     }
     this.isAlreadyFound();
   }

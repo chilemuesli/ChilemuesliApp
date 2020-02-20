@@ -42,6 +42,13 @@ const theme = {
       fontFamily: 'Roboto-Light',
     },
   },
+  ListItem: {
+    titleStyle: {
+      color: 'black',
+      fontSize: 18,
+      fontFamily: 'Roboto-Light',
+    },
+  },
 };
 
 const MainNavigator = createStackNavigator({
