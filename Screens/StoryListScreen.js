@@ -47,6 +47,10 @@ export default class StoryListScreen extends React.Component {
     });
   }
 
+  onContestSelected(){
+    console.log('onContestSelected');
+  }
+
   isAlreadyFound = async story => {
     try {
       const value = await AsyncStorage.getItem(story.id + '.found');
@@ -63,6 +67,23 @@ export default class StoryListScreen extends React.Component {
   };
 
   render() {
+    let contestListItem = null;
+    if (
+      this.state.stories.length > 0 &&
+      this.state.stories.length === this.state.found.length
+    ) {
+      //if (!this.state.stories.some(story => !this.state.found[story.id])) {
+        contestListItem = (
+          <ListItem
+            title={'Wettbewerb'}
+            rightIcon={{name: 'form', color: COLOR_PRIMARY}}
+            onPress={() => this.onContestSelected()}
+            bottomDivider={true}
+          />
+        );
+      //}
+    }
+
     return (
       <ScrollView style={styles.view}>
         <View>
@@ -77,6 +98,7 @@ export default class StoryListScreen extends React.Component {
               bottomDivider={true}
             />
           ))}
+          {contestListItem}
         </View>
       </ScrollView>
     );

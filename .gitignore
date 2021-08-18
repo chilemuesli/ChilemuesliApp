@@ -1,7 +1,9 @@
 .gradle/
 .idea/
 build/
+release/
 *.code-workspace
 node_modules/
 main.jsbundle
 android/local.properties
+.vscode
