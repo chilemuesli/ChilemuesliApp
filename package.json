@@ -1,6 +1,6 @@
 {
   "name": "ChilemuesliApp",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -9,12 +9,13 @@
     "test": "jest",
     "lint": "eslint .",
     "build:ios": "react-native bundle --entry-file='index.js' --bundle-output='./ios/main.jsbundle' --dev=false --platform='ios'",
-    "postinstall": "npx jetify"
+    "postinstall": "npx jetify && patch-package"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.7.1",
     "deprecated-react-native-listview": "^0.0.6",
     "jetifier": "^1.6.5",
+    "patch-package": "^6.4.7",
     "react": "16.9.0",
     "react-native": "0.61.5",
     "react-native-beacons-manager": "https://github.com/chilemuesli/react-native-beacons-manager.git#85b410d",
