@@ -17,7 +17,7 @@
     "jetifier": "^1.6.5",
     "patch-package": "^6.4.7",
     "react": "16.11.0",
-    "react-native": "0.62.2",
+    "react-native": "0.62.3",
     "react-native-beacons-manager": "https://github.com/chilemuesli/react-native-beacons-manager.git#85b410d",
     "react-native-bluetooth-state-manager": "^1.1.0",
     "react-native-components": "^0.0.1",
