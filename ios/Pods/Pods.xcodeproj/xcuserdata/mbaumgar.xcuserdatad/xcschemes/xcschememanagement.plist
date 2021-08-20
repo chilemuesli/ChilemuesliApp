@@ -24,22 +24,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-ChilemuesliApp-ChilemuesliAppTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ChilemuesliApp-tvOS-ChilemuesliApp-tvOSTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ChilemuesliApp-tvOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-ChilemuesliApp-tvOSTests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-ChilemuesliApp.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-ChilemuesliAppTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

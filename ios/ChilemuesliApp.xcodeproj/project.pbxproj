@@ -22,7 +22,7 @@
 		2DCD954D1E0B4F2C00145EB5 /* ChilemuesliAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ChilemuesliAppTests.m */; };
 		38572EFCA2A3905062768AF4 /* libPods-ChilemuesliApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F81470DD17C95A1CD751FA5 /* libPods-ChilemuesliApp.a */; };
 		5E169769F71A448EAC2B808C /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21125C3F5F70422FB562AA3E /* Roboto-Thin.ttf */; };
-		620DB37D23B7F93700C31508 /* StoryData in Resources */ = {isa = PBXBuildFile; fileRef = 620DB37C23B7F93700C31508 /* StoryData */; };
+		626C9D3126CEF8F30029C197 /* StoryData in Resources */ = {isa = PBXBuildFile; fileRef = 620DB37C23B7F93700C31508 /* StoryData */; };
 		62EB9845238F1CB10069CC42 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 008F07F21AC5B25A0029DE68 /* main.jsbundle */; };
 		62EB9846238F1D0F0069CC42 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 008F07F21AC5B25A0029DE68 /* main.jsbundle */; };
 		62EB9867238F22F70069CC42 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62EB9857238F22F60069CC42 /* Entypo.ttf */; };
@@ -41,16 +41,16 @@
 		62EB9874238F22F70069CC42 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62EB9864238F22F70069CC42 /* Ionicons.ttf */; };
 		62EB9875238F22F70069CC42 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62EB9865238F22F70069CC42 /* Foundation.ttf */; };
 		62EB9876238F22F70069CC42 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62EB9866238F22F70069CC42 /* SimpleLineIcons.ttf */; };
+		6445123C4F44954F5A0FE60D /* libPods-ChilemuesliApp-ChilemuesliAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB73C1C7B3B5DB97B9546876 /* libPods-ChilemuesliApp-ChilemuesliAppTests.a */; };
 		6F8845B4E75F4E3EAEBAA81F /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F278DCF6BE38450A9E1F4F7F /* Roboto-Light.ttf */; };
 		8C70ABE9667C422D918BB15A /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0DF6FE3ABEEF4E249BC0AF5E /* Roboto-Medium.ttf */; };
 		A26D07572E3D44B5B4B3AACC /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A5A9037272F54C45BF6D2C45 /* Roboto-BoldItalic.ttf */; };
-		A5546E820E1E2460E58FEE9E /* libPods-ChilemuesliApp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CED71DB5DCBAEBD7F2026ED4 /* libPods-ChilemuesliApp-tvOSTests.a */; };
 		B00CC2C3CCEB47C099CF8CF8 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F08642B0D34F4D4B82C5583F /* Roboto-Black.ttf */; };
 		BAB9C61D43204BB399D00208 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1F909C7E1664E8DBC9E4650 /* Roboto-Bold.ttf */; };
-		C4E5AC34B8C8F851BC589C57 /* libPods-ChilemuesliAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BDD73A94E8BD13BFF6553C /* libPods-ChilemuesliAppTests.a */; };
 		D91B7812F25E4270A04D218A /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57388A90C8D54035AE66522B /* Roboto-Regular.ttf */; };
 		E60B07C30E4D458591A4FE1B /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7ADFC4FCFBAD46BCAA289109 /* Roboto-ThinItalic.ttf */; };
 		E97CDB092FED4596B2F04584 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 129A741519844A9CBB0BA4EF /* Roboto-BlackItalic.ttf */; };
+		FA501C5EF780C32CC52526A2 /* libPods-ChilemuesliApp-tvOS-ChilemuesliApp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 732D71E04329BD8ED0F637F2 /* libPods-ChilemuesliApp-tvOS-ChilemuesliApp-tvOSTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,16 +86,20 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ChilemuesliApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ChilemuesliApp/main.m; sourceTree = "<group>"; };
 		21125C3F5F70422FB562AA3E /* Roboto-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Thin.ttf"; path = "../assets/fonts/Roboto-Thin.ttf"; sourceTree = "<group>"; };
-		22BDD73A94E8BD13BFF6553C /* libPods-ChilemuesliAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChilemuesliAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B77E7DCA1856E3C32165C32 /* Pods-ChilemuesliAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChilemuesliAppTests.release.xcconfig"; path = "Target Support Files/Pods-ChilemuesliAppTests/Pods-ChilemuesliAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* ChilemuesliApp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChilemuesliApp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* ChilemuesliApp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ChilemuesliApp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3545080AF049DE8C8641AD45 /* Pods-ChilemuesliApp-ChilemuesliAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChilemuesliApp-ChilemuesliAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ChilemuesliApp-ChilemuesliAppTests/Pods-ChilemuesliApp-ChilemuesliAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		36AA8F28B098666499E337FF /* Pods-ChilemuesliApp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChilemuesliApp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-ChilemuesliApp-tvOSTests/Pods-ChilemuesliApp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		3E92ECD23981EAFED153B3F0 /* Pods-ChilemuesliApp-tvOS-ChilemuesliApp-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChilemuesliApp-tvOS-ChilemuesliApp-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-ChilemuesliApp-tvOS-ChilemuesliApp-tvOSTests/Pods-ChilemuesliApp-tvOS-ChilemuesliApp-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4A8B921BF5B0B632875EBE88 /* Pods-ChilemuesliApp-ChilemuesliAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChilemuesliApp-ChilemuesliAppTests.release.xcconfig"; path = "Target Support Files/Pods-ChilemuesliApp-ChilemuesliAppTests/Pods-ChilemuesliApp-ChilemuesliAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		4D34BD44A1F5402B8078BC1D /* Roboto-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Italic.ttf"; path = "../assets/fonts/Roboto-Italic.ttf"; sourceTree = "<group>"; };
 		57388A90C8D54035AE66522B /* Roboto-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Regular.ttf"; path = "../assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		5C388FAEFE481F894B729DD4 /* Pods-ChilemuesliApp-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChilemuesliApp-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-ChilemuesliApp-tvOS/Pods-ChilemuesliApp-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		60890BA5BC429843DBCBCF2D /* Pods-ChilemuesliApp-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChilemuesliApp-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-ChilemuesliApp-tvOSTests/Pods-ChilemuesliApp-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		620DB37C23B7F93700C31508 /* StoryData */ = {isa = PBXFileReference; lastKnownFileType = folder; name = StoryData; path = ../StoryData; sourceTree = "<group>"; };
+		626C9D3226D035BB0029C197 /* ChilemuesliApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChilemuesliApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		626C9D3326D035BB0029C197 /* ChilemuesliApp-tvOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChilemuesliApp-tvOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		62EB9857238F22F60069CC42 /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		62EB9858238F22F60069CC42 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		62EB9859238F22F60069CC42 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
@@ -113,15 +117,17 @@
 		62EB9865238F22F70069CC42 /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		62EB9866238F22F70069CC42 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		716C45420CC04EC7B709DAAB /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-LightItalic.ttf"; path = "../assets/fonts/Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		732D71E04329BD8ED0F637F2 /* libPods-ChilemuesliApp-tvOS-ChilemuesliApp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChilemuesliApp-tvOS-ChilemuesliApp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76817EA64B207B4BA5B7D290 /* libPods-ChilemuesliApp-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChilemuesliApp-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ADFC4FCFBAD46BCAA289109 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-ThinItalic.ttf"; path = "../assets/fonts/Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		8C75390A304843ACBCB877A9 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-MediumItalic.ttf"; path = "../assets/fonts/Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		8F279DF85132E81C2FCBE7E9 /* Pods-ChilemuesliApp-tvOS-ChilemuesliApp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChilemuesliApp-tvOS-ChilemuesliApp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-ChilemuesliApp-tvOS-ChilemuesliApp-tvOSTests/Pods-ChilemuesliApp-tvOS-ChilemuesliApp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		A5A9037272F54C45BF6D2C45 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-BoldItalic.ttf"; path = "../assets/fonts/Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
 		A7D9580A70BAD08A6DF8074B /* Pods-ChilemuesliAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChilemuesliAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ChilemuesliAppTests/Pods-ChilemuesliAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0145B2E853F223715F9F3AA /* Pods-ChilemuesliApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChilemuesliApp.release.xcconfig"; path = "Target Support Files/Pods-ChilemuesliApp/Pods-ChilemuesliApp.release.xcconfig"; sourceTree = "<group>"; };
 		C32121E6E735EB75E314EEC5 /* Pods-ChilemuesliApp-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChilemuesliApp-tvOS.release.xcconfig"; path = "Target Support Files/Pods-ChilemuesliApp-tvOS/Pods-ChilemuesliApp-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		CED71DB5DCBAEBD7F2026ED4 /* libPods-ChilemuesliApp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChilemuesliApp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9E8EB47ADAC4D84AFD9F3C8 /* libRNiBeacon.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNiBeacon.a; sourceTree = "<group>"; };
+		EB73C1C7B3B5DB97B9546876 /* libPods-ChilemuesliApp-ChilemuesliAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChilemuesliApp-ChilemuesliAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F08642B0D34F4D4B82C5583F /* Roboto-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Black.ttf"; path = "../assets/fonts/Roboto-Black.ttf"; sourceTree = "<group>"; };
@@ -135,7 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4E5AC34B8C8F851BC589C57 /* libPods-ChilemuesliAppTests.a in Frameworks */,
+				6445123C4F44954F5A0FE60D /* libPods-ChilemuesliApp-ChilemuesliAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,7 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5546E820E1E2460E58FEE9E /* libPods-ChilemuesliApp-tvOSTests.a in Frameworks */,
+				FA501C5EF780C32CC52526A2 /* libPods-ChilemuesliApp-tvOS-ChilemuesliApp-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +199,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				626C9D3226D035BB0029C197 /* ChilemuesliApp-Bridging-Header.h */,
+				626C9D3326D035BB0029C197 /* ChilemuesliApp-tvOS-Bridging-Header.h */,
 			);
 			name = ChilemuesliApp;
 			sourceTree = "<group>";
@@ -204,8 +212,8 @@
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				0F81470DD17C95A1CD751FA5 /* libPods-ChilemuesliApp.a */,
 				76817EA64B207B4BA5B7D290 /* libPods-ChilemuesliApp-tvOS.a */,
-				CED71DB5DCBAEBD7F2026ED4 /* libPods-ChilemuesliApp-tvOSTests.a */,
-				22BDD73A94E8BD13BFF6553C /* libPods-ChilemuesliAppTests.a */,
+				EB73C1C7B3B5DB97B9546876 /* libPods-ChilemuesliApp-ChilemuesliAppTests.a */,
+				732D71E04329BD8ED0F637F2 /* libPods-ChilemuesliApp-tvOS-ChilemuesliApp-tvOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -289,6 +297,10 @@
 				36AA8F28B098666499E337FF /* Pods-ChilemuesliApp-tvOSTests.release.xcconfig */,
 				A7D9580A70BAD08A6DF8074B /* Pods-ChilemuesliAppTests.debug.xcconfig */,
 				2B77E7DCA1856E3C32165C32 /* Pods-ChilemuesliAppTests.release.xcconfig */,
+				3545080AF049DE8C8641AD45 /* Pods-ChilemuesliApp-ChilemuesliAppTests.debug.xcconfig */,
+				4A8B921BF5B0B632875EBE88 /* Pods-ChilemuesliApp-ChilemuesliAppTests.release.xcconfig */,
+				3E92ECD23981EAFED153B3F0 /* Pods-ChilemuesliApp-tvOS-ChilemuesliApp-tvOSTests.debug.xcconfig */,
+				8F279DF85132E81C2FCBE7E9 /* Pods-ChilemuesliApp-tvOS-ChilemuesliApp-tvOSTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -323,6 +335,7 @@
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				C0C0D0D4106DD2500E3D6B00 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -400,7 +413,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1120;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = Chilemues.li;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -409,9 +422,11 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 5989NN7MH5;
+						LastSwiftMigration = 1250;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 1250;
 						ProvisioningStyle = Automatic;
 					};
 					2D02E48F1E0B4A5D006451C7 = {
@@ -455,7 +470,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				620DB37D23B7F93700C31508 /* StoryData in Resources */,
+				626C9D3126CEF8F30029C197 /* StoryData in Resources */,
 				62EB9845238F1CB10069CC42 /* main.jsbundle in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
@@ -560,7 +575,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ChilemuesliAppTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ChilemuesliApp-ChilemuesliAppTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -644,11 +659,59 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ChilemuesliApp-tvOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ChilemuesliApp-tvOS-ChilemuesliApp-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0C0D0D4106DD2500E3D6B00 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChilemuesliApp-ChilemuesliAppTests/Pods-ChilemuesliApp-ChilemuesliAppTests-resources.sh",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Feather.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Brands.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Regular.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Solid.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Fontisto.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Foundation.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Ionicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialCommunityIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChilemuesliApp-ChilemuesliAppTests/Pods-ChilemuesliApp-ChilemuesliAppTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -778,7 +841,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A7D9580A70BAD08A6DF8074B /* Pods-ChilemuesliAppTests.debug.xcconfig */;
+			baseConfigurationReference = 3545080AF049DE8C8641AD45 /* Pods-ChilemuesliApp-ChilemuesliAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -790,7 +853,7 @@
 					"$(SRCROOT)/../node_modules/react-native-beacons-manager/ios/RNiBeacon/RNiBeacon",
 				);
 				INFOPLIST_FILE = ChilemuesliAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
@@ -806,7 +869,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2B77E7DCA1856E3C32165C32 /* Pods-ChilemuesliAppTests.release.xcconfig */;
+			baseConfigurationReference = 4A8B921BF5B0B632875EBE88 /* Pods-ChilemuesliApp-ChilemuesliAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -815,7 +878,7 @@
 					"$(SRCROOT)/../node_modules/react-native-beacons-manager/ios/RNiBeacon/RNiBeacon",
 				);
 				INFOPLIST_FILE = ChilemuesliAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
@@ -834,6 +897,7 @@
 			baseConfigurationReference = FED0776CCCE22B6EE7C607EA /* Pods-ChilemuesliApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 5989NN7MH5;
@@ -851,6 +915,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ch.mabaka.Chilemuesli;
 				PRODUCT_NAME = ChilemuesliApp;
+				SWIFT_OBJC_BRIDGING_HEADER = "ChilemuesliApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -860,6 +927,7 @@
 			baseConfigurationReference = B0145B2E853F223715F9F3AA /* Pods-ChilemuesliApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5989NN7MH5;
 				HEADER_SEARCH_PATHS = (
@@ -876,6 +944,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ch.mabaka.Chilemuesli;
 				PRODUCT_NAME = ChilemuesliApp;
+				SWIFT_OBJC_BRIDGING_HEADER = "ChilemuesliApp-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -887,6 +957,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -908,8 +979,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.ChilemuesliApp-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_OBJC_BRIDGING_HEADER = "ChilemuesliApp-tvOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Debug;
 		};
@@ -920,6 +994,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -942,14 +1017,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.ChilemuesliApp-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_OBJC_BRIDGING_HEADER = "ChilemuesliApp-tvOS-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Release;
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60890BA5BC429843DBCBCF2D /* Pods-ChilemuesliApp-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 3E92ECD23981EAFED153B3F0 /* Pods-ChilemuesliApp-tvOS-ChilemuesliApp-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -975,13 +1052,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChilemuesliApp-tvOS.app/ChilemuesliApp-tvOS";
-				TVOS_DEPLOYMENT_TARGET = 10.1;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Debug;
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 36AA8F28B098666499E337FF /* Pods-ChilemuesliApp-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 8F279DF85132E81C2FCBE7E9 /* Pods-ChilemuesliApp-tvOS-ChilemuesliApp-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1008,7 +1085,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChilemuesliApp-tvOS.app/ChilemuesliApp-tvOS";
-				TVOS_DEPLOYMENT_TARGET = 10.1;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Release;
 		};
@@ -1035,6 +1112,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1059,7 +1137,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1089,6 +1167,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1106,7 +1185,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

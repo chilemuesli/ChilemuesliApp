@@ -16,8 +16,8 @@
     "deprecated-react-native-listview": "^0.0.6",
     "jetifier": "^1.6.5",
     "patch-package": "^6.4.7",
-    "react": "16.9.0",
-    "react-native": "0.61.5",
+    "react": "16.11.0",
+    "react-native": "0.62.2",
     "react-native-beacons-manager": "https://github.com/chilemuesli/react-native-beacons-manager.git#85b410d",
     "react-native-bluetooth-state-manager": "^1.1.0",
     "react-native-components": "^0.0.1",
@@ -44,8 +44,9 @@
     "babel-jest": "^24.9.0",
     "eslint": "^6.7.0",
     "jest": "^24.9.0",
-    "metro-react-native-babel-preset": "^0.57.0",
-    "react-test-renderer": "16.9.0"
+    "metro-react-native-babel-preset": "^0.58.0",
+    "react-test-renderer": "16.11.0",
+    "flow-bin": "^0.113.0"
   },
   "jest": {
     "preset": "react-native"
