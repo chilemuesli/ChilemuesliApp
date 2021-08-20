@@ -6,4 +6,5 @@ release/
 node_modules/
 main.jsbundle
 android/local.properties
+ios/Pods/
 .vscode
