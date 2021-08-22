@@ -120,7 +120,7 @@ export default class StoryScreen extends React.Component {
             deinem Smartphone Bluetooth aktiviert sein und du musst der{' '}
             Chilemues.li App gestatten auf deinen Standort zuzugreifen.
           </MyText>
-          <MyTitle style={styles.distanceTitle}>Distanz zur Maus</MyTitle>
+          <MyTitle style={styles.distanceTitle}>Geschätzte Distanz zur Maus</MyTitle>
           <MyText style={styles.distanceText}>
             {isNaN(this.state.distanceToBeaconInMeter)
               ? 'Du bist zu weit entfernt'
@@ -187,6 +187,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   video: {
+    marginTop: 20,
     width: '100%',
     height: 'auto',
     minWidth: '100%',
