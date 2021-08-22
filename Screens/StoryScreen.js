@@ -40,16 +40,12 @@ export default class StoryScreen extends React.Component {
     this.state.beaconRangingService.startRanging(
       beacon => {
         console.log('Beacon: ' + JSON.stringify(beacon));
-        if (isNaN(beacon.distance)) {
-          this.setState({distanceToBeaconInMeter: 'unbekannt'});
-        } else {
-          this.setState({distanceToBeaconInMeter: beacon.distance});
-          if (beacon.distance >= 0 && beacon.distance < 0.5) {
-            // Found it!
-            this.state.beaconRangingService.stopRanging();
-            this.showFoundAlert();
-            this.setIsAlreadyFound();
-          }
+        this.setState({distanceToBeaconInMeter: beacon.distance});
+        if (beacon.distance >= 0 && beacon.distance < 1) {
+          // Found it!
+          this.state.beaconRangingService.stopRanging();
+          this.showFoundAlert();
+          this.setIsAlreadyFound();
         }
       },
       bluetoothState => {
@@ -109,12 +105,14 @@ export default class StoryScreen extends React.Component {
 
   render() {
     const story = this.state.story;
+    let title = <MyTitle style={styles.topTitle}>{story.title}</MyTitle>;
     let content = null;
 
     if (!this.state.found) {
       content = (
         <View>
-          <MyText>
+          {title}
+          <MyText style={styles.contentText}>
             Du hast die {story.title} bisher noch nicht gefunden. Die{' '}
             {story.title} ist irgendwo in der Kirche versteckt. Um die{' '}
             Geschichte freizuschalten, musst du die Maus finden und dein{' '}
@@ -124,7 +122,9 @@ export default class StoryScreen extends React.Component {
           </MyText>
           <MyTitle style={styles.distanceTitle}>Distanz zur Maus</MyTitle>
           <MyText style={styles.distanceText}>
-            {Math.round(this.state.distanceToBeaconInMeter * 10) / 10 + 'm'}
+            {isNaN(this.state.distanceToBeaconInMeter)
+              ? 'Du bist zu weit entfernt'
+              : Math.round(this.state.distanceToBeaconInMeter * 10) / 10 + 'm'}
           </MyText>
         </View>
       );
@@ -134,30 +134,31 @@ export default class StoryScreen extends React.Component {
       story.audioFile !== ''
     ) {
       content = (
-        <Video
-          source={{uri: story.audioFile}} // Can be a URL or a local file.
-          ref={ref => {
-            this.player = ref;
-          }} // Store reference
-          onBuffer={this.onBuffer} // Callback when remote video is buffering
-          onError={this.videoError} // Callback when video cannot be load
-          //poster={story.imageFiles[0]}
-          ignoreSilentSwitch="ignore"
-          posterResizeMode={'center'}
-          audioOnly={true}
-          controls={true}
-          paused={true}
-          muted={false}
-          style={styles.video}
-        />
+        <View>
+          {title}
+          <Video
+            source={{uri: story.audioFile}} // Can be a URL or a local file.
+            ref={ref => {
+              this.player = ref;
+            }} // Store reference
+            onBuffer={this.onBuffer} // Callback when remote video is buffering
+            onError={this.videoError} // Callback when video cannot be load
+            //poster={story.imageFiles[0]}
+            ignoreSilentSwitch="ignore"
+            posterResizeMode={'center'}
+            audioOnly={true}
+            controls={true}
+            paused={true}
+            muted={false}
+            style={styles.video}
+          />
+          <MyText style={styles.contentText}>{story.description}</MyText>
+        </View>
       );
     }
     return (
       <ScrollView style={styles.scrollView}>
-        <View style={styles.contentView}>
-          <MyTitle style={styles.topTitle}>{story.title}</MyTitle>
-          {content}
-        </View>
+        <View style={styles.contentView}>{content}</View>
       </ScrollView>
     );
   }
@@ -172,6 +173,9 @@ const styles = StyleSheet.create({
   },
   topTitle: {
     textAlign: 'center',
+  },
+  contentText: {
+    marginTop: 20,
   },
   distanceTitle: {
     textAlign: 'center',
