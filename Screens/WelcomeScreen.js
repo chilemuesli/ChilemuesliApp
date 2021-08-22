@@ -1,6 +1,7 @@
 import React from 'react';
-import {ScrollView, View, StyleSheet} from 'react-native';
+import {ScrollView, View, StyleSheet, Dimensions} from 'react-native';
 import {Button} from 'react-native-elements';
+import Image from 'react-native-scalable-image';
 
 export default class WelcomeScreen extends React.Component {
   openSearchMiceListView() {
@@ -37,7 +38,11 @@ export default class WelcomeScreen extends React.Component {
       <View style={styles.mainView}>
         <ScrollView
           contentContainerStyle={styles.scrollViewContentContainerStyle}>
-          <View style={styles.button_view}>
+          <Image
+            source={require('../assets/img/LogoMuesli.png')}
+            width={Dimensions.get('window').width / 3}
+          />
+          <View style={styles.buttonView}>
             <Button
               onPress={() => {
                 this.openSearchMiceListView();
@@ -63,12 +68,12 @@ export default class WelcomeScreen extends React.Component {
               }}
               title="Datenschutzerklärung"
             />
-            <Button
+            {/*<Button
               onPress={() => {
                 this.openDebugView();
               }}
               title="Debug"
-            />
+            />*/}
           </View>
         </ScrollView>
       </View>
@@ -84,8 +89,12 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     justifyContent: 'center',
   },
-  button_view: {
-    flexGrow: 1,
+  image: {
+    flex: 1,
+    marginTop: 5,
+  },
+  buttonView: {
+    flexGrow: 2,
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
