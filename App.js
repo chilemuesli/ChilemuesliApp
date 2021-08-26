@@ -28,8 +28,8 @@ const theme = {
     type: 'clear',
     buttonStyle: {
       backgroundColor: COLOR_PRIMARY,
-      width: 200,
-      height: 40,
+      width: 220,
+      height: 46,
       marginTop: 15,
       marginBottom: 15,
       borderColor: 'transparent',
