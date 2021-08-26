@@ -4,6 +4,10 @@ import {Button} from 'react-native-elements';
 import Image from 'react-native-scalable-image';
 
 export default class WelcomeScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Menü',
+  };
+
   openSearchMiceListView() {
     console.log('openSearchMiceListView clicked');
     this.props.navigation.navigate('StoryList', {});
@@ -25,6 +29,7 @@ export default class WelcomeScreen extends React.Component {
     this.props.navigation.navigate('WebViewer', {
       URL:
         'https://www.chilemues.li/mobile-pages/datenschutzerklaerung-mobile/',
+      title: 'Datenschutz',
     });
   }
 

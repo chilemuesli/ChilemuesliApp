@@ -4,6 +4,12 @@ import {StyleSheet} from 'react-native';
 import Config from 'react-native-config';
 
 export default class WebScreen extends React.Component {
+  static navigationOptions = ({navigation}) => {
+    return {
+      title: navigation.getParam('title', ''),
+    };
+  };
+
   state = {
     URL: Config.WELCOME_URL,
   };

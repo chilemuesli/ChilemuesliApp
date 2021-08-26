@@ -6,6 +6,10 @@ import AsyncStorage from '@react-native-community/async-storage';
 import {COLOR_PRIMARY} from '../Styles/Common';
 
 export default class StoryListScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Müsli',
+  };
+
   state = {
     readStoryService: new ReadStoriesService(),
     stories: [],

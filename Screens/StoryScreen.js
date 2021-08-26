@@ -9,6 +9,18 @@ import AsyncStorage from '@react-native-community/async-storage';
 import BeaconRangingService from '../Service/BeaconRangingService';
 
 export default class StoryScreen extends React.Component {
+  static navigationOptions = ({navigation}) => {
+    let story = navigation.getParam('selectedStory');
+    if (story !== null) {
+      return {
+        title: story.title,
+      };
+    }
+    return {
+      title: '',
+    };
+  };
+
   state = {
     readStoryService: new ReadStoriesService(),
     beaconRangingService: new BeaconRangingService(),
@@ -120,7 +132,9 @@ export default class StoryScreen extends React.Component {
             deinem Smartphone Bluetooth aktiviert sein und du musst der{' '}
             Chilemues.li App gestatten auf deinen Standort zuzugreifen.
           </MyText>
-          <MyTitle style={styles.distanceTitle}>Geschätzte Distanz zur Maus</MyTitle>
+          <MyTitle style={styles.distanceTitle}>
+            Geschätzte Distanz zur Maus
+          </MyTitle>
           <MyText style={styles.distanceText}>
             {isNaN(this.state.distanceToBeaconInMeter)
               ? 'Du bist zu weit entfernt'

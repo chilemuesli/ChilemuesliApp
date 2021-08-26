@@ -17,6 +17,9 @@ const MAIL_ADDRESS = 'info@ref-hinwil.ch';
 const MAIL_SUBJECT = 'Chilemues.li';
 const PHONE_NUMBER = '+41 44 937 14 37';
 export default class ContactScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Kontakt',
+  };
   constructor(props) {
     super(props);
   }

@@ -15,6 +15,9 @@ const churchAddress = {
   end: 'Reformierte Kirchgemeinde Hinwil',
 };
 export default class TravelInstructionsScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Anreise',
+  };
   constructor(props) {
     super(props);
   }
