@@ -53,7 +53,7 @@ export default class StoryScreen extends React.Component {
       beacon => {
         console.log('Beacon: ' + JSON.stringify(beacon));
         this.setState({distanceToBeaconInMeter: beacon.distance});
-        if (beacon.distance >= 0 && beacon.distance < 1) {
+        if (beacon.distance >= 0 && beacon.distance < 2) {
           // Found it!
           this.state.beaconRangingService.stopRanging();
           this.showFoundAlert();

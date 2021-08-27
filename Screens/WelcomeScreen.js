@@ -33,6 +33,16 @@ export default class WelcomeScreen extends React.Component {
     });
   }
 
+  openHelpView() {
+    console.log('openHelpView clicked');
+    console.log('Try to open WebViewer');
+    this.props.navigation.navigate('WebViewer', {
+      URL:
+        'https://www.chilemues.li/mobile-pages/anleitung/',
+      title: 'Anleitung',
+    });
+  }
+
   openDebugView() {
     console.log('openDebugView clicked');
     this.props.navigation.navigate('Test', {});
@@ -72,6 +82,12 @@ export default class WelcomeScreen extends React.Component {
                 this.openPrivacyPolicyView();
               }}
               title="Datenschutzerklärung"
+            />
+            <Button
+              onPress={() => {
+                this.openHelpView();
+              }}
+              title="Anleitung"
             />
             {/*<Button
               onPress={() => {
