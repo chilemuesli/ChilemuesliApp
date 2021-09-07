@@ -7,6 +7,10 @@ import ReadStoriesService from '../Service/ReadStoriesService';
 import Video from 'react-native-video';
 import AsyncStorage from '@react-native-community/async-storage';
 import BeaconRangingService from '../Service/BeaconRangingService';
+import {Button} from 'react-native-elements';
+import {COLOR_PRIMARY} from '../Styles/Common';
+
+const Pulse = require('react-native-pulse').default;
 
 export default class StoryScreen extends React.Component {
   static navigationOptions = ({navigation}) => {
@@ -26,6 +30,7 @@ export default class StoryScreen extends React.Component {
     beaconRangingService: new BeaconRangingService(),
     story: null,
     audioLoadingFailed: false,
+    searching: false,
     found: false,
     distanceToBeaconInMeter: 'unbekannt',
   };
@@ -52,12 +57,17 @@ export default class StoryScreen extends React.Component {
     this.state.beaconRangingService.startRanging(
       beacon => {
         console.log('Beacon: ' + JSON.stringify(beacon));
-        this.setState({distanceToBeaconInMeter: beacon.distance});
-        if (beacon.distance >= 0 && beacon.distance < 2) {
-          // Found it!
-          this.state.beaconRangingService.stopRanging();
-          this.showFoundAlert();
-          this.setIsAlreadyFound();
+        if (beacon.distance >= 0) {
+          this.setState({distanceToBeaconInMeter: beacon.distance});
+          if (beacon.distance <= 2) {
+            // Found it!
+            this.state.beaconRangingService.stopRanging();
+            this.showFoundAlert();
+            this.setIsAlreadyFound();
+            this.setState({searching: false});
+          }
+        } else {
+          this.setState({distanceToBeaconInMeter: 'unbekannt'});
         }
       },
       bluetoothState => {
@@ -69,7 +79,7 @@ export default class StoryScreen extends React.Component {
   }
 
   componentWillUnmount() {
-    if (!this.state.found) {
+    if (this.state.searching) {
       this.state.beaconRangingService.stopRanging();
     }
   }
@@ -89,7 +99,7 @@ export default class StoryScreen extends React.Component {
       if (value !== null && value === 'true') {
         this.setState({found: true});
       } else {
-        this.startRangingForBeacon();
+        //this.startRangingForBeacon();
         console.log(this.state.story.iBeaconName + ' was not found before.');
       }
     } catch (e) {
@@ -107,6 +117,11 @@ export default class StoryScreen extends React.Component {
     console.log('Value saved.');
   };
 
+  startSearching() {
+    this.setState({searching: true});
+    this.startRangingForBeacon();
+  }
+
   onBuffer() {
     console.log('Audio is buffering....');
   }
@@ -120,7 +135,7 @@ export default class StoryScreen extends React.Component {
     let title = <MyTitle style={styles.topTitle}>{story.title}</MyTitle>;
     let content = null;
 
-    if (!this.state.found) {
+    if (!this.state.found && !this.state.searching) {
       content = (
         <View>
           {title}
@@ -132,14 +147,39 @@ export default class StoryScreen extends React.Component {
             deinem Smartphone Bluetooth aktiviert sein und du musst der{' '}
             Chilemues.li App gestatten auf deinen Standort zuzugreifen.
           </MyText>
+          <View style={styles.buttonView}>
+            <Button
+              onPress={() => {
+                this.startSearching();
+              }}
+              title="Suche starten"
+            />
+          </View>
+        </View>
+      );
+    } else if (this.state.searching) {
+      content = (
+        <View>
+          {title}
           <MyTitle style={styles.distanceTitle}>
             Geschätzte Distanz zur Maus
           </MyTitle>
-          <MyText style={styles.distanceText}>
-            {isNaN(this.state.distanceToBeaconInMeter)
-              ? 'Du bist zu weit entfernt'
-              : Math.round(this.state.distanceToBeaconInMeter * 10) / 10 + 'm'}
-          </MyText>
+
+          <View style={styles.sonarView}>
+            <Pulse
+              color={COLOR_PRIMARY}
+              numPulses={3}
+              diameter={400}
+              speed={20}
+              duration={2000}
+            />
+            <MyText style={styles.distanceText}>
+              {isNaN(this.state.distanceToBeaconInMeter)
+                ? 'Du bist zu weit entfernt'
+                : Math.round(this.state.distanceToBeaconInMeter * 10) / 10 +
+                  'm'}
+            </MyText>
+          </View>
         </View>
       );
     } else if (
@@ -193,12 +233,26 @@ const styles = StyleSheet.create({
   },
   distanceTitle: {
     textAlign: 'center',
-    marginTop: 30,
+    marginTop: 40,
+  },
+  sonarView: {
+    flexGrow: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    height: 400,
+    //marginTop: 120,
   },
   distanceText: {
     fontSize: 30,
     textAlign: 'center',
-    marginTop: 30,
+    //marginTop: 50,
+  },
+  buttonView: {
+    flexGrow: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
   },
   video: {
     marginTop: 20,
