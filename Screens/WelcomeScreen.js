@@ -27,7 +27,9 @@ export default class WelcomeScreen extends React.Component {
     ) {
       this.setState({lastLogoTouch: Date.now()});
       this.setState({logoTouchCount: this.state.logoTouchCount + 1});
-      if (this.state.logoTouchCount >= 4){
+      if (this.state.logoTouchCount >= 4) {
+        this.setState({lastLogoTouch: 0});
+        this.setState({logoTouchCount: 0});
         this.openDebugView();
       }
     } else {

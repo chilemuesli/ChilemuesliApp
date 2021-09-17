@@ -55,7 +55,7 @@ export default class StoryScreen extends React.Component {
 
   startRangingForBeacon() {
     this.state.beaconRangingService.startRanging(
-      beacon => {
+      (beacon) => {
         console.log('Beacon: ' + JSON.stringify(beacon));
         if (beacon.distance >= 0) {
           this.setState({distanceToBeaconInMeter: beacon.distance});
@@ -70,7 +70,7 @@ export default class StoryScreen extends React.Component {
           this.setState({distanceToBeaconInMeter: 'unbekannt'});
         }
       },
-      bluetoothState => {
+      (bluetoothState) => {
         console.log('BluetoothState: ' + bluetoothState);
       },
       this.state.story.major,
@@ -182,17 +182,13 @@ export default class StoryScreen extends React.Component {
           </View>
         </View>
       );
-    } else if (
-      this.state.found &&
-      story.audioFile !== undefined &&
-      story.audioFile !== ''
-    ) {
-      content = (
-        <View>
-          {title}
+    } else if (this.state.found) {
+      let video = <View />;
+      if (story.audioFile) {
+        video = (
           <Video
             source={{uri: story.audioFile}} // Can be a URL or a local file.
-            ref={ref => {
+            ref={(ref) => {
               this.player = ref;
             }} // Store reference
             onBuffer={this.onBuffer} // Callback when remote video is buffering
@@ -206,6 +202,12 @@ export default class StoryScreen extends React.Component {
             muted={false}
             style={styles.video}
           />
+        );
+      }
+      content = (
+        <View>
+          {title}
+          {video}
           <MyText style={styles.contentText}>{story.description}</MyText>
         </View>
       );
