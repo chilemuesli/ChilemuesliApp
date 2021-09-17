@@ -23,20 +23,20 @@ export default class StoryListScreen extends React.Component {
   componentDidMount() {
     this.state.readStoryService
       .readStories()
-      .then(result => {
+      .then((result) => {
         console.log('RESULT:');
         console.log(result);
         this.loadingFinished(result);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log('ERROR!');
         console.log(err);
       });
   }
 
-  loadingFinished = stories => {
+  loadingFinished = (stories) => {
     this.setState({stories: stories});
-    stories.forEach(story => {
+    stories.forEach((story) => {
       this.isAlreadyFound(story);
     });
     console.log('State:');
@@ -51,11 +51,11 @@ export default class StoryListScreen extends React.Component {
     });
   }
 
-  onContestSelected(){
+  onContestSelected() {
     console.log('onContestSelected');
   }
 
-  isAlreadyFound = async story => {
+  isAlreadyFound = async (story) => {
     try {
       const value = await AsyncStorage.getItem(story.id + '.found');
       let found = this.state.found;
@@ -71,23 +71,6 @@ export default class StoryListScreen extends React.Component {
   };
 
   render() {
-    let contestListItem = null;
-    if (
-      this.state.stories.length > 0 &&
-      this.state.stories.length === this.state.found.length
-    ) {
-      //if (!this.state.stories.some(story => !this.state.found[story.id])) {
-        contestListItem = (
-          <ListItem
-            title={'Wettbewerb'}
-            rightIcon={{name: 'form', color: COLOR_PRIMARY}}
-            onPress={() => this.onContestSelected()}
-            bottomDivider={true}
-          />
-        );
-      //}
-    }
-
     return (
       <ScrollView style={styles.view}>
         <View>
@@ -102,7 +85,6 @@ export default class StoryListScreen extends React.Component {
               bottomDivider={true}
             />
           ))}
-          {contestListItem}
         </View>
       </ScrollView>
     );

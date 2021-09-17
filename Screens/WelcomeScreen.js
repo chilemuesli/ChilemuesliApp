@@ -1,5 +1,11 @@
 import React from 'react';
-import {ScrollView, View, StyleSheet, Dimensions} from 'react-native';
+import {
+  ScrollView,
+  View,
+  StyleSheet,
+  Dimensions,
+  TouchableWithoutFeedback,
+} from 'react-native';
 import {Button} from 'react-native-elements';
 import Image from 'react-native-scalable-image';
 
@@ -7,6 +13,28 @@ export default class WelcomeScreen extends React.Component {
   static navigationOptions = {
     title: 'Menü',
   };
+
+  state = {
+    logoTouchCount: 0,
+    lastLogoTouch: 0,
+  };
+
+  onLogoTouch() {
+    console.log('Logo clicked');
+    if (
+      this.state.lastLogoTouch === 0 ||
+      Date.now() - 1000 < this.state.lastLogoTouch
+    ) {
+      this.setState({lastLogoTouch: Date.now()});
+      this.setState({logoTouchCount: this.state.logoTouchCount + 1});
+      if (this.state.logoTouchCount >= 4){
+        this.openDebugView();
+      }
+    } else {
+      this.setState({lastLogoTouch: Date.now()});
+      this.setState({logoTouchCount: 0});
+    }
+  }
 
   openSearchMiceListView() {
     console.log('openSearchMiceListView clicked');
@@ -27,8 +55,7 @@ export default class WelcomeScreen extends React.Component {
     console.log('openPrivacyPolicyView clicked');
     console.log('Try to open WebViewer');
     this.props.navigation.navigate('WebViewer', {
-      URL:
-        'https://www.chilemues.li/mobile-pages/datenschutzerklaerung-mobile/',
+      URL: 'https://www.chilemues.li/mobile-pages/datenschutzerklaerung-mobile/',
       title: 'Datenschutz',
     });
   }
@@ -37,15 +64,14 @@ export default class WelcomeScreen extends React.Component {
     console.log('openHelpView clicked');
     console.log('Try to open WebViewer');
     this.props.navigation.navigate('WebViewer', {
-      URL:
-        'https://www.chilemues.li/mobile-pages/anleitung/',
+      URL: 'https://www.chilemues.li/mobile-pages/anleitung/',
       title: 'Anleitung',
     });
   }
 
   openDebugView() {
     console.log('openDebugView clicked');
-    this.props.navigation.navigate('Test', {});
+    this.props.navigation.navigate('Debug', {});
   }
 
   render() {
@@ -53,10 +79,12 @@ export default class WelcomeScreen extends React.Component {
       <View style={styles.mainView}>
         <ScrollView
           contentContainerStyle={styles.scrollViewContentContainerStyle}>
-          <Image
-            source={require('../assets/img/LogoMuesli.png')}
-            width={Dimensions.get('window').width / 3}
-          />
+          <TouchableWithoutFeedback onPress={() => this.onLogoTouch()}>
+            <Image
+              source={require('../assets/img/LogoMuesli.png')}
+              width={Dimensions.get('window').width / 3}
+            />
+          </TouchableWithoutFeedback>
           <View style={styles.buttonView}>
             <Button
               onPress={() => {

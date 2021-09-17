@@ -16,6 +16,7 @@ import StoryListScreen from './Screens/StoryListScreen';
 import StoryScreen from './Screens/StoryScreen';
 import WebScreen from './Screens/WebScreen';
 import ContactScreen from './Screens/ContactScreen';
+import DebugScreen from './Screens/DebugScreen';
 import TravelInstructionsScreen from './Screens/TravelInstructionsScreen';
 import {ThemeProvider} from 'react-native-elements';
 import {COLOR_PRIMARY, BORDER_RADIUS} from './Styles/Common';
@@ -75,6 +76,10 @@ const MainNavigator = createStackNavigator({
   TravelInstructions: {
     screen: TravelInstructionsScreen,
     routeName: 'TravelInstructions',
+  },
+  Debug: {
+    screen: DebugScreen,
+    routeName: 'Test',
   },
   Test: {
     screen: BeaconsDemoScreen,
