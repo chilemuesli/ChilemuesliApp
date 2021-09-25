@@ -1150,6 +1150,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.mabaka.Chilemuesli;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1203,6 +1204,7 @@
 					"$(inherited)",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.mabaka.Chilemuesli;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
