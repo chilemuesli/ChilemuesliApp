@@ -5,7 +5,7 @@
         "plural": "false",
         "avatar": "01/avatar.jpg",
         "imageFiles": ["01/avatar.jpg"],
-        "audioFile": "01/Testmaus.mp4",
+        "audioFile": "01/story.mp4",
         "description": "Das Begrüssungsmüsli ist gerade etwas ausser Atem, da sie zu Fuss hierher gekommen ist. Doch was für einen Raum hat sie hier überhaupt betreten, sie erzählt es dir gerade selbst.",
         "major": 8340,
         "minor": 1
@@ -16,7 +16,7 @@
         "plural": "true",
         "avatar": "02/avatar.jpg",
         "imageFiles": ["02/avatar.jpg"],
-        "audioFile": "",
+        "audioFile": "02/story.mp4",
         "description": "Zwei Müsli-Kinder schauen sich in der Kirche um und entdecken, lange Stäbe. Was haben diese zu bedeuten? Weisst du, von was sie sprechen?",
         "major": 8340,
         "minor": 2
@@ -27,7 +27,7 @@
         "plural": "false",
         "avatar": "03/avatar.jpg",
         "imageFiles": ["03/avatar.jpg"],
-        "audioFile": "",
+        "audioFile": "03/story.mp4",
         "description": "Das Organistin-Müsli erzählt über die Orgel und was dieses Instrument alles kann und wie vielfältig es ist. Sie bringt die Orgel auch zum Klingen.",
         "major": 8340,
         "minor": 3
