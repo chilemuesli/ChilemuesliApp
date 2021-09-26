@@ -38,7 +38,7 @@
         "plural": "true",
         "avatar": "04/avatar.jpg",
         "imageFiles": ["04/avatar.jpg"],
-        "audioFile": "",
+        "audioFile": "04/story.mp4",
         "description": "Die beiden Kumba-Müsli kommen von weit her, zusammen haben sie in Kumba in Kamerun Theologie studiert und sich dort kennengelernt. Sie erzählen von ihrer Heimat und ihrem Studium und was dies mit der reformierten Kirche Hinwil zu tun hat.",
         "major": 8340,
         "minor": 4
@@ -49,7 +49,7 @@
         "plural": "false",
         "avatar": "05/avatar.jpg",
         "imageFiles": ["05/avatar.jpg"],
-        "audioFile": "",
+        "audioFile": "05/story.mp4",
         "description": "Das Koch-Müsli kommt aus Bellinzona. Einmal im Jahr kocht es Risotto hier in Hinwil. Warum und was es sonst noch mit Hinwil verbindet, erzählt es dir gleich selbst.",
         "major": 8340,
         "minor": 5
@@ -60,7 +60,7 @@
         "plural": "true",
         "avatar": "06/avatar.jpg",
         "imageFiles": ["06/avatar.jpg"],
-        "audioFile": "",
+        "audioFile": "06/story.mp4",
         "description": "Herr Schmidhauser ist hier in Hinwil aufgewachsen. Seine Frau lernte er bei der Organisation Gemeinschaft der Versöhnung kennen. Nun leben sie mit ihren Kindern zusammen in Israel. Was sie dort genau machen und weshalb sie immer noch mit Hinwil verbunden sind, erzählen sie am besten selbst.",
         "major": 8340,
         "minor": 6
@@ -71,7 +71,7 @@
         "plural": "true",
         "avatar": "07/avatar.jpg",
         "imageFiles": ["07/avatar.jpg"],
-        "audioFile": "",
+        "audioFile": "07/story.mp4",
         "description": "Die beiden berichten über ihre Arbeit im Hintergrund, neben dem Putzen haben sie bei einem Gottesdienst viel zu tun, vor allem bevor er losgeht. Sie sind gerade daran alles einzurichten.",
         "major": 8340,
         "minor": 7
@@ -82,7 +82,7 @@
         "plural": "false",
         "avatar": "08/avatar.jpg",
         "imageFiles": ["08/avatar.jpg"],
-        "audioFile": "",
+        "audioFile": "08/story.mp4",
         "description": "Das Cevi-Müsli trägt ein blaues Hemd, was es mit diesem auf sich hat und was der Cevi ist, und vor allem, was es im Cevi alles erlebt, das erzählt es gerade selbst.",
         "major": 8340,
         "minor": 8
@@ -93,7 +93,7 @@
         "plural": "false",
         "avatar": "09/avatar.jpg",
         "imageFiles": ["09/avatar.jpg"],
-        "audioFile": "",
+        "audioFile": "09/story.mp4",
         "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         "major": 8340,
         "minor": 9
@@ -115,7 +115,7 @@
         "plural": "true",
         "avatar": "11/avatar.jpg",
         "imageFiles": ["11/avatar.jpg"],
-        "audioFile": "",
+        "audioFile": "11/story.mp4",
         "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         "major": 8340,
         "minor": 11
@@ -126,7 +126,7 @@
         "plural": "true",
         "avatar": "02/avatar.jpg",
         "imageFiles": ["12/avatar.jpg"],
-        "audioFile": "",
+        "audioFile": "12/story.mp4",
         "description": "Der Müsli Chor hat ein schwieriges Jahr hinter sich. Sie freuen sich sehr, dass sie wieder singen dürfen, doch sie waren nicht untätig und haben sogar online gesungen. Doch nun proben sie wieder am Donnerstagabend hier in der Kirche.",
         "major": 8340,
         "minor": 12
@@ -137,7 +137,7 @@
         "plural": "false",
         "avatar": "13/avatar.jpg",
         "imageFiles": ["13/avatar.jpg"],
-        "audioFile": "",
+        "audioFile": "13/story.mp4",
         "description": "Das Harfe-Müsli weiss viel interessantes über die Harfe zu berichten und lädt dazu ein, den feinen Tönen zu lauschen.",
         "major": 8340,
         "minor": 13
@@ -148,7 +148,7 @@
         "plural": "false",
         "avatar": "14/avatar.jpg",
         "imageFiles": ["14/avatar.jpg"],
-        "audioFile": "",
+        "audioFile": "14/story.mp4",
         "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         "major": 8340,
         "minor": 14
@@ -170,7 +170,7 @@
         "plural": "true",
         "avatar": "16/avatar.jpg",
         "imageFiles": ["16/avatar.jpg"],
-        "audioFile": "",
+        "audioFile": "16/story.mp4",
         "description": "Lasset die Kinder zu mir kommen. Dies steht in goldenen Buchstaben auf den Taufstein geschrieben. Deshalb ist dieses Paar hier zusammen mit ihrem Müsli-Chind. Was der Baum mit den grünen Blättern mit der Taufe zu tun hat und wie es den Eltern geht, das erzählen sie selber.",
         "major": 8340,
         "minor": 16
