@@ -134,18 +134,26 @@ export default class StoryScreen extends React.Component {
     const story = this.state.story;
     let title = <MyTitle style={styles.topTitle}>{story.title}</MyTitle>;
     let content = null;
+    let article = '';
+    let articleLow = '';
+    if (story.article) {
+      article = story.article + ' ';
+      articleLow = story.article.toLowerCase() + ' ';
+    }
 
     if (!this.state.found && !this.state.searching) {
       content = (
         <View>
           {title}
           <MyText style={styles.contentText}>
-            Du hast die {story.title} bisher noch nicht gefunden. Die{' '}
-            {story.title} ist irgendwo in der Kirche versteckt. Um die{' '}
-            Geschichte freizuschalten, musst du die Maus finden und dein{' '}
-            Smartphone in ihre Nähe halten. Damit dies funktioniert, muss auf{' '}
-            deinem Smartphone Bluetooth aktiviert sein und du musst der{' '}
-            Chilemues.li App gestatten auf deinen Standort zuzugreifen.
+            Du hast {articleLow}
+            {story.title} bisher noch nicht gefunden. {article}
+            {story.title} ist irgendwo in der Kirche versteckt. Um die
+            Geschichte freizuschalten, musst du {articleLow}
+            {story.title} finden und dein Smartphone näher als 2m heranbringen. Damit
+            dies funktioniert, muss auf deinem Smartphone Bluetooth aktiviert
+            sein und du musst der Chilemues.li App gestatten auf deinen Standort
+            zuzugreifen.
           </MyText>
           <View style={styles.buttonView}>
             <Button

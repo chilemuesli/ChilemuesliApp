@@ -2,7 +2,7 @@
     {
         "id": 1,
         "title": "Begrüssungs-Müsli",
-        "plural": "false",
+        "article": "Das",
         "avatar": "01/avatar.jpg",
         "imageFiles": ["01/avatar.jpg"],
         "audioFile": "01/story.mp4",
@@ -13,7 +13,7 @@
     {
         "id": 2,
         "title": "Müsli-Kinder",
-        "plural": "true",
+        "article": "Die",
         "avatar": "02/avatar.jpg",
         "imageFiles": ["02/avatar.jpg"],
         "audioFile": "02/story.mp4",
@@ -24,7 +24,7 @@
     {
         "id": 3,
         "title": "Organistin-Müsli",
-        "plural": "false",
+        "article": "Das",
         "avatar": "03/avatar.jpg",
         "imageFiles": ["03/avatar.jpg"],
         "audioFile": "03/story.mp4",
@@ -35,7 +35,7 @@
     {
         "id": 4,
         "title": "Kumba-Müsli",
-        "plural": "true",
+        "article": "Die",
         "avatar": "04/avatar.jpg",
         "imageFiles": ["04/avatar.jpg"],
         "audioFile": "04/story.mp4",
@@ -46,7 +46,7 @@
     {
         "id": 5,
         "title": "Koch-Müsli",
-        "plural": "false",
+        "article": "Das",
         "avatar": "05/avatar.jpg",
         "imageFiles": ["05/avatar.jpg"],
         "audioFile": "05/story.mp4",
@@ -57,7 +57,7 @@
     {
         "id": 6,
         "title": "Schmidhauser-Müsli",
-        "plural": "true",
+        "article": "Die",
         "avatar": "06/avatar.jpg",
         "imageFiles": ["06/avatar.jpg"],
         "audioFile": "06/story.mp4",
@@ -68,7 +68,7 @@
     {
         "id": 7,
         "title": "Techniker- und Sigristin-Müsli",
-        "plural": "true",
+
         "avatar": "07/avatar.jpg",
         "imageFiles": ["07/avatar.jpg"],
         "audioFile": "07/story.mp4",
@@ -79,7 +79,7 @@
     {
         "id": 8,
         "title": "Cevi-Müsli",
-        "plural": "false",
+        "article": "Das",
         "avatar": "08/avatar.jpg",
         "imageFiles": ["08/avatar.jpg"],
         "audioFile": "08/story.mp4",
@@ -90,7 +90,7 @@
     {
         "id": 9,
         "title": "Besucher Müsli",
-        "plural": "false",
+        "article": "Das",
         "avatar": "09/avatar.jpg",
         "imageFiles": ["09/avatar.jpg"],
         "audioFile": "09/story.mp4",
@@ -101,7 +101,7 @@
     {
         "id": 10,
         "title": "Band-Müsli",
-        "plural": "true",
+        "article": "Die",
         "avatar": "10/avatar.jpg",
         "imageFiles": ["10/avatar.jpg"],
         "audioFile": "10/story.mp4",
@@ -113,7 +113,7 @@
     {
         "id": 11,
         "title": "Hochzeits-Müsli mit Pfarrer",
-        "plural": "true",
+        "article": "Die",
         "avatar": "11/avatar.jpg",
         "imageFiles": ["11/avatar.jpg"],
         "audioFile": "11/story.mp4",
@@ -124,7 +124,7 @@
     {
         "id": 12,
         "title": "Chor-Müsli",
-        "plural": "true",
+        "article": "Die",
         "avatar": "02/avatar.jpg",
         "imageFiles": ["12/avatar.jpg"],
         "audioFile": "12/story.mp4",
@@ -135,7 +135,7 @@
     {
         "id": 13,
         "title": "Harfe-Müsli ",
-        "plural": "false",
+        "article": "Das",
         "avatar": "13/avatar.jpg",
         "imageFiles": ["13/avatar.jpg"],
         "audioFile": "13/story.mp4",
@@ -146,7 +146,7 @@
     {
         "id": 14,
         "title": "Handwerker-Müsli",
-        "plural": "false",
+        "article": "Das",
         "avatar": "14/avatar.jpg",
         "imageFiles": ["14/avatar.jpg"],
         "audioFile": "14/story.mp4",
@@ -156,8 +156,8 @@
     },
     {
         "id": 15,
-        "title": "Herr-Müsli ",
-        "plural": "false",
+        "title": "Herr-Müsli",
+
         "avatar": "15/avatar.jpg",
         "imageFiles": ["15/avatar.jpg"],
         "audioFile": "15/story.mp4",
@@ -168,7 +168,7 @@
     {
         "id": 16,
         "title": "Tauf-Müsli",
-        "plural": "true",
+        "article": "Die",
         "avatar": "16/avatar.jpg",
         "imageFiles": ["16/avatar.jpg"],
         "audioFile": "16/story.mp4",
@@ -179,7 +179,7 @@
     {
         "id": 17,
         "title": "Tanz-Müsli",
-        "plural": "false",
+        "article": "Das",
         "avatar": "17/avatar.jpg",
         "imageFiles": ["17/avatar.jpg"],
         "audioFile": "17/story.mp4",
