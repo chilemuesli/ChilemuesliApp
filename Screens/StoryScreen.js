@@ -147,13 +147,13 @@ export default class StoryScreen extends React.Component {
           {title}
           <MyText style={styles.contentText}>
             Du hast {articleLow}
-            {story.title} bisher noch nicht gefunden. {article}
-            Die Chilemuesli sind irgendwo in der Kirche versteckt. Um die
-            Geschichte freizuschalten, musst du {articleLow}
-            {story.title} finden und dein Smartphone näher als 2m heranbringen. Damit
-            dies funktioniert, muss auf deinem Smartphone Bluetooth aktiviert
-            sein und du musst der Chilemues.li App gestatten auf deinen Standort
-            zuzugreifen.
+            {story.title} bisher noch nicht gefunden. Die Chilemuesli sind
+            irgendwo in der Kirche versteckt. Um die Geschichte freizuschalten,
+            musst du {articleLow}
+            {story.title} finden und dein Smartphone näher als 2m heranbringen.
+            Damit dies funktioniert, muss auf deinem Smartphone Bluetooth
+            aktiviert sein und du musst der Chilemues.li App gestatten auf
+            deinen Standort zuzugreifen.
           </MyText>
           <View style={styles.buttonView}>
             <Button
