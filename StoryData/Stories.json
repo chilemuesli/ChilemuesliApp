@@ -89,7 +89,7 @@
     },
     {
         "id": 9,
-        "title": "Besucher Müsli",
+        "title": "Besucher-Müsli",
         "article": "Das",
         "avatar": "09/avatar.jpg",
         "imageFiles": ["09/avatar.jpg"],
@@ -125,7 +125,7 @@
         "id": 12,
         "title": "Chor-Müsli",
         "article": "Die",
-        "avatar": "02/avatar.jpg",
+        "avatar": "12/avatar.jpg",
         "imageFiles": ["12/avatar.jpg"],
         "audioFile": "12/story.mp4",
         "description": "Der Müsli Chor hat ein schwieriges Jahr hinter sich. Sie freuen sich sehr, dass sie wieder singen dürfen, doch sie waren nicht untätig und haben sogar online gesungen. Doch nun proben sie wieder am Donnerstagabend hier in der Kirche.",
