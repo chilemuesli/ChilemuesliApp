@@ -94,7 +94,7 @@
         "avatar": "09/avatar.jpg",
         "imageFiles": ["09/avatar.jpg"],
         "audioFile": "09/story.mp4",
-        "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+        "description": "Die Kirche ist tagsüber offen, auch wenn kein Gottesdienst stattfindet. Dieses Müsli geniesst einfach die Stille in der Kirche und entdeckt ein besonderes Buch. Hast du es auch entdeckt? Du darfst gerne auch etwas in unser Gebetsbuch schreiben.",
         "major": 8340,
         "minor": 9
     },
@@ -105,6 +105,7 @@
         "avatar": "10/avatar.jpg",
         "imageFiles": ["10/avatar.jpg"],
         "audioFile": "10/story.mp4",
+        "copyrightNotice":"Lied: Säge, T/M: Markus Dolder, ©Creation-Music Schweiz",
         "description": "Die Müsli Band macht regelmässig Musik in der Kirche. Warum sie im Gottesdienst Musik machen und was ihre Musik mit Gott zu tun hat, erzählen sie selber.",
         "major": 8340,
         "minor": 10
@@ -116,7 +117,7 @@
         "avatar": "11/avatar.jpg",
         "imageFiles": ["11/avatar.jpg"],
         "audioFile": "11/story.mp4",
-        "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+        "description": "Herr und Frau Müsli sind schon lange ein paar und endlich ist es so weit, der grosse Tag ist da. Sie sind in der Kirche, um ihren Bund vor Gott, ihrer Familie, Freunden und Bekannten festzumachen und Ja zu einander zu sagen. Der Pfarrer begrüsst sie gerade, hör doch rein.",
         "major": 8340,
         "minor": 11
     },
@@ -149,7 +150,7 @@
         "avatar": "14/avatar.jpg",
         "imageFiles": ["14/avatar.jpg"],
         "audioFile": "14/story.mp4",
-        "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+        "description": "In der Kirche fällt auch mal eine Reparatur an oder es wird eine Bühne aufgebaut für ein Theater oder der Christbaum wird aufgestellt, da ist das Handwerker-Müsli zur Stelle und hilft. Es ist auch gerade in Aktion. Siehst du es schon?",
         "major": 8340,
         "minor": 14
     },
@@ -160,7 +161,7 @@
         "avatar": "15/avatar.jpg",
         "imageFiles": ["15/avatar.jpg"],
         "audioFile": "15/story.mp4",
-        "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+        "description": "Herr Müsli ist schon alt. Er mag nicht mehr, er hat es im Kreuz und das Leben macht ihm zu schaffen. Am besten hörst du ihm zu.",
         "major": 8340,
         "minor": 15
     },

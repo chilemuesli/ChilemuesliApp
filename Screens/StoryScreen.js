@@ -204,10 +204,17 @@ export default class StoryScreen extends React.Component {
           />
         );
       }
+      let copyright = <View />;
+      if (story.copyrightNotice) {
+        copyright = (
+          <MyText style={styles.copyrightText}>{story.copyrightNotice}</MyText>
+        );
+      }
       content = (
         <View>
           {title}
           {video}
+          {copyright}
           <MyText style={styles.contentText}>{story.description}</MyText>
         </View>
       );
@@ -229,6 +236,10 @@ const styles = StyleSheet.create({
   },
   topTitle: {
     textAlign: 'center',
+  },
+  copyrightText: {
+    marginTop: 10,
+    fontSize: 14,
   },
   contentText: {
     marginTop: 20,
