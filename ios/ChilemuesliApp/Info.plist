@@ -41,6 +41,8 @@
 	<string>Chilemues.li braucht Zugriff auf deinen Standort um zu erkennen ob du dich in der Nähe eines Müslis befindest.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Chilemues.li braucht Zugriff auf deinen Standort um zu erkennen ob du dich in der Nähe eines Müslis befindest.</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Chilemues.li braucht Zugriff auf Bluetooth um zu erkennen ob du dich in der Nähe eines Müslis befindest.</string>
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>Chilemues.li braucht Zugriff auf Bluetooth um zu erkennen ob du dich in der Nähe eines Müslis befindest.</string>
 	<key>UILaunchStoryboardName</key>
