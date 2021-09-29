@@ -57,36 +57,12 @@ public class Setup {
             Log.i("INFO", "Target folder creation succeded: " + success);
             // Analyzing all file on assets subfolder
             for(String filename : files) {
-                InputStream in = null;
-                OutputStream out = null;
-
-
+                String assetPath = name + "/" + filename;
                 if (success) {
-                    // Moving all the files to data dir
-                    try {
-                        in = assetManager.open(name + "/" +filename);
-                        out = new FileOutputStream(targetFolder + filename);
-                        Log.i("INFO", "Copy to: " + targetFolder + filename);
-                        copyFile(in, out);
-                        in.close();
-                        in = null;
-                        out.flush();
-                        out.close();
-                        out = null;
-                    } catch(IOException e) {
-                        Log.e("ERROR", "Failed to copy asset file: " + filename, e);
-                    } finally {
-                        // Edit 3 (after MMs comment)
-                        try {
-                            in.close();
-                            in = null;
-                        } catch (Exception e){}
-                        try {
-                            out.flush();
-                            out.close();
-                            out = null;
-                        } catch (Exception e){}
-
+                    if (isDirectory(assetManager, assetPath)){
+                        copyFolder(assetPath);
+                    } else {
+                        copyFile(assetManager, targetFolder, filename, assetPath);
                     }
                 }
                 else {
@@ -101,8 +77,35 @@ public class Setup {
         }
     }
 
+    private static void copyFile(AssetManager assetManager, String targetFolder, String filename, String assetPath) {
+        // Moving the file to data dir
+        InputStream in = null;
+        OutputStream out = null;
+        try {
+
+            in = assetManager.open(assetPath);
+            out = new FileOutputStream(targetFolder + filename);
+            Log.i("INFO", "Copy to: " + targetFolder + filename);
+            copyFileInToOut(in, out);
+        } catch(IOException e) {
+            Log.e("ERROR", "Failed to copy asset file: " + filename, e);
+        } finally {
+            // Edit 3 (after MMs comment)
+            try {
+                in.close();
+                in = null;
+            } catch (Exception e){}
+            try {
+                out.flush();
+                out.close();
+                out = null;
+            } catch (Exception e){}
+
+        }
+    }
+
     // Method used by copyAssets() on purpose to copy a file.
-    private static void copyFile(InputStream in, OutputStream out) throws IOException {
+    private static void copyFileInToOut(InputStream in, OutputStream out) throws IOException {
         byte[] buffer = new byte[4096];
         int read;
         while((read = in.read(buffer)) != -1) {
@@ -118,5 +121,14 @@ public class Setup {
             }
         }
         return directoryToBeDeleted.delete();
+    }
+
+    private static boolean isDirectory(AssetManager assetManager, String assetPath){
+        try {
+            return(assetManager.list(assetPath).length>=1);
+        } catch (IOException e) {
+            // ignore
+        }
+        return false;
     }
 }
