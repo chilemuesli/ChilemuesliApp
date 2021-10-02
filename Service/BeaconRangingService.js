@@ -18,7 +18,7 @@ export default class BeaconRangingService {
 
   // will be set as a reference to "beaconsDidRange" event:
   beaconsDidRangeEvent = null;
-  rangedBeaconsUUIDMap = new Map();
+  rangedBeaconsUUIDMap = {};
   majorToBeFound = '';
   minorToBeFound = '';
 
@@ -30,8 +30,8 @@ export default class BeaconRangingService {
       console.log('Running on Android');
       console.log('Android permissions are handled in native app code.');
     }
-    this.rangedBeaconsUUIDMap.set(UUID_1, []);
-    this.rangedBeaconsUUIDMap.set(UUID_2, []);
+    this.rangedBeaconsUUIDMap[UUID_1] = [];
+    this.rangedBeaconsUUIDMap[UUID_2] = [];
   }
 
   startRanging(
@@ -45,13 +45,13 @@ export default class BeaconRangingService {
     this.minorToBeFound = minorToFind;
     Beacons.startRangingBeaconsInRegion(this.region1)
       .then(() => console.log('Beacons ranging started successfully'))
-      .catch(error =>
+      .catch((error) =>
         console.log(`Beacons ranging not started, error: ${error}`),
       );
     // Range for beacons inside the other region
     Beacons.startRangingBeaconsInRegion(this.region2)
       .then(() => console.log('Beacons ranging started successfully'))
-      .catch(error =>
+      .catch((error) =>
         console.log(`Beacons ranging not started, error: ${error}`),
       );
 
@@ -62,10 +62,11 @@ export default class BeaconRangingService {
 
     this.beaconsDidRangeEvent = Beacons.BeaconsEventEmitter.addListener(
       'beaconsDidRange',
-      data => {
+      (data) => {
         console.log('beaconsDidRange data: ', data);
         const {beacons} = data;
-        this.rangedBeaconsUUIDMap = this.convertRangingArrayToMap(beacons);
+        this.convertRangingArrayToMap(beacons);
+        console.log('rangedBeaconsUUIDMap', this.rangedBeaconsUUIDMap);
         let beaconToBeFound = this.findFirstBeaconWithIdentifierToFind(UUID_1);
         if (beaconToBeFound != null) {
           console.log('Calling listener');
@@ -82,7 +83,7 @@ export default class BeaconRangingService {
     );
 
     // listen bluetooth state change event
-    BluetoothState.onStateChange(bluetoothState => {
+    BluetoothState.onStateChange((bluetoothState) => {
       bluetoothStateListener(bluetoothState);
     });
   }
@@ -91,13 +92,13 @@ export default class BeaconRangingService {
     // stop ranging beacons:
     Beacons.stopRangingBeaconsInRegion(this.region1)
       .then(() => console.log('Beacons ranging stopped successfully'))
-      .catch(error =>
+      .catch((error) =>
         console.log(`Beacons ranging not stopped, error: ${error}`),
       );
 
     Beacons.stopRangingBeaconsInRegion(this.region2)
       .then(() => console.log('Beacons ranging stopped successfully'))
-      .catch(error =>
+      .catch((error) =>
         console.log(`Beacons ranging not stopped, error: ${error}`),
       );
 
@@ -106,28 +107,32 @@ export default class BeaconRangingService {
   }
 
   convertRangingArrayToMap(rangedBeacon) {
-    console.log('this.rangedBeaconsUUIDMap: ' + this.rangedBeaconsUUIDMap);
-    rangedBeacon.forEach(beacon => {
+    // clear map
+    this.rangedBeaconsUUIDMap[UUID_1] = [];
+    this.rangedBeaconsUUIDMap[UUID_2] = [];
+    rangedBeacon.forEach((beacon) => {
       if (beacon.uuid.length > 0) {
         const uuid = beacon.uuid.toUpperCase();
-        const rangedBeacons = this.rangedBeaconsUUIDMap
-          .get(uuid)
-          .filter(rangedBeac => rangedBeac === uuid);
-
-        this.rangedBeaconsUUIDMap.set(uuid, [...rangedBeacons, beacon]);
+        this.rangedBeaconsUUIDMap[uuid] = this.rangedBeaconsUUIDMap[uuid] || [];
+        this.rangedBeaconsUUIDMap[uuid].push(beacon);
       }
     });
-    return this.rangedBeaconsUUIDMap;
+    console.log('this.rangedBeaconsUUIDMap: ' + this.rangedBeaconsUUIDMap);
   }
 
   findFirstBeaconWithIdentifierToFind(uuid) {
     const majorMinorToBeFound = this.majorToBeFound + '.' + this.minorToBeFound;
-    let rangedBeacons = this.rangedBeaconsUUIDMap.get(uuid);
+    let rangedBeacons = this.rangedBeaconsUUIDMap[uuid];
     let beaconToBeFound = null;
-    rangedBeacons.forEach(beacon => {
+    console.log(
+      'Ranging: ' + majorMinorToBeFound + ' UUID: ' + uuid + ' RangedBeacons: ',
+      rangedBeacons,
+    );
+    rangedBeacons.forEach((beacon) => {
       const majorMinor = beacon.major + '.' + beacon.minor;
+      console.log('Checking: ' + majorMinor);
       if (majorMinor === majorMinorToBeFound) {
-        console.log('Ranging: ' + majorMinorToBeFound);
+        console.log('Found: ' + majorMinor);
         beaconToBeFound = beacon;
       }
     });
