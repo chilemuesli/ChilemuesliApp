@@ -21,6 +21,22 @@ export default class StoryListScreen extends React.Component {
   }
 
   componentDidMount() {
+    this.loadData();
+    this.willFocusSubscription = this.props.navigation.addListener(
+      'willFocus',
+      () => {
+        this.loadData();
+      },
+    );
+  }
+
+  componentWillUnmount() {
+    if (this.willFocusSubscription){
+      this.willFocusSubscription.remove();
+    }
+  }
+
+  loadData() {
     this.state.readStoryService
       .readStories()
       .then((result) => {
