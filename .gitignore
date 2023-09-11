@@ -8,3 +8,4 @@ main.jsbundle
 android/local.properties
 ios/Pods/
 .vscode
+*.hprof

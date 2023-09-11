@@ -1,7 +1,7 @@
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-platform :ios, '10.0'
+platform :ios, '11.0'
 
 
 target 'ChilemuesliApp' do
@@ -36,12 +36,14 @@ target 'ChilemuesliApp' do
   # pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
   # pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   # pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+  
 
   # pod 'RNBluetoothStateManager', :path => '../node_modules/react-native-bluetooth-state-manager'
   # pod 'RNFS', :path => '../node_modules/react-native-fs'
   # pod 'react-native-video', :path => '../node_modules/react-native-video/react-native-video.podspec'
   
   # pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+  
   
   config = use_native_modules!
   use_react_native!(:path => config["reactNativePath"])
@@ -65,6 +67,7 @@ end
 
 post_install do |installer|
   react_native_post_install(installer)
+  __apply_Xcode_12_5_M1_post_install_workaround(installer)
 end
 
 # post_install do |installer|
