@@ -78,7 +78,7 @@ project.ext.react = [
     enableHermes: false,  // clean and rebuild if changing
 ]
 
-apply from: "../../node_modules/react-native/react.gradle"
+//apply from: "../../node_modules/react-native/react.gradle"
 
 /**
  * Architectures to build native code for in debug.
@@ -133,6 +133,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 4
         versionName "1.3"
+        multiDexEnabled true
     }
     splits {
         abi {
@@ -187,7 +188,9 @@ dependencies {
     implementation project(':react-native-vector-icons')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation project(':react-native-bluetooth-state-manager')
-    implementation "com.facebook.react:react-native:+"  // From node_modules
+    //implementation "com.facebook.react:react-native:+"  // From node_modules
+    //implementation 'com.facebook.react:react-native:0.66.5!!'
+    implementation "com.facebook.react:react-native"  // From node_modules
     implementation project(':react-native-fs')
     implementation project(':react-native-fs')
     if (enableHermes) {
