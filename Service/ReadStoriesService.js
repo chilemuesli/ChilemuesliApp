@@ -19,10 +19,10 @@ export default class ReadStoriesService {
     return new Promise((resolve, reject) => {
       this.rnfs
         .readFile(baseDirectory + 'Stories.json')
-        .then(result => {
+        .then((result) => {
           console.log('File loaded, try to parse it.');
           result = JSON.parse(result);
-          result.forEach(story => {
+          result.forEach((story) => {
             if (story.audioFile !== undefined && story.audioFile !== '') {
               story.audioFile = baseDirectory + story.audioFile;
             }
@@ -36,7 +36,7 @@ export default class ReadStoriesService {
           });
           resolve(result);
         })
-        .catch(err => {
+        .catch((err) => {
           console.log('ERROR!');
           console.log(err.message, err.code);
           reject(err);

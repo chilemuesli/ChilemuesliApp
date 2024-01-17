@@ -1,6 +1,6 @@
 import {Platform} from 'react-native';
+import {DeviceEventEmitter} from 'react-native';
 import Beacons from 'react-native-beacons-manager';
-import BluetoothState from 'react-native-bluetooth-state-manager';
 
 /**
  * uuid of YOUR BEACON (change to yours)
@@ -25,7 +25,7 @@ export default class BeaconRangingService {
   constructor() {
     if (Platform.OS === 'ios') {
       console.log('Running on iOS');
-      Beacons.requestAlwaysAuthorization();
+      Beacons.requestWhenInUseAuthorization();
     } else if (Platform === 'android') {
       console.log('Running on Android');
       console.log('Android permissions are handled in native app code.');
@@ -34,37 +34,25 @@ export default class BeaconRangingService {
     this.rangedBeaconsUUIDMap[UUID_2] = [];
   }
 
-  startRanging(
+  async startRanging(
     rangingListener,
     bluetoothStateListener,
     majorToFind,
     minorToFind,
   ) {
-    // Range for beacons inside the region
     this.majorToBeFound = majorToFind;
     this.minorToBeFound = minorToFind;
-    Beacons.startRangingBeaconsInRegion(this.region1)
-      .then(() => console.log('Beacons ranging started successfully'))
-      .catch((error) =>
-        console.log(`Beacons ranging not started, error: ${error}`),
-      );
-    // Range for beacons inside the other region
-    Beacons.startRangingBeaconsInRegion(this.region2)
-      .then(() => console.log('Beacons ranging started successfully'))
-      .catch((error) =>
-        console.log(`Beacons ranging not started, error: ${error}`),
-      );
 
-    // update location to ba able to monitor:
     if (Platform.OS === 'ios') {
-      Beacons.startUpdatingLocation();
+      this.startRangingiOS(rangingListener, bluetoothStateListener);
+    } else if (Platform === 'android') {
+      await this.startRangingAndroid(rangingListener, bluetoothStateListener);
     }
-
-    this.beaconsDidRangeEvent = Beacons.BeaconsEventEmitter.addListener(
+    this.beaconsDidRangeEvent = DeviceEventEmitter.addListener(
       'beaconsDidRange',
       (data) => {
         console.log('beaconsDidRange data: ', data);
-        const {beacons} = data;
+        const {beacons} = data.beacons;
         this.convertRangingArrayToMap(beacons);
         console.log('rangedBeaconsUUIDMap', this.rangedBeaconsUUIDMap);
         let beaconToBeFound = this.findFirstBeaconWithIdentifierToFind(UUID_1);
@@ -81,11 +69,28 @@ export default class BeaconRangingService {
         console.log('Beacon to be found: ' + beaconToBeFound);
       },
     );
+  }
 
-    // listen bluetooth state change event
-    BluetoothState.onStateChange((bluetoothState) => {
-      bluetoothStateListener(bluetoothState);
-    });
+  startRangingiOS(rangingListener, bluetoothStateListener) {
+    Beacons.startMonitoringForRegion(this.region1);
+    Beacons.startRangingBeaconsInRegion(this.region1);
+    Beacons.startMonitoringForRegion(this.region2);
+    Beacons.startRangingBeaconsInRegion(this.region2);
+    Beacons.startUpdatingLocation();
+  }
+
+  async startRangingAndroid(rangingListener, bluetoothStateListener) {
+    // Tells the library to detect iBeacons
+    Beacons.detectIBeacons();
+
+    // Start detecting all iBeacons in the nearby
+    try {
+      await Beacons.startRangingBeaconsInRegion(this.region1);
+      await Beacons.startRangingBeaconsInRegion(this.region2);
+      console.log('Beacons ranging started successfully!');
+    } catch (error) {
+      console.log(`Beacons ranging not started, error: ${error}`);
+    }
   }
 
   stopRanging() {
