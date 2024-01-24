@@ -12,10 +12,10 @@ const IDENTIFIER_1 = 'Holy';
 const UUID_2 = 'AB9F6774-7413-4806-8497-A30B7C1A9DE4';
 const IDENTIFIER_2 = 'April';
 
-export default class BeaconRangingService {
-  region1 = {identifier: IDENTIFIER_1, uuid: UUID_1};
-  region2 = {identifier: IDENTIFIER_2, uuid: UUID_2};
+const region1 = {identifier: IDENTIFIER_1, uuid: UUID_1};
+const region2 = {identifier: IDENTIFIER_2, uuid: UUID_2};
 
+export default class BeaconRangingService {
   // will be set as a reference to "beaconsDidRange" event:
   beaconsDidRangeEvent = null;
   rangedBeaconsUUIDMap = {};
@@ -43,11 +43,14 @@ export default class BeaconRangingService {
     this.majorToBeFound = majorToFind;
     this.minorToBeFound = minorToFind;
 
+    console.log('Start ranging');
     if (Platform.OS === 'ios') {
-      this.startRangingiOS(rangingListener, bluetoothStateListener);
+      this.startRangingiOS();
     } else if (Platform === 'android') {
-      await this.startRangingAndroid(rangingListener, bluetoothStateListener);
+      await this.startRangingAndroid();
     }
+    console.log('Start finished');
+    console.log('Add listener');
     this.beaconsDidRangeEvent = DeviceEventEmitter.addListener(
       'beaconsDidRange',
       (data) => {
@@ -69,24 +72,32 @@ export default class BeaconRangingService {
         console.log('Beacon to be found: ' + beaconToBeFound);
       },
     );
+    console.log('Add listener finished');
   }
 
-  startRangingiOS(rangingListener, bluetoothStateListener) {
-    Beacons.startMonitoringForRegion(this.region1);
-    Beacons.startRangingBeaconsInRegion(this.region1);
-    Beacons.startMonitoringForRegion(this.region2);
-    Beacons.startRangingBeaconsInRegion(this.region2);
+  startRangingiOS() {
+    console.log('Start monitoring for region 1!');
+    Beacons.startMonitoringForRegion(region1);
+    console.log('Start ranging for region 1!');
+    Beacons.startRangingBeaconsInRegion(region1);
+    console.log('Start monitoring for region 2!');
+    Beacons.startMonitoringForRegion(region2);
+    console.log('Start ranging for region 2!');
+    Beacons.startRangingBeaconsInRegion(region2);
+    console.log('Start updating location!');
     Beacons.startUpdatingLocation();
   }
 
-  async startRangingAndroid(rangingListener, bluetoothStateListener) {
+  async startRangingAndroid() {
     // Tells the library to detect iBeacons
     Beacons.detectIBeacons();
 
     // Start detecting all iBeacons in the nearby
     try {
-      await Beacons.startRangingBeaconsInRegion(this.region1);
-      await Beacons.startRangingBeaconsInRegion(this.region2);
+      console.log('Start ranging for region 1!');
+      await Beacons.startRangingBeaconsInRegion(region1);
+      console.log('Start monitoring for region 2!');
+      await Beacons.startRangingBeaconsInRegion(region2);
       console.log('Beacons ranging started successfully!');
     } catch (error) {
       console.log(`Beacons ranging not started, error: ${error}`);
@@ -95,13 +106,13 @@ export default class BeaconRangingService {
 
   stopRanging() {
     // stop ranging beacons:
-    Beacons.stopRangingBeaconsInRegion(this.region1)
+    Beacons.stopRangingBeaconsInRegion(region1)
       .then(() => console.log('Beacons ranging stopped successfully'))
       .catch((error) =>
         console.log(`Beacons ranging not stopped, error: ${error}`),
       );
 
-    Beacons.stopRangingBeaconsInRegion(this.region2)
+    Beacons.stopRangingBeaconsInRegion(region2)
       .then(() => console.log('Beacons ranging stopped successfully'))
       .catch((error) =>
         console.log(`Beacons ranging not stopped, error: ${error}`),

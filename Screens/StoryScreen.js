@@ -100,8 +100,7 @@ export default class StoryScreen extends React.Component {
       if (value !== null && value === 'true') {
         this.setState({found: true});
       } else {
-        //this.startRangingForBeacon();
-        console.log(this.state.story.iBeaconName + ' was not found before.');
+        console.log(this.state.story.id + ' was not found before.');
       }
     } catch (e) {
       console.log(e);
