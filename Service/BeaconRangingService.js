@@ -53,40 +53,77 @@ export default class BeaconRangingService {
     }
     console.log('Start finished');
     console.log('Add listener');
-    this.beaconsDidRangeEvent = DeviceEventEmitter.addListener(
-      'beaconsDidRange',
-      (data) => {
-        console.log('beaconsDidRange data: ', data);
-        const beacons = data.beacons;
-        console.log('beacons: ', beacons);
-        this.convertRangingArrayToMap(beacons);
-        console.log('rangedBeaconsUUIDMap', this.rangedBeaconsUUIDMap);
-        let beaconToBeFound = this.findFirstBeaconWithIdentifierToFind(UUID_1);
-        if (beaconToBeFound != null) {
-          console.log('Calling listener');
-          rangingListener(beaconToBeFound);
-        } else {
-          beaconToBeFound = this.findFirstBeaconWithIdentifierToFind(UUID_2);
-          if (beaconToBeFound != null) {
-            console.log('Calling listener');
-            rangingListener(beaconToBeFound);
-          }
-        }
-        console.log('Beacon to be found: ' + beaconToBeFound);
-      },
-    );
+    if (Platform.OS === 'ios') {
+      this.beaconsDidRangeEvent = Beacons.BeaconsEventEmitter.addListener(
+        'beaconsDidRange',
+        (data) => {
+          this.beaconsDidRange(data, rangingListener);
+        },
+      );
+    } else if (Platform.OS === 'android') {
+      this.beaconsDidRangeEvent = DeviceEventEmitter.addListener(
+        'beaconsDidRange',
+        (data) => {
+          this.beaconsDidRange(data, rangingListener);
+        },
+      );
+    }
     console.log('Add listener finished');
+  }
+
+  beaconsDidRange(data, rangingListener) {
+    console.log('beaconsDidRange data: ', data);
+    const beacons = data.beacons;
+    console.log('beacons: ', beacons);
+    this.convertRangingArrayToMap(beacons);
+    console.log('rangedBeaconsUUIDMap', this.rangedBeaconsUUIDMap);
+    let beaconToBeFound = this.findFirstBeaconWithIdentifierToFind(UUID_1);
+    if (beaconToBeFound != null) {
+      console.log('Calling listener');
+      rangingListener(beaconToBeFound);
+    } else {
+      beaconToBeFound = this.findFirstBeaconWithIdentifierToFind(UUID_2);
+      if (beaconToBeFound != null) {
+        console.log('Calling listener');
+        rangingListener(beaconToBeFound);
+      }
+    }
+    console.log('Beacon to be found: ' + beaconToBeFound);
   }
 
   startRangingiOS() {
     console.log('Start monitoring for region 1!');
-    Beacons.startMonitoringForRegion(region1);
+    Beacons.startMonitoringForRegion(region1)
+      .then(() =>
+        console.log('Beacons monitoring for region 1 started successfully'),
+      )
+      .catch((error) =>
+        console.log(`Beacons monitoring not started, error: ${error}`),
+      );
     console.log('Start ranging for region 1!');
-    Beacons.startRangingBeaconsInRegion(region1);
+    Beacons.startRangingBeaconsInRegion(region1)
+      .then(() =>
+        console.log('Beacons ranging for region 1 started successfully'),
+      )
+      .catch((error) =>
+        console.log(`Beacons ranging not started, error: ${error}`),
+      );
     console.log('Start monitoring for region 2!');
-    Beacons.startMonitoringForRegion(region2);
+    Beacons.startMonitoringForRegion(region2)
+      .then(() =>
+        console.log('Beacons monitoring for region 2 started successfully'),
+      )
+      .catch((error) =>
+        console.log(`Beacons monitoring not started, error: ${error}`),
+      );
     console.log('Start ranging for region 2!');
-    Beacons.startRangingBeaconsInRegion(region2);
+    Beacons.startRangingBeaconsInRegion(region2)
+      .then(() =>
+        console.log('Beacons ranging for region 2 started successfully'),
+      )
+      .catch((error) =>
+        console.log(`Beacons ranging not started, error: ${error}`),
+      );
     console.log('Start updating location!');
     Beacons.startUpdatingLocation();
   }
