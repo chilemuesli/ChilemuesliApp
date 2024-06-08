@@ -58,7 +58,8 @@ export default class BeaconRangingService {
       'beaconsDidRange',
       (data) => {
         console.log('beaconsDidRange data: ', data);
-        const {beacons} = data.beacons;
+        const beacons = data.beacons;
+        console.log('beacons: ', beacons);
         this.convertRangingArrayToMap(beacons);
         console.log('rangedBeaconsUUIDMap', this.rangedBeaconsUUIDMap);
         let beaconToBeFound = this.findFirstBeaconWithIdentifierToFind(UUID_1);
@@ -139,6 +140,8 @@ export default class BeaconRangingService {
           this.rangedBeaconsUUIDMap[uuid].push(beacon);
         }
       });
+    } else {
+      console.log('rangedBeacon is undefined!!!');
     }
     console.log('this.rangedBeaconsUUIDMap: ' + this.rangedBeaconsUUIDMap);
   }
