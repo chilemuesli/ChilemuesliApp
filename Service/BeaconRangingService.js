@@ -26,7 +26,6 @@ export default class BeaconRangingService {
     if (Platform.OS === 'ios') {
       console.log('Running on iOS');
       Beacons.requestWhenInUseAuthorization();
-      Beacons.detectIBeacons();
     } else if (Platform === 'android') {
       console.log('Running on Android');
       console.log('Android permissions are handled in native app code.');
