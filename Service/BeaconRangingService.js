@@ -26,6 +26,7 @@ export default class BeaconRangingService {
     if (Platform.OS === 'ios') {
       console.log('Running on iOS');
       Beacons.requestWhenInUseAuthorization();
+      Beacons.detectIBeacons();
     } else if (Platform === 'android') {
       console.log('Running on Android');
       console.log('Android permissions are handled in native app code.');
@@ -45,8 +46,10 @@ export default class BeaconRangingService {
 
     console.log('Start ranging');
     if (Platform.OS === 'ios') {
+      console.log('Start ranging iOS');
       this.startRangingiOS();
-    } else if (Platform === 'android') {
+    } else if (Platform.OS === 'android') {
+      console.log('Start ranging Android async');
       await this.startRangingAndroid();
     }
     console.log('Start finished');
@@ -89,6 +92,7 @@ export default class BeaconRangingService {
   }
 
   async startRangingAndroid() {
+    console.log('Start ranging android impl');
     // Tells the library to detect iBeacons
     Beacons.detectIBeacons();
 
@@ -126,13 +130,16 @@ export default class BeaconRangingService {
     // clear map
     this.rangedBeaconsUUIDMap[UUID_1] = [];
     this.rangedBeaconsUUIDMap[UUID_2] = [];
-    rangedBeacon.forEach((beacon) => {
-      if (beacon.uuid.length > 0) {
-        const uuid = beacon.uuid.toUpperCase();
-        this.rangedBeaconsUUIDMap[uuid] = this.rangedBeaconsUUIDMap[uuid] || [];
-        this.rangedBeaconsUUIDMap[uuid].push(beacon);
-      }
-    });
+    if (!(rangedBeacon === undefined)) {
+      rangedBeacon.forEach((beacon, index, array) => {
+        if (beacon.uuid.length > 0) {
+          const uuid = beacon.uuid.toUpperCase();
+          this.rangedBeaconsUUIDMap[uuid] =
+            this.rangedBeaconsUUIDMap[uuid] || [];
+          this.rangedBeaconsUUIDMap[uuid].push(beacon);
+        }
+      });
+    }
     console.log('this.rangedBeaconsUUIDMap: ' + this.rangedBeaconsUUIDMap);
   }
 

@@ -8,7 +8,8 @@ bundle directly from the development server. Below you can see all the possible 
 and their defaults. If you decide to add a configuration block, make sure to add it before the
 `apply from: "../../node_modules/react-native/react.gradle"` line.
 */
-
+/*
+// Example!!
 project.ext.react = [
   // the name of the generated asset file containing your JS bundle
   //bundleAssetName: "index.android.bundle",
@@ -71,9 +72,15 @@ project.ext.react = [
   // supply additional arguments to the packager
   extraPackagerArgs: []
 ]
- 
+*/
 
 project.ext.react = [
+    // whether to bundle JS and assets in debug mode
+    // default is false
+    bundleInDebug: true,
+
+    // whether to bundle JS and assets in release mode
+    bundleInRelease: true,
     entryFile: "index.js",
     enableHermes: false,  // clean and rebuild if changing
 ]
