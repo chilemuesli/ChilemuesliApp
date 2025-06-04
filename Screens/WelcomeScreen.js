@@ -53,7 +53,9 @@ export default class WelcomeScreen extends React.Component {
 
   openTravellingInstructionsView() {
     console.log('openTravellingInstructionsView clicked');
-    this.props.navigation.navigate('TravelInstructions', {});
+    this.props.navigation.navigate('TravelInstructions', {
+      title: 'Anreise',
+    });
   }
 
   openContactView() {

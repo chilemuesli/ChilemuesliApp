@@ -10,6 +10,7 @@ import {
   BUTTON_STYLES, 
   BUTTON_TITLE_STYLES
 } from '../Styles/Common';
+import {useRoute, useNavigation} from '@react-navigation/native';
 
 const ICON_SIZE = 40;
 const churchAddress = {
@@ -18,58 +19,60 @@ const churchAddress = {
   query: 'Reformierte Kirchgemeinde Hinwil',
   end: 'Reformierte Kirchgemeinde Hinwil',
 };
-export default class TravelInstructionsScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Anreise',
-  };
-  constructor(props) {
-    super(props);
-  }
+const TravelInstructionsScreen = () => {
+  const navigation = useNavigation();
+  const route = useRoute();
 
-  render() {
-    return (
-      <ScrollView style={styles.scrollView}>
-        <View style={styles.contentView}>
-          <MyTitle style={styles.topTitle}>Anreise</MyTitle>
-          <View style={styles.iconView}>
-            <Icon name="train" size={ICON_SIZE} color={COLOR_PRIMARY} />
-          </View>
-          <MyText>Mit der S14 bis zum Bahnhof Hinwil.</MyText>
-          <View style={styles.iconView}>
-            <Icon name="bus" size={ICON_SIZE} color={COLOR_PRIMARY} />
-          </View>
-          <MyText>
-            Mit den Bussen der Linien 870 oder 875 bis Hinwil, Gstalden.
-          </MyText>
-          <MyText>
-            {
-              'Von hier sind es noch drei Minuten Fussmarsch zur Reformierten Kirche.'
-            }
-          </MyText>
-          <View style={styles.iconView}>
-            <Icon name="car" size={ICON_SIZE} color={COLOR_PRIMARY} />
-          </View>
-          <MyText>
-            {
-              'Reformierte Kirchgemeinde Hinwil\nFelsenhofstrasse 9\n8340 Hinwil'
-            }
-          </MyText>
-          <View style={styles.buttonView}>
-            <Button
-              onPress={() => createOpenLink(churchAddress)}
-              buttonStyle={BUTTON_STYLES}
-              titleStyle={BUTTON_TITLE_STYLES}
-              title="Auf der Karte zeigen"
-            />
-          </View>
-          <MyText>
-            Mit dem Auto kann direkt bis zur Kirche gefahren werden.
-          </MyText>
+  // Screen-Titel aus den Parametern setzen oder Default-Wert verwenden
+  React.useLayoutEffect(() => {
+    navigation.setOptions({
+      title: route.params?.title || 'Anreise',
+    });
+  }, [navigation, route.params?.title]);
+
+  return (
+    <ScrollView style={styles.scrollView}>
+      <View style={styles.contentView}>
+        <MyTitle style={styles.topTitle}>Anreise</MyTitle>
+        <View style={styles.iconView}>
+          <Icon name="train" size={ICON_SIZE} color={COLOR_PRIMARY} />
         </View>
-      </ScrollView>
-    );
-  }
-}
+        <MyText>Mit der S14 bis zum Bahnhof Hinwil.</MyText>
+        <View style={styles.iconView}>
+          <Icon name="bus" size={ICON_SIZE} color={COLOR_PRIMARY} />
+        </View>
+        <MyText>
+          Mit den Bussen der Linien 870 oder 875 bis Hinwil, Gstalden.
+        </MyText>
+        <MyText>
+          {
+            'Von hier sind es noch drei Minuten Fussmarsch zur Reformierten Kirche.'
+          }
+        </MyText>
+        <View style={styles.iconView}>
+          <Icon name="car" size={ICON_SIZE} color={COLOR_PRIMARY} />
+        </View>
+        <MyText>
+          {
+            'Reformierte Kirchgemeinde Hinwil\nFelsenhofstrasse 9\n8340 Hinwil'
+          }
+        </MyText>
+        <View style={styles.buttonView}>
+          <Button
+            onPress={() => createOpenLink(churchAddress)}
+            buttonStyle={BUTTON_STYLES}
+            titleStyle={BUTTON_TITLE_STYLES}
+            title="Auf der Karte zeigen"
+          />
+        </View>
+        <MyText>
+          Mit dem Auto kann direkt bis zur Kirche gefahren werden.
+        </MyText>
+      </View>
+    </ScrollView>
+  );
+};
+
 const styles = StyleSheet.create({
   scrollView: {
     flex: 1,
@@ -94,3 +97,5 @@ const styles = StyleSheet.create({
     //textAlign: 'center',
   },
 });
+
+export default TravelInstructionsScreen;
