@@ -4,8 +4,12 @@ import MyText from '../Components/MyText';
 import MyTitle from '../Components/MyTitle';
 import createOpenLink from 'react-native-open-maps';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {Button} from 'react-native-elements';
-import {COLOR_PRIMARY} from '../Styles/Common';
+import {Button} from '@rneui/themed';
+import {
+  COLOR_PRIMARY, 
+  BUTTON_STYLES, 
+  BUTTON_TITLE_STYLES
+} from '../Styles/Common';
 
 const ICON_SIZE = 40;
 const churchAddress = {
@@ -53,6 +57,8 @@ export default class TravelInstructionsScreen extends React.Component {
           <View style={styles.buttonView}>
             <Button
               onPress={() => createOpenLink(churchAddress)}
+              buttonStyle={BUTTON_STYLES}
+              titleStyle={BUTTON_TITLE_STYLES}
               title="Auf der Karte zeigen"
             />
           </View>
@@ -80,8 +86,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   buttonView: {
-    flexGrow: 1,
-    justifyContent: 'center',
+    marginVertical: 20,
     alignItems: 'center',
     width: '100%',
   },

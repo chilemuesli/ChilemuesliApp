@@ -6,9 +6,9 @@ import {
   Dimensions,
   TouchableWithoutFeedback,
 } from 'react-native';
-import {Button} from 'react-native-elements';
+import {Button} from '@rneui/themed';
 import ReadStoriesService from '../Service/ReadStoriesService';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default class DebugScreen extends React.Component {
   static navigationOptions = {

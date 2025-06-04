@@ -1,80 +1,90 @@
 {
   "name": "ReactCommon",
   "module_name": "ReactCommon",
-  "version": "0.66.5",
+  "version": "0.77.2",
   "summary": "-",
   "homepage": "https://reactnative.dev/",
   "license": "MIT",
-  "authors": "Facebook, Inc. and its affiliates",
+  "authors": "Meta Platforms, Inc. and its affiliates",
   "platforms": {
-    "ios": "11.0"
+    "ios": "15.1"
   },
   "source": {
     "git": "https://github.com/facebook/react-native.git",
-    "tag": "v0.66.5"
+    "tag": "v0.77.2"
   },
   "header_dir": "ReactCommon",
-  "compiler_flags": "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -Wno-comma -Wno-shorten-64-to-32 -Wno-documentation",
+  "compiler_flags": "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -DFOLLY_HAVE_CLOCK_GETTIME=1 -Wno-comma -Wno-shorten-64-to-32 -Wno-documentation",
   "pod_target_xcconfig": {
-    "HEADER_SEARCH_PATHS": "\"$(PODS_ROOT)/boost\" \"$(PODS_ROOT)/RCT-Folly\" \"$(PODS_ROOT)/DoubleConversion\" \"$(PODS_ROOT)/Headers/Private/React-Core\"",
+    "HEADER_SEARCH_PATHS": "\"$(PODS_ROOT)/boost\" \"$(PODS_ROOT)/RCT-Folly\" \"$(PODS_ROOT)/DoubleConversion\" \"$(PODS_ROOT)/fast_float/include\" \"$(PODS_ROOT)/fmt/include\" \"$(PODS_ROOT)/Headers/Private/React-Core\"",
     "USE_HEADERMAP": "YES",
-    "CLANG_CXX_LANGUAGE_STANDARD": "c++14"
-  },
-  "dependencies": {
-    "React-logger": [
-      "0.66.5"
-    ]
+    "DEFINES_MODULE": "YES",
+    "CLANG_CXX_LANGUAGE_STANDARD": "c++20",
+    "GCC_WARN_PEDANTIC": "YES"
   },
   "subspecs": [
-    {
-      "name": "react_debug_core",
-      "source_files": "react/debug/*.{cpp,h}"
-    },
     {
       "name": "turbomodule",
       "dependencies": {
         "React-callinvoker": [
-          "0.66.5"
+          "0.77.2"
         ],
         "React-perflogger": [
-          "0.66.5"
-        ],
-        "React-Core": [
-          "0.66.5"
+          "0.77.2"
         ],
         "React-cxxreact": [
-          "0.66.5"
+          "0.77.2"
         ],
         "React-jsi": [
-          "0.66.5"
+          "0.77.2"
         ],
         "RCT-Folly": [
-          "2021.06.28.00-v2"
+          "2024.11.18.00"
         ],
-        "DoubleConversion": [
-
+        "React-logger": [
+          "0.77.2"
         ],
-        "glog": [
-
-        ]
+        "DoubleConversion": [],
+        "fast_float": [
+          "6.1.4"
+        ],
+        "fmt": [
+          "11.0.2"
+        ],
+        "glog": [],
+        "hermes-engine": []
       },
       "subspecs": [
         {
-          "name": "core",
-          "source_files": [
-            "react/nativemodule/core/ReactCommon/**/*.{cpp,h}",
-            "react/nativemodule/core/platform/ios/**/*.{mm,cpp,h}"
-          ]
+          "name": "bridging",
+          "dependencies": {
+            "React-jsi": [
+              "0.77.2"
+            ],
+            "hermes-engine": []
+          },
+          "source_files": "react/bridging/**/*.{cpp,h}",
+          "exclude_files": "react/bridging/tests",
+          "header_dir": "react/bridging",
+          "pod_target_xcconfig": {
+            "HEADER_SEARCH_PATHS": "\"$(PODS_TARGET_SRCROOT)/ReactCommon\" \"$(PODS_ROOT)/RCT-Folly\""
+          }
         },
         {
-          "name": "samples",
-          "source_files": [
-            "react/nativemodule/samples/ReactCommon/**/*.{cpp,h}",
-            "react/nativemodule/samples/platform/ios/**/*.{mm,cpp,h}"
-          ],
+          "name": "core",
+          "source_files": "react/nativemodule/core/ReactCommon/**/*.{cpp,h}",
+          "pod_target_xcconfig": {
+            "HEADER_SEARCH_PATHS": "\"$(PODS_TARGET_SRCROOT)/ReactCommon\" \"$(PODS_CONFIGURATION_BUILD_DIR)/React-debug/React_debug.framework/Headers\" \"$(PODS_CONFIGURATION_BUILD_DIR)/React-debug/React_featureflags.framework/Headers\" \"$(PODS_CONFIGURATION_BUILD_DIR)/React-utils/React_utils.framework/Headers\""
+          },
           "dependencies": {
-            "ReactCommon/turbomodule/core": [
-              "0.66.5"
+            "React-debug": [
+              "0.77.2"
+            ],
+            "React-featureflags": [
+              "0.77.2"
+            ],
+            "React-utils": [
+              "0.77.2"
             ]
           }
         }

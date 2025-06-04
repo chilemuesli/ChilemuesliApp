@@ -8,8 +8,8 @@
 import React from 'react';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import {createAppContainer} from 'react-navigation';
-import {createStackNavigator} from 'react-navigation-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import WelcomeScreen from './Screens/WelcomeScreen';
 import BeaconsDemoScreen from './Screens/BeaconsDemoScreen';
 import StoryListScreen from './Screens/StoryListScreen';
@@ -18,8 +18,8 @@ import WebScreen from './Screens/WebScreen';
 import ContactScreen from './Screens/ContactScreen';
 import DebugScreen from './Screens/DebugScreen';
 import TravelInstructionsScreen from './Screens/TravelInstructionsScreen';
-import {ThemeProvider} from 'react-native-elements';
-import {COLOR_PRIMARY, BORDER_RADIUS} from './Styles/Common';
+import { ThemeProvider } from '@rneui/themed';
+import { COLOR_PRIMARY, BORDER_RADIUS } from './Styles/Common';
 
 FontAwesome.loadFont();
 MaterialIcons.loadFont();
@@ -52,49 +52,29 @@ const theme = {
   },
 };
 
-const MainNavigator = createStackNavigator({
-  Home: {
-    screen: WelcomeScreen,
-    routeName: 'Home',
-  },
-  StoryList: {
-    screen: StoryListScreen,
-    routeName: 'StoryList',
-  },
-  Story: {
-    screen: StoryScreen,
-    routeName: 'Story',
-  },
-  WebViewer: {
-    screen: WebScreen,
-    routeName: 'WebViewer',
-  },
-  Contact: {
-    screen: ContactScreen,
-    routeName: 'Contact',
-  },
-  TravelInstructions: {
-    screen: TravelInstructionsScreen,
-    routeName: 'TravelInstructions',
-  },
-  Debug: {
-    screen: DebugScreen,
-    routeName: 'Test',
-  },
-  Test: {
-    screen: BeaconsDemoScreen,
-    routeName: 'Test',
-  },
-});
+const Stack = createStackNavigator();
 
-const AppContainer = createAppContainer(MainNavigator);
-
-export default class App extends React.Component {
-  render() {
-    return (
-      <ThemeProvider theme={theme}>
-        <AppContainer />
-      </ThemeProvider>
-    );
-  }
+export default function App() {
+  return (
+    <ThemeProvider theme={theme}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={WelcomeScreen} />
+          <Stack.Screen name="StoryList" component={StoryListScreen} />
+          <Stack.Screen 
+            name="StoryScreen"
+            component={StoryScreen}
+            options={({ route }) => ({ 
+              title: route.params?.selectedStory?.title || ''
+            })}
+          />
+          <Stack.Screen name="WebViewer" component={WebScreen} />
+          <Stack.Screen name="Contact" component={ContactScreen} />
+          <Stack.Screen name="TravelInstructions" component={TravelInstructionsScreen} />
+          <Stack.Screen name="Debug" component={DebugScreen} />
+          <Stack.Screen name="Test" component={BeaconsDemoScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </ThemeProvider>
+  );
 }

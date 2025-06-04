@@ -1,48 +1,63 @@
 {
   "name": "react-native-video",
-  "version": "5.2.1",
+  "version": "6.14.0",
   "summary": "A <Video /> element for react-native",
   "description": "A <Video /> element for react-native",
   "license": "MIT",
-  "authors": "Brent Vatne <brentvatne@gmail.com> (https://github.com/brentvatne)",
-  "homepage": "https://github.com/react-native-community/react-native-video",
+  "authors": "Community Contributors",
+  "homepage": "https://github.com/TheWidlarzGroup/react-native-video",
   "source": {
-    "git": "https://github.com/react-native-community/react-native-video.git",
-    "tag": "5.2.1"
+    "git": "https://github.com/TheWidlarzGroup/react-native-video.git",
+    "tag": "v6.14.0"
   },
   "platforms": {
-    "ios": "8.0",
-    "tvos": "9.0"
+    "ios": "13.0",
+    "tvos": "13.0",
+    "visionos": "1.0"
   },
-  "static_framework": true,
+  "compiler_flags": "-DRCT_NEW_ARCH_ENABLED=1 -DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -DFOLLY_HAVE_CLOCK_GETTIME=1 -Wno-comma -Wno-shorten-64-to-32",
   "dependencies": {
-    "React-Core": [
-
-    ]
+    "React-Core": [],
+    "RCT-Folly": [
+      "2024.11.18.00"
+    ],
+    "glog": [],
+    "React-RCTFabric": [],
+    "ReactCodegen": [],
+    "RCTRequired": [],
+    "RCTTypeSafety": [],
+    "ReactCommon/turbomodule/bridging": [],
+    "ReactCommon/turbomodule/core": [],
+    "React-NativeModulesApple": [],
+    "Yoga": [],
+    "React-Fabric": [],
+    "React-graphics": [],
+    "React-utils": [],
+    "React-featureflags": [],
+    "React-debug": [],
+    "React-ImageManager": [],
+    "React-rendererdebug": [],
+    "DoubleConversion": [],
+    "hermes-engine": []
+  },
+  "pod_target_xcconfig": {
+    "HEADER_SEARCH_PATHS": "\"$(PODS_ROOT)/boost\" \"$(PODS_ROOT)/Headers/Private/Yoga\"",
+    "CLANG_CXX_LANGUAGE_STANDARD": "c++20",
+    "OTHER_CPLUSPLUSFLAGS": "$(inherited) -DRCT_NEW_ARCH_ENABLED=1 -DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -DFOLLY_HAVE_CLOCK_GETTIME=1 -Wno-comma -Wno-shorten-64-to-32",
+    "OTHER_SWIFT_FLAGS": "$(inherited) -DRCT_NEW_ARCH_ENABLED"
   },
   "default_subspecs": "Video",
-  "xcconfig": {
-    "OTHER_LDFLAGS": "-ObjC"
-  },
   "subspecs": [
     {
-      "name": "Video",
-      "source_files": "ios/Video/*.{h,m}"
+      "name": "Fabric",
+      "source_files": "ios/Fabric/**/*.{h,mm}"
     },
     {
-      "name": "VideoCaching",
+      "name": "Video",
+      "source_files": "ios/Video/**/*.{h,m,swift,mm}",
       "dependencies": {
-        "react-native-video/Video": [
-
-        ],
-        "SPTPersistentCache": [
-          "~> 1.1.0"
-        ],
-        "DVAssetLoaderDelegate": [
-          "~> 0.3.1"
-        ]
-      },
-      "source_files": "ios/VideoCaching/**/*.{h,m}"
+        "react-native-video/Fabric": []
+      }
     }
   ]
 }

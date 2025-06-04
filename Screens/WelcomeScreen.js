@@ -6,8 +6,16 @@ import {
   Dimensions,
   TouchableWithoutFeedback,
 } from 'react-native';
-import {Button} from 'react-native-elements';
-import Image from 'react-native-scalable-image';
+import {Button} from '@rneui/themed';
+import ScalableImage from '../Components/ScalableImage';
+import {
+  COLOR_PRIMARY,
+  BUTTON_STYLES,
+  BUTTON_TITLE_STYLES,
+  FIRST_BUTTON_STYLES,
+} from '../Styles/Common';
+
+const BUTTON_WIDTH = 370; // Passe diesen Wert ggf. an deine längsten Texte an
 
 export default class WelcomeScreen extends React.Component {
   static navigationOptions = {
@@ -79,50 +87,51 @@ export default class WelcomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.mainView}>
-        <ScrollView
-          contentContainerStyle={styles.scrollViewContentContainerStyle}>
-          <TouchableWithoutFeedback onPress={() => this.onLogoTouch()}>
-            <Image
-              source={require('../assets/img/LogoMuesli.png')}
-              width={Dimensions.get('window').width / 3}
-            />
-          </TouchableWithoutFeedback>
+        <ScrollView contentContainerStyle={styles.scrollViewContentContainerStyle}>
+          <View style={styles.logoContainer}>
+            <TouchableWithoutFeedback onPress={() => this.onLogoTouch()}>
+              <ScalableImage
+                source={require('../assets/img/LogoMuesli.png')}
+                width={Dimensions.get('window').width * 0.6}
+              />
+            </TouchableWithoutFeedback>
+          </View>
           <View style={styles.buttonView}>
             <Button
-              onPress={() => {
-                this.openSearchMiceListView();
-              }}
+              onPress={() => this.openSearchMiceListView()}
+              buttonStyle={styles.button}
+              titleStyle={styles.buttonTitle}
               style={styles.firstButton}
               title="Müsli suchen"
             />
             <Button
-              onPress={() => {
-                this.openTravellingInstructionsView();
-              }}
+              onPress={() => this.openTravellingInstructionsView()}
+              buttonStyle={styles.button}
+              titleStyle={styles.buttonTitle}
               title="Anreise"
             />
             <Button
-              onPress={() => {
-                this.openContactView();
-              }}
+              onPress={() => this.openContactView()}
+              buttonStyle={styles.button}
+              titleStyle={styles.buttonTitle}
               title="Kontakt"
             />
             <Button
-              onPress={() => {
-                this.openPrivacyPolicyView();
-              }}
+              onPress={() => this.openPrivacyPolicyView()}
+              buttonStyle={styles.button}
+              titleStyle={styles.buttonTitle}
               title="Datenschutzerklärung"
             />
             <Button
-              onPress={() => {
-                this.openHelpView();
-              }}
+              onPress={() => this.openHelpView()}
+              buttonStyle={styles.button}
+              titleStyle={styles.buttonTitle}
               title="Anleitung"
             />
             {/*<Button
-              onPress={() => {
-                this.openDebugView();
-              }}
+              onPress={() => this.openDebugView()}
+              buttonStyle={styles.button}
+              titleStyle={styles.buttonTitle}
               title="Debug"
             />*/}
           </View>
@@ -135,14 +144,18 @@ export default class WelcomeScreen extends React.Component {
 const styles = StyleSheet.create({
   mainView: {
     flex: 1,
+    backgroundColor: '#ffffff',
   },
   scrollViewContentContainerStyle: {
     flexGrow: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
   },
-  image: {
-    flex: 1,
-    marginTop: 5,
+  logoContainer: {
+    alignItems: 'center',
+    marginTop: 24,
+    marginBottom: 24,
+    width: '100%',
   },
   buttonView: {
     flexGrow: 2,
@@ -150,7 +163,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
   },
-  firstButton: {
-    marginTop: 0,
-  },
+  button: BUTTON_STYLES,
+  buttonTitle: BUTTON_TITLE_STYLES,
+  firstButton: FIRST_BUTTON_STYLES,
 });

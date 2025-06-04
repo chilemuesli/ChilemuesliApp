@@ -7,7 +7,7 @@ import {
   Linking,
   Platform,
 } from 'react-native';
-import Image from 'react-native-scalable-image';
+import ScalableImage from '../Components/ScalableImage';
 import MyText from '../Components/MyText';
 import MyTitle from '../Components/MyTitle';
 import {COLOR_PRIMARY} from '../Styles/Common';
@@ -48,7 +48,7 @@ export default class ContactScreen extends React.Component {
     return (
       <ScrollView style={styles.scrollView}>
         <View style={styles.contentView}>
-          <Image
+          <ScalableImage
             source={require('../assets/img/LogoRefHinwil.png')}
             width={
               Dimensions.get('window').width - styles.contentView.margin * 2

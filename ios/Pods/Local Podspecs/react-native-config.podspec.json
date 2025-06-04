@@ -1,22 +1,25 @@
 {
   "name": "react-native-config",
-  "version": "1.5.1",
+  "version": "1.5.5",
   "summary": "Expose config variables to React Native apps",
   "authors": "Pedro Belo",
   "homepage": "https://github.com/luggit/react-native-config",
   "license": "MIT",
   "platforms": {
     "ios": "9.0",
-    "tvos": "9.0"
+    "tvos": "9.0",
+    "osx": "10.15",
+    "visionos": "1.0"
   },
   "source": {
     "git": "https://github.com/luggit/react-native-config.git",
-    "tag": "v1.5.1"
+    "tag": "v1.5.5"
   },
   "script_phases": {
     "name": "Config codegen",
     "script": "\nset -ex\nHOST_PATH=\"$SRCROOT/../..\"\n\"${PODS_TARGET_SRCROOT}/ios/ReactNativeConfig/BuildDotenvConfig.rb\" \"$HOST_PATH\" \"${PODS_TARGET_SRCROOT}/ios/ReactNativeConfig\"\n",
     "execution_position": "before_compile",
+    "always_out_of_date": "1",
     "input_files": [
       "$PODS_TARGET_SRCROOT/ios/ReactNativeConfig/BuildDotenvConfig.rb"
     ],
@@ -32,9 +35,7 @@
       "name": "App",
       "source_files": "ios/**/*.{h,m}",
       "dependencies": {
-        "React-Core": [
-
-        ]
+        "React-Core": []
       }
     },
     {
@@ -43,6 +44,7 @@
         "name": "Config codegen",
         "script": "\n        set -ex\n        HOST_PATH=\"$SRCROOT/../..\"\n        \"${PODS_TARGET_SRCROOT}/ios/ReactNativeConfig/BuildDotenvConfig.rb\" \"$HOST_PATH\" \"${PODS_TARGET_SRCROOT}/ios/ReactNativeConfig\"\n        ",
         "execution_position": "before_compile",
+        "always_out_of_date": "1",
         "input_files": [
           "$PODS_TARGET_SRCROOT/ios/ReactNativeConfig/BuildDotenvConfig.rb"
         ],

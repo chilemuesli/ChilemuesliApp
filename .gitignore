@@ -1,9 +1,12 @@
+ios_old/
+android_old/
 .gradle/
 .idea/
 build/
 release/
 *.code-workspace
 node_modules/
+vendor/bundle/
 main.jsbundle
 android/local.properties
 ios/Pods/
