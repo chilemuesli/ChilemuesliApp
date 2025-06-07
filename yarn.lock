@@ -5781,10 +5781,10 @@ react-native-gesture-handler@^2.25.0:
     hoist-non-react-statics "^3.3.0"
     invariant "^2.2.4"
 
-react-native-nitro-modules@^0.25.2:
-  version "0.25.2"
-  resolved "https://registry.yarnpkg.com/react-native-nitro-modules/-/react-native-nitro-modules-0.25.2.tgz#3d03869934854d7509c2f0dbaf4dca83d6969faf"
-  integrity sha512-rL+X0LzB8BXvpdrUE/+oZ5v4qS/1nZIq0M8Uctbvqq2q53sVCHX4995ffT8+lGIJe/f0QcBvvrEeXtBPl86iwQ==
+react-native-nitro-modules@^0.26.2:
+  version "0.26.2"
+  resolved "https://registry.yarnpkg.com/react-native-nitro-modules/-/react-native-nitro-modules-0.26.2.tgz#24325ae6021fc571bd0a148607a6c52a99741126"
+  integrity sha512-PvTUOryU/J1RDsPh1IvmAEDkYVVL32wCIYxkg6HsKgq+Dl+C8lth/MtW7cRZ+fJ0qW21NILbhBdhSXFzBx51fA==
 
 react-native-open-maps@^0.4.3:
   version "0.4.3"

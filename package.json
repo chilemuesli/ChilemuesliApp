@@ -24,7 +24,7 @@
     "react-native-email-link": "^1.16.1",
     "react-native-fs": "^2.20.0",
     "react-native-gesture-handler": "^2.25.0",
-    "react-native-nitro-modules": "^0.25.2",
+    "react-native-nitro-modules": "^0.26.2",
     "react-native-open-maps": "^0.4.3",
     "react-native-pulse": "^1.0.7",
     "react-native-safe-area-context": "^5.4.0",

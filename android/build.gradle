@@ -1,10 +1,10 @@
 buildscript {
     ext {
         buildToolsVersion = "35.0.0"
-        minSdkVersion = 24
+        minSdkVersion = 29
         compileSdkVersion = 35
         targetSdkVersion = 34
-        ndkVersion = "27.1.12297006"
+        ndkVersion = "27.1.12297006"  // Aktuellste verfügbare Version
         kotlinVersion = "2.0.21"
     }
     repositories {
@@ -19,3 +19,9 @@ buildscript {
 }
 
 apply plugin: "com.facebook.react.rootproject"
+
+configurations.all {
+    resolutionStrategy {
+        force 'org.jetbrains:annotations:13.0'  // Erzwinge die neuere Version
+    }
+}
