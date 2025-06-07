@@ -1,0 +1,1 @@
+/Users/mbaumgar/Documents/Projekte/ChilemuesliApp/android/app/build/intermediates/cxx/Debug/3r384ek2/obj/arm64-v8a

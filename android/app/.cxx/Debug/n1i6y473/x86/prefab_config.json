@@ -1,0 +1,10 @@
+{
+  "enabled": true,
+  "prefabPath": "/Users/mbaumgar/.gradle/caches/modules-2/files-2.1/com.google.prefab/cli/2.1.0/aa32fec809c44fa531f01dcfb739b5b3304d3050/cli-2.1.0-all.jar",
+  "packages": [
+    "/Users/mbaumgar/Documents/Projekte/ChilemuesliApp/node_modules/react-native-nitro-modules/android/build/intermediates/prefab_package/debug/prefab",
+    "/Users/mbaumgar/.gradle/caches/8.10.2/transforms/f266411dc21cf4bb3d95238b7256dd2c/transformed/react-android-0.77.2-debug/prefab",
+    "/Users/mbaumgar/.gradle/caches/8.10.2/transforms/fe480553ec96091c9b3ee037f0201652/transformed/hermes-android-0.77.2-debug/prefab",
+    "/Users/mbaumgar/.gradle/caches/8.10.2/transforms/d7d422c0963f92aa7b8a765f3bd54231/transformed/fbjni-0.7.0/prefab"
+  ]
+}

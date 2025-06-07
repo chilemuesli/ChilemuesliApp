@@ -1,0 +1,1 @@
+/Users/mbaumgar/Documents/Projekte/ChilemuesliApp/android/app/CMakeLists.txt

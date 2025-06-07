@@ -1,0 +1,27 @@
+{
+  "buildFiles": [
+    "/Users/mbaumgar/Documents/Projekte/ChilemuesliApp/android/app/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/mbaumgar/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/mbaumgar/Documents/Projekte/ChilemuesliApp/android/app/.cxx/Debug/n1i6y473/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/mbaumgar/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/mbaumgar/Documents/Projekte/ChilemuesliApp/android/app/.cxx/Debug/n1i6y473/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "chilemuesliapp::@6890427a1f51a3e7e1df": {
+      "artifactName": "chilemuesliapp",
+      "abi": "x86",
+      "output": "/Users/mbaumgar/Documents/Projekte/ChilemuesliApp/android/app/build/intermediates/cxx/Debug/n1i6y473/obj/x86/libchilemuesliapp.so",
+      "runtimeFiles": []
+    }
+  }
+}
