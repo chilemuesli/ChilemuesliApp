@@ -6,6 +6,7 @@ buildscript {
         targetSdkVersion = 34
         ndkVersion = "27.1.12297006"  // Aktuellste verfügbare Version
         kotlinVersion = "2.0.21"
+        newArchEnabled = false
     }
     repositories {
         google()

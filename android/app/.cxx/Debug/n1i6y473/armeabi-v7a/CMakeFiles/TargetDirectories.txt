@@ -1,3 +1,0 @@
-/Users/mbaumgar/Documents/Projekte/ChilemuesliApp/android/app/.cxx/Debug/n1i6y473/armeabi-v7a/CMakeFiles/chilemuesliapp.dir
-/Users/mbaumgar/Documents/Projekte/ChilemuesliApp/android/app/.cxx/Debug/n1i6y473/armeabi-v7a/CMakeFiles/edit_cache.dir
-/Users/mbaumgar/Documents/Projekte/ChilemuesliApp/android/app/.cxx/Debug/n1i6y473/armeabi-v7a/CMakeFiles/rebuild_cache.dir

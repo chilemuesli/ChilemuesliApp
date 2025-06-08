@@ -9,6 +9,7 @@ node_modules/
 vendor/bundle/
 main.jsbundle
 android/local.properties
+android/app/.cxx
 ios/Pods/
 .vscode
 *.hprof

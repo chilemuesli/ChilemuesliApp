@@ -1,8 +1,0 @@
-/Users/mbaumgar/Documents/Projekte/ChilemuesliApp/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/CMakeLists.txt
-/Users/mbaumgar/Documents/Projekte/ChilemuesliApp/node_modules/react-native-bluetooth-state-manager/android/build/generated/source/codegen/jni/CMakeLists.txt
-/Users/mbaumgar/Documents/Projekte/ChilemuesliApp/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni/CMakeLists.txt
-/Users/mbaumgar/Documents/Projekte/ChilemuesliApp/node_modules/react-native-nitro-modules/android/build/generated/source/codegen/jni/CMakeLists.txt
-/Users/mbaumgar/Documents/Projekte/ChilemuesliApp/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt
-/Users/mbaumgar/Documents/Projekte/ChilemuesliApp/node_modules/react-native-vector-icons/android/build/generated/source/codegen/jni/CMakeLists.txt
-/Users/mbaumgar/Documents/Projekte/ChilemuesliApp/node_modules/react-native-webview/android/build/generated/source/codegen/jni/CMakeLists.txt
-/Users/mbaumgar/Documents/Projekte/ChilemuesliApp/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup/CMakeLists.txt

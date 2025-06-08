@@ -77,9 +77,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.test77"
+    namespace "ch.mabaka.chilemuesli"
     defaultConfig {
-        applicationId "com.test77"
+        applicationId "ch.mabaka.chilemuesli"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -91,6 +91,12 @@ android {
                 arguments "-DANDROID_STL=c++_shared", "-DANDROID_TOOLCHAIN=clang"
             }
         }
+        configurations.all {
+            resolutionStrategy {
+                force 'com.facebook.react:react-native:0.77.2'
+            }
+        }
+        buildConfigField("boolean", "IS_NEW_ARCHITECTURE_ENABLED", "false")
     }
     signingConfigs {
         debug {
@@ -119,7 +125,7 @@ android {
         }
     }
     buildFeatures {
-        prefab true
+        buildConfig = true
     }
     packagingOptions {
         pickFirst "**/libc++_shared.so"
