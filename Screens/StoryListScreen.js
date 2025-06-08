@@ -23,34 +23,28 @@ const StoryListScreen = () => {
     async (story) => {
       try {
         const value = await AsyncStorage.getItem(story.id + '.found');
-        let updatedFound = {...found};
-        if (value !== null && value === 'true') {
-          updatedFound[story.id] = true;
-        } else {
-          updatedFound[story.id] = false;
-        }
-        setFound(updatedFound);
+        setFound(prevFound => ({
+          ...prevFound,
+          [story.id]: value !== null && value === 'true'
+        }));
       } catch (e) {
         console.log(e);
       }
     },
-    [found]
+    [] // Keine Abhängigkeit von found mehr
   );
 
   const loadData = React.useCallback(() => {
     const loadingFinished = (storiesResult) => {
       console.log('Setting state with stories:', JSON.stringify(storiesResult, null, 2));
       setStories(storiesResult);
-      storiesResult.forEach((story) => {
-        isAlreadyFound(story);
-      });
+      storiesResult.forEach(isAlreadyFound);
     };
 
     console.log('Loading stories...');
     readStoryService
       .readStories()
       .then((result) => {
-        console.log('RESULT:', JSON.stringify(result, null, 2));
         if (!result || result.length === 0) {
           console.warn('No stories received');
         }
@@ -59,7 +53,7 @@ const StoryListScreen = () => {
       .catch((err) => {
         console.error('ERROR loading stories:', err);
       });
-  }, [readStoryService, isAlreadyFound]);
+  }, [isAlreadyFound, readStoryService]);
   // isAlreadyFound is now wrapped in useCallback above
 
   // Call loadData when the component mounts

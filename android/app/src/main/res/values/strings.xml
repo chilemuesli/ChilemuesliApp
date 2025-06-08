@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">ChilemuesliApp</string>
+    <string name="app_name">Chilemues.li</string>
+
+    <string name="enabled">OK</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="settings">Einstellungen</string>
+
+    <string name="permission_go_settings_title">Permission needed</string>
+    <string name="permission_default_message">To make this action please open the settings and manually enable the requested permission.</string>
+
 </resources>
