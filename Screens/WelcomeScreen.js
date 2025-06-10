@@ -18,9 +18,6 @@ import {
 const BUTTON_WIDTH = 370; // Passe diesen Wert ggf. an deine längsten Texte an
 
 export default class WelcomeScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Menü',
-  };
 
   state = {
     logoTouchCount: 0,
@@ -93,7 +90,8 @@ export default class WelcomeScreen extends React.Component {
           <View style={styles.logoContainer}>
             <TouchableWithoutFeedback onPress={() => this.onLogoTouch()}>
               <ScalableImage
-                source={require('../assets/img/LogoMuesli.png')}
+                source={require('./img/LogoMuesli.png')}
+                onError={(error) => console.error('Image loading error:', error)}
                 width={Dimensions.get('window').width * 0.6}
               />
             </TouchableWithoutFeedback>

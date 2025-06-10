@@ -23,6 +23,8 @@ class MainApplication : Application(), ReactApplication {
         override fun getPackages(): List<ReactPackage> {
             return PackageList(this).packages
         }
+        
+        override fun getJSMainModuleName(): String = "index"
     }
 
     override fun onCreate() {

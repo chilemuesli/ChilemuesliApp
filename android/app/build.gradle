@@ -97,6 +97,7 @@ android {
             }
         }
         buildConfigField("boolean", "IS_NEW_ARCHITECTURE_ENABLED", "false")
+        buildConfigField("boolean", "IS_HERMES_ENABLED", "true")
     }
     signingConfigs {
         debug {
@@ -129,6 +130,9 @@ android {
     }
     packagingOptions {
         pickFirst "**/libc++_shared.so"
+        pickFirst "**/libfbjni.so"
+        pickFirst "**/libjsi.so"
+        pickFirst "**/libreactnativejni.so"
     }
 }
 
@@ -141,10 +145,14 @@ configurations.all {
 
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
-    implementation("com.facebook.react:react-android")
+    implementation("com.facebook.react:react-android:0.77.2") {
+        exclude group: 'com.facebook.fbjni'
+        exclude module: 'fbjni'
+    }
+    implementation "com.facebook.fbjni:fbjni:0.7.0"
 
     if (hermesEnabled.toBoolean()) {
-        implementation("com.facebook.react:hermes-android")
+        implementation("com.facebook.react:hermes-android:0.77.2")
     } else {
         implementation jscFlavor
     }

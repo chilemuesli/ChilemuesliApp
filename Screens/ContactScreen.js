@@ -49,7 +49,7 @@ export default class ContactScreen extends React.Component {
       <ScrollView style={styles.scrollView}>
         <View style={styles.contentView}>
           <ScalableImage
-            source={require('../assets/img/LogoRefHinwil.png')}
+            source={require('./img/LogoRefHinwil.png')}
             width={
               Dimensions.get('window').width - styles.contentView.margin * 2
             }

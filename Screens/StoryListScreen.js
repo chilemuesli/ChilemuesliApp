@@ -88,7 +88,7 @@ const StoryListScreen = () => {
                 source={
                   story.avatar
                     ? {uri: story.avatar}
-                    : require('../assets/img/LogoMuesli.png')
+                    : require('./img/LogoMuesli.png')
                 }
                 rounded
                 imageProps={styles.avatarImage}

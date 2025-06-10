@@ -59,7 +59,10 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Home" component={WelcomeScreen} />
+          <Stack.Screen 
+            name="Home" 
+            component={WelcomeScreen}
+            title="Menü" />
           <Stack.Screen name="StoryList" component={StoryListScreen} />
           <Stack.Screen 
             name="StoryScreen"

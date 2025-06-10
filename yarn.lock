@@ -5749,10 +5749,10 @@ react-is@^19.1.0:
   version "1.1.0"
   resolved "https://github.com/chilemuesli/react-native-beacons-manager.git#9fb3b57696a98d9659c60cab3d24f3d2d2184b88"
 
-react-native-bluetooth-state-manager@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/react-native-bluetooth-state-manager/-/react-native-bluetooth-state-manager-2.0.1.tgz#72719a2e7ef696675d280ac729eb1fc8e19e7ceb"
-  integrity sha512-W59yDNpE6XucO6SB+8iv0oN75SvyIZC+mdgDGbACazOnwIUjkl7LZHOJB7d54xzwK7pn7/RsspNjaTYrVfhBNw==
+react-native-bluetooth-state-manager@1.3.5:
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/react-native-bluetooth-state-manager/-/react-native-bluetooth-state-manager-1.3.5.tgz#45f534fbdfcb9dba4d30a97785a480799600f7aa"
+  integrity sha512-yWuN67aYF/PBH47nouYSvyeSrUK8jpSz5FqzwPnWN57yewll4h3xTQXMusvY2eG+EsmBoyMwjbFJzVl38HAOwg==
 
 react-native-config@^1.5.5:
   version "1.5.5"
