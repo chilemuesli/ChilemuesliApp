@@ -62,7 +62,7 @@ export default function App() {
           <Stack.Screen 
             name="Home" 
             component={WelcomeScreen}
-            title="Menü" />
+            options={{title: 'Menü'}}/>
           <Stack.Screen name="StoryList" component={StoryListScreen} />
           <Stack.Screen 
             name="StoryScreen"
