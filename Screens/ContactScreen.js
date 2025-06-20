@@ -17,9 +17,7 @@ const MAIL_ADDRESS = 'info@ref-hinwil.ch';
 const MAIL_SUBJECT = 'Chilemues.li';
 const PHONE_NUMBER = '+41 44 937 14 37';
 export default class ContactScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Kontakt',
-  };
+
   constructor(props) {
     super(props);
   }
@@ -45,14 +43,17 @@ export default class ContactScreen extends React.Component {
   }
 
   render() {
+    const logoWidth = Math.min(
+      300,
+      Dimensions.get('window').width - styles.contentView.margin * 2
+    );
+
     return (
       <ScrollView style={styles.scrollView}>
         <View style={styles.contentView}>
           <ScalableImage
             source={require('./img/LogoRefHinwil.png')}
-            width={
-              Dimensions.get('window').width - styles.contentView.margin * 2
-            }
+            width={Dimensions.get('window').width - styles.contentView.margin * 2}
           />
           <MyTitle style={styles.topTitle}>Kontakt</MyTitle>
           <MyText>Evangelisch-reformierte Kirchgemeinde Hinwil</MyText>
@@ -67,6 +68,7 @@ export default class ContactScreen extends React.Component {
           <MyTitle style={styles.topTitle}>Öffnungszeiten Sekretariat</MyTitle>
           <MyText>Dienstag bis Freitag</MyText>
           <MyText>8.30 – 11.30 Uhr / 13.30 – 15.30 Uhr</MyText>
+          <View/>
         </View>
       </ScrollView>
     );
@@ -78,6 +80,7 @@ const styles = StyleSheet.create({
   },
   contentView: {
     margin: 10,
+    alignItems: 'top',
   },
   topTitle: {
     marginTop: 20,

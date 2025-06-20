@@ -9,6 +9,12 @@ import {
 import {Button} from '@rneui/themed';
 import ReadStoriesService from '../Service/ReadStoriesService';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {
+  COLOR_PRIMARY,
+  BUTTON_STYLES,
+  BUTTON_TITLE_STYLES,
+  FIRST_BUTTON_STYLES,
+} from '../Styles/Common';
 
 export default class DebugScreen extends React.Component {
   static navigationOptions = {
@@ -67,16 +73,15 @@ export default class DebugScreen extends React.Component {
           contentContainerStyle={styles.scrollViewContentContainerStyle}>
           <View style={styles.buttonView}>
             <Button
-              onPress={() => {
-                this.setAllFound();
-              }}
-              style={styles.firstButton}
+              onPress={() => this.setAllFound()}
+              buttonStyle={[BUTTON_STYLES, FIRST_BUTTON_STYLES]}
+              titleStyle={BUTTON_TITLE_STYLES}
               title="Alle gefunden"
             />
             <Button
-              onPress={() => {
-                this.setAllNotFound();
-              }}
+              onPress={() => this.setAllNotFound()}
+              buttonStyle={BUTTON_STYLES}
+              titleStyle={BUTTON_TITLE_STYLES}
               title="Keine gefunden"
             />
           </View>
@@ -103,8 +108,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-  },
-  firstButton: {
-    marginTop: 0,
   },
 });

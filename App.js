@@ -72,9 +72,15 @@ export default function App() {
             })}
           />
           <Stack.Screen name="WebViewer" component={WebScreen} />
-          <Stack.Screen name="Contact" component={ContactScreen} />
+          <Stack.Screen
+            name="Contact"
+            component={ContactScreen}
+            options={{ title: 'Kontakt' }}
+          />
           <Stack.Screen name="TravelInstructions" component={TravelInstructionsScreen} />
-          <Stack.Screen name="Debug" component={DebugScreen} />
+          <Stack.Screen name="Debug" 
+            component={DebugScreen} 
+            options={{ title: 'Debug' }}/>
           <Stack.Screen name="Test" component={BeaconsDemoScreen} />
         </Stack.Navigator>
       </NavigationContainer>

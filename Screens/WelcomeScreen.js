@@ -4,7 +4,7 @@ import {
   View,
   StyleSheet,
   Dimensions,
-  TouchableWithoutFeedback,
+  Pressable,
 } from 'react-native';
 import {Button} from '@rneui/themed';
 import ScalableImage from '../Components/ScalableImage';
@@ -25,22 +25,21 @@ export default class WelcomeScreen extends React.Component {
   };
 
   onLogoTouch() {
-    console.log('Logo clicked');
-    if (
-      this.state.lastLogoTouch === 0 ||
-      Date.now() - 1000 < this.state.lastLogoTouch
-    ) {
-      this.setState({lastLogoTouch: Date.now()});
-      this.setState({logoTouchCount: this.state.logoTouchCount + 1});
-      if (this.state.logoTouchCount >= 4) {
-        this.setState({lastLogoTouch: 0});
-        this.setState({logoTouchCount: 0});
+    this.setState((prevState) => {
+      const now = Date.now();
+      const withinTime = prevState.lastLogoTouch === 0 || now - prevState.lastLogoTouch < 1000;
+      const newCount = withinTime ? prevState.logoTouchCount + 1 : 1;
+      console.log(`Logo touched ${newCount} times`);
+      if (newCount === 5) {
         this.openDebugView();
+        return { logoTouchCount: 0, lastLogoTouch: 0 };
       }
-    } else {
-      this.setState({lastLogoTouch: Date.now()});
-      this.setState({logoTouchCount: 0});
-    }
+
+      return {
+        logoTouchCount: newCount,
+        lastLogoTouch: now,
+      };
+    });
   }
 
   openSearchMiceListView() {
@@ -88,13 +87,13 @@ export default class WelcomeScreen extends React.Component {
       <View style={styles.mainView}>
         <ScrollView contentContainerStyle={styles.scrollViewContentContainerStyle}>
           <View style={styles.logoContainer}>
-            <TouchableWithoutFeedback onPress={() => this.onLogoTouch()}>
+            <Pressable onPress={() => this.onLogoTouch()}>
               <ScalableImage
                 source={require('./img/LogoMuesli.png')}
                 onError={(error) => console.error('Image loading error:', error)}
                 width={Dimensions.get('window').width * 0.6}
               />
-            </TouchableWithoutFeedback>
+            </Pressable>
           </View>
           <View style={styles.buttonView}>
             <Button
