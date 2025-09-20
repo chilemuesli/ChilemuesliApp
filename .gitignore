@@ -13,3 +13,4 @@ android/app/.cxx
 ios/Pods/
 .vscode
 *.hprof
+.DS_Store
