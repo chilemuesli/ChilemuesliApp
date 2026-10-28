@@ -30061,7 +30061,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/RNCAsyncStorage";
 				IBSC_MODULE = RNCAsyncStorage;
 				INFOPLIST_FILE = "Target Support Files/RNCAsyncStorage/ResourceBundle-RNCAsyncStorage_resources-RNCAsyncStorage-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				PRODUCT_NAME = RNCAsyncStorage_resources;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -30078,7 +30078,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/RNCAsyncStorage";
 				IBSC_MODULE = RNCAsyncStorage;
 				INFOPLIST_FILE = "Target Support Files/RNCAsyncStorage/ResourceBundle-RNCAsyncStorage_resources-RNCAsyncStorage-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				PRODUCT_NAME = RNCAsyncStorage_resources;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -34259,7 +34259,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 46EB2E0001C680 /* fmt.release.xcconfig */;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -34297,7 +34297,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 46EB2E0001C670 /* fmt.debug.xcconfig */;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";

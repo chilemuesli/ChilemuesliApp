@@ -18,7 +18,6 @@ import {
 const BUTTON_WIDTH = 370; // Passe diesen Wert ggf. an deine längsten Texte an
 
 export default class WelcomeScreen extends React.Component {
-
   state = {
     logoTouchCount: 0,
     lastLogoTouch: 0,
@@ -27,12 +26,13 @@ export default class WelcomeScreen extends React.Component {
   onLogoTouch() {
     this.setState((prevState) => {
       const now = Date.now();
-      const withinTime = prevState.lastLogoTouch === 0 || now - prevState.lastLogoTouch < 1000;
+      const withinTime =
+        prevState.lastLogoTouch === 0 || now - prevState.lastLogoTouch < 1000;
       const newCount = withinTime ? prevState.logoTouchCount + 1 : 1;
       console.log(`Logo touched ${newCount} times`);
       if (newCount === 5) {
         this.openDebugView();
-        return { logoTouchCount: 0, lastLogoTouch: 0 };
+        return {logoTouchCount: 0, lastLogoTouch: 0};
       }
 
       return {
@@ -85,12 +85,15 @@ export default class WelcomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.mainView}>
-        <ScrollView contentContainerStyle={styles.scrollViewContentContainerStyle}>
+        <ScrollView
+          contentContainerStyle={styles.scrollViewContentContainerStyle}>
           <View style={styles.logoContainer}>
             <Pressable onPress={() => this.onLogoTouch()}>
               <ScalableImage
                 source={require('./img/LogoMuesli.png')}
-                onError={(error) => console.error('Image loading error:', error)}
+                onError={(error) =>
+                  console.error('Image loading error:', error)
+                }
                 width={Dimensions.get('window').width * 0.6}
               />
             </Pressable>

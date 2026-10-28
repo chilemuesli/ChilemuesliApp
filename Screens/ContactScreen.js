@@ -45,7 +45,7 @@ export default class ContactScreen extends React.Component {
       },
       (error) => {
         console.log('Fehler beim Laden des Bildes:', error);
-      }
+      },
     );
   }
 
@@ -71,11 +71,11 @@ export default class ContactScreen extends React.Component {
 
   weblinkPressed() {
     console.log('Web link pressed');
-    Linking.openURL("https://" + URL).catch((err) => {
+    Linking.openURL('https://' + URL).catch((err) => {
       console.error('An error occurred while opening the web link:', err);
     });
   }
-  
+
   render() {
     return (
       <ScrollView style={styles.scrollView}>

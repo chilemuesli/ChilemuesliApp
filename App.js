@@ -2,14 +2,13 @@
  * Main class of the ChilemuesliApp.
  *
  * @format
- * @flow
  */
 
 import React from 'react';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 import WelcomeScreen from './Screens/WelcomeScreen';
 import BeaconsDemoScreen from './Screens/BeaconsDemoScreen';
 import StoryListScreen from './Screens/StoryListScreen';
@@ -18,8 +17,8 @@ import WebScreen from './Screens/WebScreen';
 import ContactScreen from './Screens/ContactScreen';
 import DebugScreen from './Screens/DebugScreen';
 import TravelInstructionsScreen from './Screens/TravelInstructionsScreen';
-import { ThemeProvider } from '@rneui/themed';
-import { COLOR_PRIMARY, BORDER_RADIUS } from './Styles/Common';
+import {ThemeProvider} from '@rneui/themed';
+import {COLOR_PRIMARY, BORDER_RADIUS} from './Styles/Common';
 
 FontAwesome.loadFont();
 MaterialIcons.loadFont();
@@ -59,28 +58,34 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen 
-            name="Home" 
+          <Stack.Screen
+            name="Home"
             component={WelcomeScreen}
-            options={{title: 'Menü'}}/>
+            options={{title: 'Menü'}}
+          />
           <Stack.Screen name="StoryList" component={StoryListScreen} />
-          <Stack.Screen 
+          <Stack.Screen
             name="StoryScreen"
             component={StoryScreen}
-            options={({ route }) => ({ 
-              title: route.params?.selectedStory?.title || ''
+            options={({route}) => ({
+              title: route.params?.selectedStory?.title || '',
             })}
           />
           <Stack.Screen name="WebViewer" component={WebScreen} />
           <Stack.Screen
             name="Contact"
             component={ContactScreen}
-            options={{ title: 'Kontakt' }}
+            options={{title: 'Kontakt'}}
           />
-          <Stack.Screen name="TravelInstructions" component={TravelInstructionsScreen} />
-          <Stack.Screen name="Debug" 
-            component={DebugScreen} 
-            options={{ title: 'Debug' }}/>
+          <Stack.Screen
+            name="TravelInstructions"
+            component={TravelInstructionsScreen}
+          />
+          <Stack.Screen
+            name="Debug"
+            component={DebugScreen}
+            options={{title: 'Debug'}}
+          />
           <Stack.Screen name="Test" component={BeaconsDemoScreen} />
         </Stack.Navigator>
       </NavigationContainer>

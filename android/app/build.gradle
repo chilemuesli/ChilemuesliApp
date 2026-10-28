@@ -2,6 +2,14 @@ apply plugin: "com.android.application"
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
 
+// ios/Version.xcconfig is the single source of truth for versionName/versionCode
+// (and for the iOS marketing version/build number).
+def appVersion = [:]
+file("../../ios/Version.xcconfig").eachLine { line ->
+    def m = line =~ /^\s*(\w+)\s*=\s*(\S+)/
+    if (m) appVersion[m[0][1]] = m[0][2]
+}
+
 /**
  * This is the configuration block to customize your React Native Android app.
  * By default you don't need to apply any configuration, just uncomment the lines you need.
@@ -82,8 +90,8 @@ android {
         applicationId "ch.mabaka.chilemuesli"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 14
-        versionName "2.1"
+        versionCode appVersion.CURRENT_PROJECT_VERSION.toInteger()
+        versionName appVersion.MARKETING_VERSION
         
         // Add 16KB page size support
         ndk {

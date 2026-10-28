@@ -40,9 +40,7 @@
   },
   "frameworks": "UIKit",
   "dependencies": {
-    "DoubleConversion": [
-
-    ],
+    "DoubleConversion": [],
     "fast_float": [
       "6.1.4"
     ],
@@ -64,23 +62,13 @@
     "React-jsi": [
       "0.77.3"
     ],
-    "React-RCTBlob": [
-
-    ],
+    "React-RCTBlob": [],
     "SocketRocket": [
       "0.7.1"
     ],
-    "React-jsinspector": [
-
-    ],
-    "React-RCTFBReactNativeSpec": [
-
-    ],
-    "ReactCommon": [
-
-    ],
-    "React-NativeModulesApple": [
-
-    ]
+    "React-jsinspector": [],
+    "React-RCTFBReactNativeSpec": [],
+    "ReactCommon": [],
+    "React-NativeModulesApple": []
   }
 }
