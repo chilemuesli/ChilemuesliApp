@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let rootView = appDelegate.rootViewFactory.view(
       withModuleName: moduleName,
       initialProperties: appDelegate.initialProps,
-      launchOptions: nil
+      launchOptions: appDelegate.reactNativeLaunchOptions
     )
     let rootViewController = appDelegate.createRootViewController()
     appDelegate.setRootView(rootView, toRootViewController: rootViewController)

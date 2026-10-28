@@ -5,6 +5,9 @@ import ReactAppDependencyProvider
 
 @main
 class AppDelegate: RCTAppDelegate {
+  // Kept for SceneDelegate, which creates the React Native root view.
+  var reactNativeLaunchOptions: [AnyHashable: Any]?
+
   override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     self.moduleName = "ChilemuesliApp"
     self.dependencyProvider = RCTAppDependencyProvider()
@@ -15,6 +18,8 @@ class AppDelegate: RCTAppDelegate {
 
     // The window is created by SceneDelegate (UIScene life cycle).
     self.automaticallyLoadReactNativeWindow = false
+
+    self.reactNativeLaunchOptions = launchOptions
 
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
