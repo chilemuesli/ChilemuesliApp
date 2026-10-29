@@ -22,6 +22,8 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>message</string>
@@ -56,6 +58,8 @@
 	<string>Chilemues.li braucht Zugriff auf deinen Standort um zu erkennen ob du dich in der Nähe eines Müslis befindest.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Chilemues.li braucht Zugriff auf deinen Standort um zu erkennen ob du dich in der Nähe eines Müslis befindest.</string>
+	<key>RCTNewArchEnabled</key>
+	<true/>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Roboto-Black.ttf</string>
@@ -81,7 +85,5 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<false/>
 </dict>
 </plist>

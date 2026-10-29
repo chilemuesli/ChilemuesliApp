@@ -1,30 +1,54 @@
-import UIKit
 import React
 import React_RCTAppDelegate
+import ReactAppDependencyProvider
+import UIKit
 
-// RCTAppDelegate (RN 0.77) creates its window in application(_:didFinishLaunchingWithOptions:),
-// which UIKit's scene life cycle no longer allows. AppDelegate disables that and the
-// window is created here instead.
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+class SceneDelegate: RCTDefaultReactNativeFactoryDelegate, UIWindowSceneDelegate {
   var window: UIWindow?
+  var reactNativeFactory: RCTReactNativeFactory?
 
-  func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-    guard let windowScene = scene as? UIWindowScene,
-          let appDelegate = UIApplication.shared.delegate as? AppDelegate,
-          let moduleName = appDelegate.moduleName else { return }
+  func scene(
+    _ scene: UIScene,
+    willConnectTo session: UISceneSession,
+    options connectionOptions: UIScene.ConnectionOptions
+  ) {
+    guard let windowScene = scene as? UIWindowScene else {
+      return
+    }
 
-    let rootView = appDelegate.rootViewFactory.view(
-      withModuleName: moduleName,
-      initialProperties: appDelegate.initialProps,
-      launchOptions: appDelegate.reactNativeLaunchOptions
+    dependencyProvider = RCTAppDependencyProvider()
+    reactNativeFactory = RCTReactNativeFactory(delegate: self)
+    window = UIWindow(windowScene: windowScene)
+
+    #if DEBUG
+    let devMenuConfiguration = RCTDevMenuConfiguration(
+      devMenuEnabled: true,
+      shakeGestureEnabled: true,
+      keyboardShortcutsEnabled: true
     )
-    let rootViewController = appDelegate.createRootViewController()
-    appDelegate.setRootView(rootView, toRootViewController: rootViewController)
+    reactNativeFactory?.devMenuConfiguration = devMenuConfiguration
+    #endif
 
-    let window = UIWindow(windowScene: windowScene)
-    window.rootViewController = rootViewController
-    window.makeKeyAndVisible()
-    self.window = window
-    appDelegate.window = window
+    reactNativeFactory?.startReactNative(
+      withModuleName: "ChilemuesliApp",
+      in: window,
+      connectionOptions: connectionOptions
+    )
+  }
+
+  func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+    RCTLinkingManager.scene(scene, openURLContexts: URLContexts)
+  }
+
+  func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+    RCTLinkingManager.scene(scene, continue: userActivity)
+  }
+
+  override func bundleURL() -> URL? {
+    #if DEBUG
+    RCTBundleURLProvider.sharedSettings().jsBundleURL(forBundleRoot: "index")
+    #else
+    Bundle.main.url(forResource: "main", withExtension: "jsbundle")
+    #endif
   }
 }

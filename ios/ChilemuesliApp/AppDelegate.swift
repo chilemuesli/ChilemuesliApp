@@ -1,44 +1,12 @@
 import UIKit
-import React
-import React_RCTAppDelegate
-import ReactAppDependencyProvider
 
+// React Native is started by SceneDelegate (UIScene life cycle, required for the iOS 27 SDK).
 @main
-class AppDelegate: RCTAppDelegate {
-  // Kept for SceneDelegate, which creates the React Native root view.
-  var reactNativeLaunchOptions: [AnyHashable: Any]?
-
-  override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    self.moduleName = "ChilemuesliApp"
-    self.dependencyProvider = RCTAppDependencyProvider()
-
-    // You can add your custom initial props in the dictionary below.
-    // They will be passed down to the ViewController used by React Native.
-    self.initialProps = [:]
-
-    // The window is created by SceneDelegate (UIScene life cycle).
-    self.automaticallyLoadReactNativeWindow = false
-
-    self.reactNativeLaunchOptions = launchOptions
-
-    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
-  }
-
-  override func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-    let configuration = UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    configuration.delegateClass = SceneDelegate.self
-    return configuration
-  }
-
-  override func sourceURL(for bridge: RCTBridge) -> URL? {
-    self.bundleURL()
-  }
-
-  override func bundleURL() -> URL? {
-#if DEBUG
-    RCTBundleURLProvider.sharedSettings().jsBundleURL(forBundleRoot: "index")
-#else
-    Bundle.main.url(forResource: "main", withExtension: "jsbundle")
-#endif
+class AppDelegate: UIResponder, UIApplicationDelegate {
+  func application(
+    _ application: UIApplication,
+    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
+  ) -> Bool {
+    true
   }
 }
