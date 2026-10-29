@@ -51,10 +51,7 @@ jobs:
           cache: yarn
       - run: yarn install --frozen-lockfile
       - run: yarn lint
-      # Red on master today: jest cannot load the navigation stack (no
-      # react-native-gesture-handler mock). Informational until fixed.
       - run: yarn test --ci
-        continue-on-error: true
 
   android:
     name: Android debug build

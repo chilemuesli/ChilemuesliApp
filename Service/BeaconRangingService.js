@@ -1,5 +1,4 @@
 import {Platform} from 'react-native';
-import {DeviceEventEmitter} from 'react-native';
 import Beacons from 'react-native-beacons-manager';
 
 /**
@@ -53,21 +52,12 @@ export default class BeaconRangingService {
     }
     console.log('Start finished');
     console.log('Add listener');
-    if (Platform.OS === 'ios') {
-      this.beaconsDidRangeEvent = Beacons.BeaconsEventEmitter.addListener(
-        'beaconsDidRange',
-        (data) => {
-          this.beaconsDidRange(data, rangingListener);
-        },
-      );
-    } else if (Platform.OS === 'android') {
-      this.beaconsDidRangeEvent = DeviceEventEmitter.addListener(
-        'beaconsDidRange',
-        (data) => {
-          this.beaconsDidRange(data, rangingListener);
-        },
-      );
-    }
+    this.beaconsDidRangeEvent = Beacons.BeaconsEventEmitter.addListener(
+      'beaconsDidRange',
+      (data) => {
+        this.beaconsDidRange(data, rangingListener);
+      },
+    );
     console.log('Add listener finished');
   }
 

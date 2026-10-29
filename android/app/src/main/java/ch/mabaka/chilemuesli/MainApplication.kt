@@ -4,11 +4,9 @@ import android.app.Application
 import ch.mabaka.chilemuesli.Setup.copyFolder
 import com.facebook.react.PackageList
 import com.facebook.react.ReactApplication
-import com.facebook.react.ReactNativeHost
-import com.facebook.react.ReactPackage
-import com.facebook.react.defaults.DefaultReactNativeHost
-import com.facebook.react.soloader.OpenSourceMergedSoMapping
-import com.facebook.soloader.SoLoader
+import com.facebook.react.ReactHost
+import com.facebook.react.ReactNativeApplicationEntryPoint.loadReactNative
+import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -17,19 +15,16 @@ import kotlinx.coroutines.launch
 class MainApplication : Application(), ReactApplication {
     private val applicationScope = CoroutineScope(Dispatchers.Main + Job())
 
-    override val reactNativeHost: ReactNativeHost = object : DefaultReactNativeHost(this) {
-        override fun getUseDeveloperSupport(): Boolean = BuildConfig.DEBUG
-        
-        override fun getPackages(): List<ReactPackage> {
-            return PackageList(this).packages
-        }
-        
-        override fun getJSMainModuleName(): String = "index"
+    override val reactHost: ReactHost by lazy {
+        getDefaultReactHost(
+            context = applicationContext,
+            packageList = PackageList(this).packages,
+        )
     }
 
     override fun onCreate() {
         super.onCreate()
-        SoLoader.init(this, OpenSourceMergedSoMapping)
+        loadReactNative(this)
         ContextProvider.init(this)
         
         // Starte Coroutine für das Kopieren des Ordners

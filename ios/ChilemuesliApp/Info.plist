@@ -35,6 +35,8 @@
 	<string>Die App nutzt Bluetooth, um die Chilemüsli in der Kirche zu finden.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Die App benötigt deinen Standort, um die Entfernung zu den Chilemüsli in der Kirche zu messen.</string>
+	<key>RCTNewArchEnabled</key>
+	<true/>
 	<key>UIAppFonts</key>
 	<array>
 		<string>MaterialIcons.ttf</string>
