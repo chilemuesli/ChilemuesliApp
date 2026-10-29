@@ -6,9 +6,9 @@ import createOpenLink from 'react-native-open-maps';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Button} from '@rneui/themed';
 import {
-  COLOR_PRIMARY, 
-  BUTTON_STYLES, 
-  BUTTON_TITLE_STYLES
+  COLOR_PRIMARY,
+  BUTTON_STYLES,
+  BUTTON_TITLE_STYLES,
 } from '../Styles/Common';
 import {useRoute, useNavigation} from '@react-navigation/native';
 
@@ -53,9 +53,7 @@ const TravelInstructionsScreen = () => {
           <Icon name="car" size={ICON_SIZE} color={COLOR_PRIMARY} />
         </View>
         <MyText>
-          {
-            'Reformierte Kirchgemeinde Hinwil\nFelsenhofstrasse 9\n8340 Hinwil'
-          }
+          {'Reformierte Kirchgemeinde Hinwil\nFelsenhofstrasse 9\n8340 Hinwil'}
         </MyText>
         <View style={styles.buttonView}>
           <Button

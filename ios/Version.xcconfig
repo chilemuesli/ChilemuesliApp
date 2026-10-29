@@ -1,0 +1,6 @@
+// Single source of truth for the app version on both platforms.
+// iOS: applied as project-level build settings (CFBundleShortVersionString / CFBundleVersion).
+// Android: parsed by android/app/build.gradle (versionName / versionCode).
+// Keep one "KEY = value" per line; build number must be an integer.
+MARKETING_VERSION = 2.2
+CURRENT_PROJECT_VERSION = 15

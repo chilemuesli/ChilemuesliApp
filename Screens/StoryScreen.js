@@ -11,7 +11,7 @@ import {Button} from '@rneui/themed';
 import {
   COLOR_PRIMARY,
   BUTTON_STYLES,
-  BUTTON_TITLE_STYLES
+  BUTTON_TITLE_STYLES,
 } from '../Styles/Common';
 import {useRoute, useNavigation} from '@react-navigation/native';
 
@@ -22,24 +22,29 @@ const StoryScreen = () => {
   const navigation = useNavigation();
   const selectedStory = route.params?.selectedStory;
 
-  // Frühe Rückgabe, wenn keine Story übergeben wurde
-  if (!selectedStory) {
-    return (
-      <View style={styles.contentView}>
-        <MyText>Keine Story gefunden</MyText>
-      </View>
-    );
-  }
-
-  const [state, setState] = React.useState({
+  const [state, setState] = React.useState(() => ({
     readStoryService: new ReadStoriesService(),
     beaconRangingService: new BeaconRangingService(),
-    story: selectedStory,  // Hier wird die selectedStory verwendet
+    story: selectedStory, // Hier wird die selectedStory verwendet
     audioLoadingFailed: false,
     searching: false,
     found: false,
     distanceToBeaconInMeter: 'unbekannt',
-  });
+  }));
+
+  const storyId = selectedStory?.id;
+  const isAlreadyFound = React.useCallback(async () => {
+    try {
+      const value = await AsyncStorage.getItem(storyId + '.found');
+      if (value !== null && value === 'true') {
+        setState((prevState) => ({...prevState, found: true}));
+      } else {
+        console.log(storyId + ' was not found before.');
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }, [storyId]);
 
   // Screen-Titel setzen
   React.useLayoutEffect(() => {
@@ -68,16 +73,22 @@ const StoryScreen = () => {
         console.log('Beacon: ' + JSON.stringify(beacon));
         console.log('Distance: ' + beacon.distance);
         if (beacon.distance >= 0) {
-          setState(prevState => ({...prevState, distanceToBeaconInMeter: beacon.distance}));
+          setState((prevState) => ({
+            ...prevState,
+            distanceToBeaconInMeter: beacon.distance,
+          }));
           if (beacon.distance <= 3) {
             // Found it!
             state.beaconRangingService.stopRanging();
             showFoundAlert();
             setIsAlreadyFound();
-            setState(prevState => ({...prevState, searching: false}));
+            setState((prevState) => ({...prevState, searching: false}));
           }
         } else {
-          setState(prevState => ({...prevState, distanceToBeaconInMeter: 'unbekannt'}));
+          setState((prevState) => ({
+            ...prevState,
+            distanceToBeaconInMeter: 'unbekannt',
+          }));
         }
       },
       (bluetoothState) => {
@@ -86,15 +97,16 @@ const StoryScreen = () => {
       state.story.major,
       state.story.minor,
     );
-  }
+  };
 
+  const {beaconRangingService} = state;
   React.useEffect(() => {
     return () => {
       if (state.searching) {
-        state.beaconRangingService.stopRanging();
+        beaconRangingService.stopRanging();
       }
     };
-  }, [state.searching]);
+  }, [state.searching, beaconRangingService]);
 
   const showFoundAlert = () => {
     Alert.alert(
@@ -103,24 +115,11 @@ const StoryScreen = () => {
       [{text: 'OK', onPress: () => console.log('OK Pressed')}],
       {cancelable: false},
     );
-  }
-
-  const isAlreadyFound = async () => {
-    try {
-      const value = await AsyncStorage.getItem(state.story.id + '.found');
-      if (value !== null && value === 'true') {
-        setState(prevState => ({...prevState, found: true}));
-      } else {
-        console.log(state.story.id + ' was not found before.');
-      }
-    } catch (e) {
-      console.log(e);
-    }
   };
 
   const setIsAlreadyFound = async () => {
     try {
-      setState(prevState => ({...prevState, found: true}));
+      setState((prevState) => ({...prevState, found: true}));
       await AsyncStorage.setItem(state.story.id + '.found', 'true');
     } catch (e) {
       console.log(e);
@@ -129,16 +128,25 @@ const StoryScreen = () => {
   };
 
   const startSearching = () => {
-    setState(prevState => ({...prevState, searching: true}));
+    setState((prevState) => ({...prevState, searching: true}));
     startRangingForBeacon();
-  }
+  };
 
   const onBuffer = () => {
     console.log('Audio is buffering....');
-  }
+  };
 
   const onError = () => {
     console.log('Audio loading failed!');
+  };
+
+  // Keine Story übergeben
+  if (!selectedStory) {
+    return (
+      <View style={styles.contentView}>
+        <MyText>Keine Story gefunden</MyText>
+      </View>
+    );
   }
 
   const story = state.story;
@@ -162,8 +170,8 @@ const StoryScreen = () => {
           musst du {articleLow}
           {story.title} finden und dein Smartphone näher als 2m heranbringen.
           Damit dies funktioniert, muss auf deinem Smartphone Bluetooth
-          aktiviert sein und du musst der Chilemues.li App gestatten auf
-          deinen Standort zuzugreifen.
+          aktiviert sein und du musst der Chilemues.li App gestatten auf deinen
+          Standort zuzugreifen.
         </MyText>
         <View style={styles.buttonView}>
           <Button
@@ -196,8 +204,7 @@ const StoryScreen = () => {
           <MyText style={styles.distanceText}>
             {isNaN(state.distanceToBeaconInMeter)
               ? 'Du bist zu weit entfernt'
-              : Math.round(state.distanceToBeaconInMeter * 10) / 10 +
-                'm'}
+              : Math.round(state.distanceToBeaconInMeter * 10) / 10 + 'm'}
           </MyText>
         </View>
       </View>

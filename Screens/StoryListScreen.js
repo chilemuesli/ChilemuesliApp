@@ -1,6 +1,6 @@
 import React, {useEffect, useLayoutEffect} from 'react';
 import {ScrollView, View, StyleSheet} from 'react-native';
-import {ListItem, Avatar} from '@rneui/themed';  // Avatar zusätzlich importieren
+import {ListItem, Avatar} from '@rneui/themed'; // Avatar zusätzlich importieren
 import ReadStoriesService from '../Service/ReadStoriesService';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {COLOR_PRIMARY} from '../Styles/Common';
@@ -23,20 +23,23 @@ const StoryListScreen = () => {
     async (story) => {
       try {
         const value = await AsyncStorage.getItem(story.id + '.found');
-        setFound(prevFound => ({
+        setFound((prevFound) => ({
           ...prevFound,
-          [story.id]: value !== null && value === 'true'
+          [story.id]: value !== null && value === 'true',
         }));
       } catch (e) {
         console.log(e);
       }
     },
-    [] // Keine Abhängigkeit von found mehr
+    [], // Keine Abhängigkeit von found mehr
   );
 
   const loadData = React.useCallback(() => {
     const loadingFinished = (storiesResult) => {
-      console.log('Setting state with stories:', JSON.stringify(storiesResult, null, 2));
+      console.log(
+        'Setting state with stories:',
+        JSON.stringify(storiesResult, null, 2),
+      );
       setStories(storiesResult);
       storiesResult.forEach(isAlreadyFound);
     };
@@ -82,8 +85,7 @@ const StoryListScreen = () => {
             <ListItem
               key={i}
               onPress={() => onStorySelected(story)}
-              bottomDivider
-            >
+              bottomDivider>
               <Avatar
                 source={
                   story.avatar

@@ -49,7 +49,7 @@ export default class BeaconsDemo extends Component {
 
     if (Platform.OS === 'ios') {
       Beacons.requestAlwaysAuthorization();
-    } else if (Platform === 'android'){
+    } else if (Platform === 'android') {
       Beacons.detectIBeacons();
     }
 
@@ -59,13 +59,13 @@ export default class BeaconsDemo extends Component {
     // Range for beacons inside the region
     Beacons.startRangingBeaconsInRegion(region)
       .then(() => console.log('Beacons ranging started succesfully'))
-      .catch(error =>
+      .catch((error) =>
         console.log(`Beacons ranging not started, error: ${error}`),
       );
     // Range for beacons inside the other region
     Beacons.startRangingBeaconsInRegion(anotherRegion)
       .then(() => console.log('Beacons ranging started succesfully'))
-      .catch(error =>
+      .catch((error) =>
         console.log(`Beacons ranging not started, error: ${error}`),
       );
 
@@ -83,7 +83,7 @@ export default class BeaconsDemo extends Component {
     // Ranging: Listen for beacon changes
     this.beaconsDidRangeEvent = Beacons.BeaconsEventEmitter.addListener(
       'beaconsDidRange',
-      data => {
+      (data) => {
         console.log('beaconsDidRange data: ', data);
         const {beacons} = data;
         const {rangingDataSource} = this.state;
@@ -97,7 +97,7 @@ export default class BeaconsDemo extends Component {
 
     // listen bluetooth state change event
     BluetoothState.onStateChange(
-      bluetoothState => this.setState({bluetoothState: bluetoothState}),
+      (bluetoothState) => this.setState({bluetoothState: bluetoothState}),
       true,
     );
 
@@ -114,13 +114,13 @@ export default class BeaconsDemo extends Component {
     // stop ranging beacons:
     Beacons.stopRangingBeaconsInRegion(region)
       .then(() => console.log('Beacons ranging stopped succesfully'))
-      .catch(error =>
+      .catch((error) =>
         console.log(`Beacons ranging not stopped, error: ${error}`),
       );
 
     Beacons.stopRangingBeaconsInRegion(regionAlternate)
       .then(() => console.log('Beacons ranging stopped succesfully'))
-      .catch(error =>
+      .catch((error) =>
         console.log(`Beacons ranging not stopped, error: ${error}`),
       );
 
@@ -151,7 +151,7 @@ export default class BeaconsDemo extends Component {
     <Text style={styles.rowSection}>{uuid}</Text>
   );
 
-  renderRangingRow = rowData => (
+  renderRangingRow = (rowData) => (
     <View style={styles.row}>
       <Text style={styles.smallText}>
         UUID: {rowData.uuid ? rowData.uuid : 'NA'}
@@ -170,14 +170,14 @@ export default class BeaconsDemo extends Component {
     </View>
   );
 
-  convertRangingArrayToMap = rangedBeacon => {
+  convertRangingArrayToMap = (rangedBeacon) => {
     const {rangedBeaconsUUIDMap} = this.state;
 
-    rangedBeacon.forEach(beacon => {
+    rangedBeacon.forEach((beacon) => {
       if (beacon.uuid.length > 0) {
         const uuid = beacon.uuid.toUpperCase();
         const rangedBeacons = rangedBeaconsUUIDMap[uuid].filter(
-          rangedBeac => rangedBeac === uuid,
+          (rangedBeac) => rangedBeac === uuid,
         );
 
         rangedBeaconsUUIDMap[uuid] = [...rangedBeacons, beacon];

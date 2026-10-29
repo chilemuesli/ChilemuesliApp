@@ -6,7 +6,7 @@ const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
 const config = {
   resolver: {
     sourceExts: ['js', 'jsx', 'json', 'ts', 'tsx'],
-    platforms: ['android', 'ios']
+    platforms: ['android', 'ios'],
   },
   server: {
     port: 8081,
@@ -18,7 +18,7 @@ const config = {
         }
         return middleware(req, res, next);
       };
-    }
+    },
   },
   transformer: {
     getTransformOptions: async () => ({
@@ -27,7 +27,7 @@ const config = {
         inlineRequires: true,
       },
     }),
-  }
+  },
 };
 
 /**

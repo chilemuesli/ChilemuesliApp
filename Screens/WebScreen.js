@@ -16,7 +16,7 @@ const WebScreen = () => {
     });
   }, [navigation, route.params?.title]);
 
-  const onShouldStartLoadWithRequest = navigator => {
+  const onShouldStartLoadWithRequest = (navigator) => {
     return true;
   };
 

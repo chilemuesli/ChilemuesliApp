@@ -5,6 +5,9 @@ import ReactAppDependencyProvider
 
 @main
 class AppDelegate: RCTAppDelegate {
+  // Kept for SceneDelegate, which creates the React Native root view.
+  var reactNativeLaunchOptions: [AnyHashable: Any]?
+
   override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     self.moduleName = "ChilemuesliApp"
     self.dependencyProvider = RCTAppDependencyProvider()
@@ -13,7 +16,18 @@ class AppDelegate: RCTAppDelegate {
     // They will be passed down to the ViewController used by React Native.
     self.initialProps = [:]
 
+    // The window is created by SceneDelegate (UIScene life cycle).
+    self.automaticallyLoadReactNativeWindow = false
+
+    self.reactNativeLaunchOptions = launchOptions
+
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+  }
+
+  override func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+    let configuration = UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    configuration.delegateClass = SceneDelegate.self
+    return configuration
   }
 
   override func sourceURL(for bridge: RCTBridge) -> URL? {
