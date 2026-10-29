@@ -32,6 +32,7 @@ const StoryScreen = () => {
     distanceToBeaconInMeter: 'unbekannt',
   }));
 
+  const playerRef = React.useRef(null);
   const storyId = selectedStory?.id;
   const isAlreadyFound = React.useCallback(async () => {
     try {
@@ -215,11 +216,9 @@ const StoryScreen = () => {
       video = (
         <Video
           source={{uri: story.audioFile}} // Can be a URL or a local file.
-          ref={(ref) => {
-            this.player = ref;
-          }} // Store reference
+          ref={playerRef} // Store reference
           onBuffer={onBuffer} // Callback when remote video is buffering
-          onError={this.videoError} // Callback when video cannot be load
+          onError={onError} // Callback when video cannot be load
           //poster={story.imageFiles[0]}
           ignoreSilentSwitch="ignore"
           posterResizeMode={'center'}
