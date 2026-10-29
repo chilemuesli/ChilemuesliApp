@@ -86,15 +86,23 @@ const BeaconsDemo = () => {
       <Text style={styles.headline}>ranging beacons:</Text>
       <SectionList
         sections={sections}
-        keyExtractor={(item, index) => item.uuid + item.major + item.minor + index}
+        keyExtractor={(item, index) =>
+          item.uuid + item.major + item.minor + index
+        }
         renderSectionHeader={({section}) => (
           <Text style={styles.rowSection}>{section.title}</Text>
         )}
         renderItem={({item}) => (
           <View style={styles.row}>
-            <Text style={styles.smallText}>UUID: {item.uuid ? item.uuid : 'NA'}</Text>
-            <Text style={styles.smallText}>Major: {item.major ? item.major : 'NA'}</Text>
-            <Text style={styles.smallText}>Minor: {item.minor ? item.minor : 'NA'}</Text>
+            <Text style={styles.smallText}>
+              UUID: {item.uuid ? item.uuid : 'NA'}
+            </Text>
+            <Text style={styles.smallText}>
+              Major: {item.major ? item.major : 'NA'}
+            </Text>
+            <Text style={styles.smallText}>
+              Minor: {item.minor ? item.minor : 'NA'}
+            </Text>
             <Text>RSSI: {item.rssi ? item.rssi : 'NA'}</Text>
             <Text>Proximity: {item.proximity ? item.proximity : 'NA'}</Text>
             <Text>
