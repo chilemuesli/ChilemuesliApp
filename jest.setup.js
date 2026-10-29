@@ -1,3 +1,4 @@
+/* eslint-env jest */
 import 'react-native-gesture-handler/jestSetup';
 
 // Native modules are not available in Jest.
